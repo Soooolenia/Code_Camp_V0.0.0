@@ -5,6 +5,8 @@ public class InteractablePartB : MonoBehaviour
     [SerializeField] private GameObject good;
     [SerializeField] private GameObject damaged;
     [SerializeField] private GameObject broken;
+
+    private bool isDamaged = false;
     private void Awake()
     {
         good.SetActive(true);
@@ -13,8 +15,17 @@ public class InteractablePartB : MonoBehaviour
     }
     public void DamagePartB()
     {
-        Debug.Log("Part B broke!");
-        good.SetActive(false);
-        damaged.SetActive(true);
+        if (isDamaged == false)
+        {
+            Debug.Log("Part B broke!");
+            good.SetActive(false);
+            damaged.SetActive(true);
+
+            isDamaged = true;
+        }
+        else
+        {
+            Debug.Log("Part B is already damaged!");
+        }
     }
 }
