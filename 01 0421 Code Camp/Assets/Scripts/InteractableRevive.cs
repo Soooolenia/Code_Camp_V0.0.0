@@ -1,8 +1,10 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class InteractableRevive : Interactable
 {
     [SerializeField] private Monster monster;
+    [SerializeField] private Machine machine;
 
     public override void Interact()
     {
@@ -16,7 +18,12 @@ public class InteractableRevive : Interactable
             return;
         }
 
-        Debug.Log("Monster has been revived!");
         monster.Revive();
+
+        //Decide if parts break or not
+        if (Random.value < 0.5f)
+        {
+            machine.BreakParts();
+        }
     }
 }

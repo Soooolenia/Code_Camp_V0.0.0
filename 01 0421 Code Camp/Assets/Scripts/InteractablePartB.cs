@@ -2,15 +2,19 @@ using UnityEngine;
 
 public class InteractablePartB : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private GameObject good;
+    [SerializeField] private GameObject damaged;
+    [SerializeField] private GameObject broken;
+    private void Awake()
     {
-        
+        good.SetActive(true);
+        damaged.SetActive(false);
+        broken.SetActive(false);
     }
-
-    // Update is called once per frame
-    void Update()
+    public void DamagePartB()
     {
-        
+        Debug.Log("Part B broke!");
+        good.SetActive(false);
+        damaged.SetActive(true);
     }
 }
