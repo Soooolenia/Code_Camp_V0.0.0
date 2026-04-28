@@ -778,7 +778,7 @@ GameObject:
   - component: {fileID: 550567900}
   m_Layer: 0
   m_Name: Part A Good
-  m_TagString: Untagged
+  m_TagString: Parts
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1017,7 +1017,7 @@ GameObject:
   - component: {fileID: 1036860784}
   m_Layer: 0
   m_Name: Part C Good
-  m_TagString: Untagged
+  m_TagString: Parts
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1918,7 +1918,7 @@ GameObject:
   - component: {fileID: 1588953955}
   m_Layer: 0
   m_Name: Part B Good
-  m_TagString: Untagged
+  m_TagString: Parts
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
