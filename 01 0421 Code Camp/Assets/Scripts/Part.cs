@@ -9,8 +9,10 @@ public class Part : MonoBehaviour
 
     [SerializeField] private Machine machine;
 
-    private bool isDamaged = false;
-    public bool isBroken = false;
+    [SerializeField] private InteractableKill interactableKill;
+
+    public bool IsDamaged = false;
+    public bool IsBroken = false;
 
     [SerializeField] private int damageLevel = 0;
 
@@ -18,16 +20,19 @@ public class Part : MonoBehaviour
 
     public void DamagePart()
     {
-        if (isBroken) { return; }
+        if (IsBroken) { return; }
 
-        if (isDamaged == false)
+        if (IsDamaged == false)
         {
             Debug.Log($"Part {gameObject.name} is damaged!");
             good.SetActive(false);
             damaged.SetActive(true);
 
-            isDamaged = true;
-            //startDamagedCounter();
+            IsDamaged = true;
+
+            //damage the kill
+            interactableKill.KillDamage -= 1;
+            Debug.Log($"Part {gameObject.name} reduced kill damage by 1");
         }
         else
         {
@@ -42,9 +47,9 @@ public class Part : MonoBehaviour
         //If part is broken, add one to damage counter
         //If part is not broken, set damage counter back to 0
 
-        if(isBroken) { return; }
+        if(IsBroken) { return; }
 
-        if (isDamaged)
+        if (IsDamaged)
         {
             damageLevel += 1;
             Debug.Log($"{gameObject.name} damage level: {damageLevel}");
@@ -55,7 +60,7 @@ public class Part : MonoBehaviour
                 damaged.SetActive(false);
                 broken.SetActive(true);
                 Debug.Log($"Part {gameObject.name} is broken!");
-                isBroken = true;
+                IsBroken = true;
 
                 machine.MachineIsWorking = false;
             }

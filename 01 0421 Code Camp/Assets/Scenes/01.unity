@@ -152,6 +152,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   machine: {fileID: 108373814}
+  kill: {fileID: 7331833490056101419}
+  isAlive: 1
+  monsterHealth: 3
 --- !u!65 &56322147
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1169,7 +1172,10 @@ MonoBehaviour:
   damaged: {fileID: 137236854}
   broken: {fileID: 1116857432}
   machine: {fileID: 108373814}
-  isBroken: 0
+  interactableKill: {fileID: 7331833490056101419}
+  IsDamaged: 0
+  IsBroken: 0
+  damageLevel: 0
   OnDamaged:
     m_PersistentCalls:
       m_Calls: []
@@ -1224,7 +1230,10 @@ MonoBehaviour:
   damaged: {fileID: 180871424}
   broken: {fileID: 1922755460}
   machine: {fileID: 108373814}
-  isBroken: 0
+  interactableKill: {fileID: 7331833490056101419}
+  IsDamaged: 0
+  IsBroken: 0
+  damageLevel: 0
   OnDamaged:
     m_PersistentCalls:
       m_Calls: []
@@ -1526,7 +1535,10 @@ MonoBehaviour:
   damaged: {fileID: 1376569467}
   broken: {fileID: 1735846516}
   machine: {fileID: 108373814}
-  isBroken: 0
+  interactableKill: {fileID: 7331833490056101419}
+  IsDamaged: 0
+  IsBroken: 0
+  damageLevel: 0
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -3185,6 +3197,10 @@ MonoBehaviour:
   energyManager: {fileID: 424864575}
   machine: {fileID: 108373814}
   animator: {fileID: 1114863242}
+  partA: {fileID: 1297298063}
+  partB: {fileID: 1108737915}
+  partC: {fileID: 1063549718}
+  KillDamage: 3
 --- !u!4 &8248628375373246381
 Transform:
   m_ObjectHideFlags: 0
