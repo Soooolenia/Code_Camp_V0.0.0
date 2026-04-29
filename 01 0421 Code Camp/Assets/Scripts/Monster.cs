@@ -3,8 +3,11 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
-    [SerializeField] Machine machine;
-    [SerializeField] InteractableKill kill;
+    [SerializeField] private Machine machine;
+    [SerializeField] private InteractableKill kill;
+
+    [SerializeField] GameObject monsterAlive;
+    [SerializeField] GameObject monsterDead;
 
     [SerializeField] private bool isAlive = true;
 
@@ -24,6 +27,10 @@ public class Monster : MonoBehaviour
         if (monsterHealth <= 0)
         {
             isAlive = false;
+
+            monsterAlive.gameObject.SetActive(false);
+            monsterDead.gameObject.SetActive(true);
+
             Debug.Log("Monster has been killed!");
             machine.DamageCounter();
         }
@@ -45,6 +52,10 @@ public class Monster : MonoBehaviour
         }
 
         isAlive = true;
+
+        monsterAlive.gameObject.SetActive(true);
+        monsterDead.gameObject.SetActive(false);
+
         monsterHealth = 3;
         Debug.Log("Monster has been revived!");
 
