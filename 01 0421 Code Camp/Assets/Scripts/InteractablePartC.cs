@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class InteractablePartC : MonoBehaviour
@@ -27,5 +28,10 @@ public class InteractablePartC : MonoBehaviour
         {
             Debug.Log("Part C is already damaged!");
         }
+    }
+
+    internal void DamageCounter()
+    {
+        throw new NotImplementedException();
     }
 }
