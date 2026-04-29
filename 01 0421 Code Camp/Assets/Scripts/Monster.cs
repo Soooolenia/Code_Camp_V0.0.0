@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -28,19 +29,24 @@ public class Monster : MonoBehaviour
         {
             isAlive = false;
 
-            monsterAlive.gameObject.SetActive(false);
-            monsterDead.gameObject.SetActive(true);
-
-            Debug.Log("Monster has been killed!");
-            machine.DamageCounter();
+            StartCoroutine(KillRoutine());
         }
 
         else
         {
             Debug.Log($"Monster current health: {monsterHealth}");
         }
+    }
 
-        // TODO: Add death animation or effects here
+    private IEnumerator KillRoutine()
+    {
+        yield return new WaitForSeconds(1f);
+
+        monsterAlive.gameObject.SetActive(false);
+        monsterDead.gameObject.SetActive(true);
+
+        Debug.Log("Monster has been killed!");
+        machine.DamageCounter();
     }
 
     public void Revive()
@@ -53,6 +59,13 @@ public class Monster : MonoBehaviour
 
         isAlive = true;
 
+        ReviveRoutine();
+    }
+
+    private IEnumerator ReviveRoutine()
+    {
+        yield return new WaitForSeconds(1f);
+
         monsterAlive.gameObject.SetActive(true);
         monsterDead.gameObject.SetActive(false);
 
@@ -60,7 +73,5 @@ public class Monster : MonoBehaviour
         Debug.Log("Monster has been revived!");
 
         machine.DamageCounter();
-
-        // TODO: Add revival animation or effects here
     }
 }
