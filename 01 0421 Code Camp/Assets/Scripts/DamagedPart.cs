@@ -9,6 +9,8 @@ public class DamagedPart : Interactable
 
     [SerializeField] private Part part;
     [SerializeField] private InteractableKill interactableKill;
+
+    [SerializeField] private EnergyManager energyManager;
     public override void Interact()
     {
         repair();
@@ -22,6 +24,7 @@ public class DamagedPart : Interactable
 
         part.IsDamaged = false;
         interactableKill.KillDamage += 1;
+        energyManager.DecreaseEnergy();
 
         Debug.Log($"{gameObject.name} has been repaired!");
     }

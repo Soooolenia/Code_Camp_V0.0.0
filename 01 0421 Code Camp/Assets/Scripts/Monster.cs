@@ -9,11 +9,13 @@ public class Monster : MonoBehaviour
     [SerializeField] GameObject monsterAlive;
     [SerializeField] GameObject monsterDead;
 
-    [SerializeField] private bool isAlive = true;
+    [SerializeField] private EnergyManager energyManager;
+
+    [SerializeField] public bool isAlive = true;
 
     public bool IsAlive => isAlive;
 
-    [SerializeField] private int monsterHealth = 3;
+    [SerializeField] public int MonsterHealth = 3;
     public void Kill()
     {
         if (!isAlive)
@@ -22,9 +24,9 @@ public class Monster : MonoBehaviour
             return;
         }
 
-        monsterHealth = monsterHealth - kill.KillDamage;
+        MonsterHealth = MonsterHealth - kill.KillDamage;
 
-        if (monsterHealth <= 0)
+        if (MonsterHealth <= 0)
         {
             isAlive = false;
 
@@ -33,11 +35,13 @@ public class Monster : MonoBehaviour
 
             Debug.Log("Monster has been killed!");
             machine.DamageCounter();
+            energyManager.IncreaseEnergy();
+
         }
 
         else
         {
-            Debug.Log($"Monster current health: {monsterHealth}");
+            Debug.Log($"Monster current health: {MonsterHealth}");
         }
 
         // TODO: Add death animation or effects here
@@ -56,7 +60,7 @@ public class Monster : MonoBehaviour
         monsterAlive.gameObject.SetActive(true);
         monsterDead.gameObject.SetActive(false);
 
-        monsterHealth = 3;
+        MonsterHealth = 3;
         Debug.Log("Monster has been revived!");
 
         machine.DamageCounter();

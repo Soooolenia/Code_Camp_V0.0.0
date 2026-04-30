@@ -7,6 +7,8 @@ public class InteractableRevive : Interactable
     [SerializeField] private Machine machine;
 
     [SerializeField] private Animator animator;
+
+    [SerializeField] private EnergyManager energyManager;
     public override void Interact()
     {
         //Check if the monster is alive
@@ -27,6 +29,8 @@ public class InteractableRevive : Interactable
 
         monster.Revive();
         animator.SetTrigger("Revive");
+
+        energyManager.DecreaseEnergy();
 
         //Decide if parts break or not
         if (Random.value < 0.5f)

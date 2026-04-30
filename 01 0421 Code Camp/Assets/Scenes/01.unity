@@ -135,7 +135,7 @@ GameObject:
   m_Layer: 0
   m_Name: Monster
   m_TagString: Untagged
-  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -155,8 +155,9 @@ MonoBehaviour:
   kill: {fileID: 7331833490056101419}
   monsterAlive: {fileID: 1019027386}
   monsterDead: {fileID: 688605303}
+  energyManager: {fileID: 424864575}
   isAlive: 1
-  monsterHealth: 3
+  MonsterHealth: 3
 --- !u!65 &56322147
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -455,6 +456,7 @@ MonoBehaviour:
   broken: {fileID: 1116857432}
   part: {fileID: 1063549718}
   interactableKill: {fileID: 7331833490056101419}
+  energyManager: {fileID: 424864575}
 --- !u!1 &180871424
 GameObject:
   m_ObjectHideFlags: 0
@@ -584,6 +586,7 @@ MonoBehaviour:
   broken: {fileID: 1922755460}
   part: {fileID: 1108737915}
   interactableKill: {fileID: 7331833490056101419}
+  energyManager: {fileID: 424864575}
 --- !u!43 &309957421
 Mesh:
   m_ObjectHideFlags: 0
@@ -791,8 +794,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe6af5d1963f8ef40b5a63b8db69aedb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  currentEnergy: 1
-  targetEnergy: 5
+  CurrentEnergy: 1
+  TargetEnergy: 5
 --- !u!4 &424864576
 Transform:
   m_ObjectHideFlags: 0
@@ -1746,6 +1749,66 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1116857432}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1173857579
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1173857581}
+  - component: {fileID: 1173857580}
+  m_Layer: 0
+  m_Name: Value Previewer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1173857580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173857579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10a1cf48f40dc664c818e50bff2c59df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  currentEnergyLevel: 0
+  targetEnergyLevel: 0
+  isMonsterAlive: 0
+  monsterHealth: 0
+  isMachineWorking: 0
+  isPartADamaged: 0
+  isPartBDamaged: 0
+  isPartCDamaged: 0
+  killDamage: 0
+  energyManager: {fileID: 424864575}
+  monster: {fileID: 56322146}
+  machine: {fileID: 108373814}
+  partA: {fileID: 1297298063}
+  partB: {fileID: 1108737915}
+  partC: {fileID: 1063549718}
+  interactableKill: {fileID: 7331833490056101419}
+--- !u!4 &1173857581
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173857579}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.85052, y: 0.55258, z: -0.34278}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1297298061
 GameObject:
   m_ObjectHideFlags: 0
@@ -2368,6 +2431,7 @@ MonoBehaviour:
   broken: {fileID: 1735846516}
   part: {fileID: 1297298063}
   interactableKill: {fileID: 7331833490056101419}
+  energyManager: {fileID: 424864575}
 --- !u!1 &1468052888
 GameObject:
   m_ObjectHideFlags: 0
@@ -2403,6 +2467,7 @@ MonoBehaviour:
   monster: {fileID: 56322146}
   machine: {fileID: 108373814}
   animator: {fileID: 1355822180}
+  energyManager: {fileID: 424864575}
 --- !u!65 &1468052890
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18531,3 +18596,4 @@ SceneRoots:
   - {fileID: 108373813}
   - {fileID: 56322150}
   - {fileID: 2136327105}
+  - {fileID: 1173857581}

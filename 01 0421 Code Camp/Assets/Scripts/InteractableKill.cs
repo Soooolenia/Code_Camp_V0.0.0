@@ -32,7 +32,7 @@ public class InteractableKill : Interactable
         monster.Kill();
         animator.SetTrigger("Kill");
 
-        energyManager.IncreaseEnergy();
+        energyManager.DecreaseEnergy();
 
         //If a part is damaged, have the machine take 1 less damage
         //if (partA.IsDamaged)

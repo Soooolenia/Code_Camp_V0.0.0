@@ -33,6 +33,14 @@ public class Part : MonoBehaviour
             //damage the kill
             interactableKill.KillDamage -= 1;
             Debug.Log($"Part {gameObject.name} reduced kill damage by 1");
+
+            //If all parts are damaged, the damage is 0
+            //Which means the machine is now broken
+            if (interactableKill.KillDamage <= 0)
+            {
+                machine.MachineIsWorking = false;
+                Debug.Log("All parts are damaged! The machine is now broken!");
+            }
         }
         else
         {
