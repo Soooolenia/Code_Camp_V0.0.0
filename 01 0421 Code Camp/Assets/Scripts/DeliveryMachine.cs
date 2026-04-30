@@ -4,13 +4,12 @@ using UnityEngine;
 public class DeliveryMachine : Interactable
 {
     [SerializeField] private Player player;
-    [SerializeField] SlotA slotAInteraction;
     public override void Interact()
     {  
         Debug.Log("Picked up good part!");
 
         //Toggle on slot A interactability
-        slotAInteraction.gameObject.SetActive(true);
+        player.GetSlotToRepair().gameObject.SetActive(true);
         Debug.Log("Slot A is now interactable!");
 
         //In hand state toggle

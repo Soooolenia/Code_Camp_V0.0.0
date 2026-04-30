@@ -1,3 +1,5 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -7,6 +9,8 @@ public class Player : MonoBehaviour
 
     [SerializeField] private GameObject badPartShowing;
     [SerializeField] private GameObject goodPartShowing;
+
+    private SlotA slotToRepair;
 
     public void ShowBadObjectInHand()
     {
@@ -23,5 +27,17 @@ public class Player : MonoBehaviour
     public void HideGoodObjectInHand()
     {
         goodPartShowing.SetActive(false);
+    }
+
+    public void SetTargetSlotForReplacement(SlotA slot)
+    {
+        slotToRepair = slot;
+    }
+
+    public SlotA GetSlotToRepair()
+    {
+        SlotA slotToReturn = slotToRepair;
+        slotToRepair = null;
+        return slotToReturn;
     }
 }

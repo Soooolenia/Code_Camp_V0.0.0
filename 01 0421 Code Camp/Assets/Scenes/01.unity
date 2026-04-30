@@ -1441,7 +1441,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DeliveryMachine
   player: {fileID: 2035358253}
-  slotAInteraction: {fileID: 365713594}
 --- !u!1 &688605303
 GameObject:
   m_ObjectHideFlags: 0
@@ -2711,6 +2710,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BrokenPart
   player: {fileID: 2035358253}
   deliveryMachineInteract: {fileID: 671973465}
+  slot: {fileID: 1347101770}
 --- !u!1 &1173857579
 GameObject:
   m_ObjectHideFlags: 0
@@ -4147,6 +4147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   player: {fileID: 2035358253}
   deliveryMachineInteract: {fileID: 671973465}
+  slot: {fileID: 365713594}
 --- !u!1 &1922755460
 GameObject:
   m_ObjectHideFlags: 0
@@ -4274,6 +4275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BrokenPart
   player: {fileID: 2035358253}
   deliveryMachineInteract: {fileID: 671973465}
+  slot: {fileID: 338906515}
 --- !u!1 &2035358251
 GameObject:
   m_ObjectHideFlags: 0
