@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public class Part : MonoBehaviour
 {
-    [SerializeField] private GameObject good;
+    [SerializeField] public GameObject Good;
     [SerializeField] private GameObject damaged;
     [SerializeField] private GameObject broken;
 
@@ -25,7 +25,7 @@ public class Part : MonoBehaviour
         if (IsDamaged == false)
         {
             Debug.Log($"Part {gameObject.name} is damaged!");
-            good.SetActive(false);
+            Good.SetActive(false);
             damaged.SetActive(true);
 
             IsDamaged = true;
@@ -64,7 +64,7 @@ public class Part : MonoBehaviour
 
             if (damageLevel >= 2)
             {
-                good.SetActive(false);
+                Good.SetActive(false);
                 damaged.SetActive(false);
                 broken.SetActive(true);
                 Debug.Log($"Part {gameObject.name} is broken!");

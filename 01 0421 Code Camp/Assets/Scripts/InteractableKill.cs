@@ -22,6 +22,14 @@ public class InteractableKill : Interactable
             return;
         }
 
+        //Check if any part is broken
+        if (partA.IsBroken || partB.IsBroken || partC.IsBroken)
+        {
+            Debug.Log("A part is broken! The machine is not working!");
+            machine.MachineIsWorking = false;
+            return;
+        }
+
         //Check if the monster is alive
         if (monster.IsAlive == false)
         {
