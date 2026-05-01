@@ -1,32 +1,41 @@
-using System;
-using Unity.VisualScripting;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public bool GoodPartInHand = false;
-    public bool BrokenPartInHand = false;
+    [Header("Settings Variables")]
+    [SerializeField] private List<GameObject> goodParts;
+    [SerializeField] private List<GameObject> brokenParts;
 
-    [SerializeField] private GameObject badPartShowing;
-    [SerializeField] private GameObject goodPartShowing;
+    [Header("In-game Variables")]
+    [SerializeField] private int currentGoodPartIndex = -1;
+    [SerializeField] private int currentBrokenPartIndex = -1;
 
     private Slot slotToRepair;
 
-    public void ShowBadObjectInHand()
+    public void ShowBadObjectInHand(int partIndex)
     {
-        badPartShowing.SetActive(true);
+        // Show the new bad object
+        brokenParts[partIndex].SetActive(true);
+        currentBrokenPartIndex = partIndex;
     }
-    public void ShowGoodObjectInHand()
+
+    public void ShowGoodObjectInHand(int partIndex)
     {
-        goodPartShowing.SetActive(true);
+        goodParts[partIndex].SetActive(true);
+        currentGoodPartIndex = partIndex;
     }
+
     public void HideBadObjectInHand()
     {
-        badPartShowing.SetActive(false);
+        brokenParts[currentBrokenPartIndex].SetActive(false);
+        currentBrokenPartIndex = -1;
     }
+
     public void HideGoodObjectInHand()
     {
-        goodPartShowing.SetActive(false);
+        goodParts[currentGoodPartIndex].SetActive(false);
+        currentGoodPartIndex = -1;
     }
 
     public void SetTargetSlotForReplacement(Slot slot)

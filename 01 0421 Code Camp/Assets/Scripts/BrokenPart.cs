@@ -6,11 +6,11 @@ public class BrokenPart : Interactable
     [SerializeField] private DeliveryMachine deliveryMachineInteract;
 
     [SerializeField] private Slot slot;
+
     public override void Interact()
     {
         //In hand state toggle
-        player.BrokenPartInHand = true;
-        player.ShowBadObjectInHand();
+        player.ShowBadObjectInHand(slot.partIndex);
         player.SetTargetSlotForReplacement(slot);
         Debug.Log("Picked up broken part.");
 
