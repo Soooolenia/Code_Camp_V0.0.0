@@ -1,13 +1,14 @@
 using System;
 using UnityEngine;
 
-public class SlotA : Interactable
+public class Slot : Interactable
 {
     [SerializeField] private Player player;
     [SerializeField] private GameObject brokenPart;
     [SerializeField] private Part part;
     [SerializeField] private DeliveryMachine deliveryMachineInteract;
     [SerializeField] private Machine machine;
+    [SerializeField] private InteractableKill interactableKill;
     public override void Interact()
     {
         //Turn on original good part on machine
@@ -25,7 +26,10 @@ public class SlotA : Interactable
         machine.MachineIsWorking = true;
         part.IsBroken = false;
 
-        //Turn off slot A interactability
+        //Add back kill damage
+        interactableKill.KillDamage += 1;
+
+        //Turn off slot interactability
         gameObject.SetActive(false);
     }
 }

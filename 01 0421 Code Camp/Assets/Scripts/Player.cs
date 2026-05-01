@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject badPartShowing;
     [SerializeField] private GameObject goodPartShowing;
 
-    private SlotA slotToRepair;
+    private Slot slotToRepair;
 
     public void ShowBadObjectInHand()
     {
@@ -29,14 +29,14 @@ public class Player : MonoBehaviour
         goodPartShowing.SetActive(false);
     }
 
-    public void SetTargetSlotForReplacement(SlotA slot)
+    public void SetTargetSlotForReplacement(Slot slot)
     {
         slotToRepair = slot;
     }
 
-    public SlotA GetSlotToRepair()
+    public Slot GetSlotToRepair()
     {
-        SlotA slotToReturn = slotToRepair;
+        Slot slotToReturn = slotToRepair;
         slotToRepair = null;
         return slotToReturn;
     }

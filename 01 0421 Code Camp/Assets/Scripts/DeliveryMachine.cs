@@ -8,9 +8,9 @@ public class DeliveryMachine : Interactable
     {  
         Debug.Log("Picked up good part!");
 
-        //Toggle on slot A interactability
+        //Finding the slot to toggle, and toggle on interactivity
         player.GetSlotToRepair().gameObject.SetActive(true);
-        Debug.Log("Slot A is now interactable!");
+        Debug.Log("Slot is now interactable!");
 
         //In hand state toggle
         player.GoodPartInHand = true;

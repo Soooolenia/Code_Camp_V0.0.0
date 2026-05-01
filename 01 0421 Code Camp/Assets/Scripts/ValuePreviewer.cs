@@ -12,9 +12,13 @@ public class ValuePreviewer : MonoBehaviour
     
     [Header("Machine State")]
     [SerializeField] private bool isMachineWorking;
+    [Header("")]
     [SerializeField] private bool isPartADamaged;
+    [SerializeField] private bool isPartABroken;
     [SerializeField] private bool isPartBDamaged;
+    [SerializeField] private bool isPartBBroken;
     [SerializeField] private bool isPartCDamaged;
+    [SerializeField] private bool isPartCBroken;
     [SerializeField] private int killDamage;
 
     [Header("References")]
@@ -35,8 +39,11 @@ public class ValuePreviewer : MonoBehaviour
 
         isMachineWorking = machine.MachineIsWorking;
         isPartADamaged = partA.IsDamaged;
+        isPartABroken = partA.IsBroken;
         isPartBDamaged = partB.IsDamaged;
+        isPartBBroken = partB.IsBroken;
         isPartCDamaged = partC.IsDamaged;
+        isPartCBroken = partC.IsBroken;
         killDamage = interactableKill.KillDamage;
     }
 

@@ -70,6 +70,9 @@ public class Part : MonoBehaviour
                 Debug.Log($"Part {gameObject.name} is broken!");
                 IsBroken = true;
 
+                // because part is broken, it's no longer damaged
+                IsDamaged = false;
+
                 machine.MachineIsWorking = false;
             }
         }

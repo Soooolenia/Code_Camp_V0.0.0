@@ -5,7 +5,7 @@ public class BrokenPart : Interactable
     [SerializeField] private Player player;
     [SerializeField] private DeliveryMachine deliveryMachineInteract;
 
-    [SerializeField] private SlotA slot;
+    [SerializeField] private Slot slot;
     public override void Interact()
     {
         //In hand state toggle
