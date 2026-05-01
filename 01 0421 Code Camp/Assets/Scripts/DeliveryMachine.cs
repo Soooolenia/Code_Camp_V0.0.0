@@ -4,6 +4,8 @@ using UnityEngine;
 public class DeliveryMachine : Interactable
 {
     [SerializeField] private Player player;
+
+    [SerializeField] private EnergyManager energyManager;
     public override void Interact()
     {  
         Debug.Log("Picked up good part!");
@@ -19,5 +21,7 @@ public class DeliveryMachine : Interactable
 
         //Toggle off delivery machine interactability
         gameObject.SetActive(false);
+
+        energyManager.DecreaseMoreEnergy();
     }
 }

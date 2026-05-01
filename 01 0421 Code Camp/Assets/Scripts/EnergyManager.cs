@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class EnergyManager : MonoBehaviour
@@ -26,6 +27,14 @@ public class EnergyManager : MonoBehaviour
     {
         Debug.Log("Energy decreased by 0.2");
         CurrentEnergy -= 0.2f;
+        //Run Energy Level Check
+        EnergyCheck();
+    }
+
+    public void DecreaseMoreEnergy()
+    {
+        Debug.Log("Energy decreased by 0.6");
+        CurrentEnergy -= 0.6f;
         //Run Energy Level Check
         EnergyCheck();
     }
