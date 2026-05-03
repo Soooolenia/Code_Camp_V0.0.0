@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
     [SerializeField] private List<GameObject> goodParts;
     [SerializeField] private List<GameObject> brokenParts;
 
+    [SerializeField] private List<GameObject> goodPartsInMachine;
+
     [Header("In-game Variables")]
     [SerializeField] private int currentGoodPartIndex = -1;
     [SerializeField] private int currentBrokenPartIndex = -1;
@@ -35,6 +37,16 @@ public class Player : MonoBehaviour
     public void HideGoodObjectInHand()
     {
         goodParts[currentGoodPartIndex].SetActive(false);
+        currentGoodPartIndex = -1;
+    }
+    public void ShowGoodObjectInMachine(int partIndex)
+    {
+        goodPartsInMachine[partIndex].SetActive(true);
+        currentGoodPartIndex = partIndex;
+    }
+    public void HideGoodObjectInMachine()
+    {
+        goodPartsInMachine[currentGoodPartIndex].SetActive(false);
         currentGoodPartIndex = -1;
     }
 
