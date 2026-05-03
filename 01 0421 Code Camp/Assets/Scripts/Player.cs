@@ -63,4 +63,9 @@ public class Player : MonoBehaviour
         slotToRepair = null;
         return slotToReturn;
     }
+
+    public Slot PeekSlotToRepair()
+    {
+        return slotToRepair;
+    }
 }

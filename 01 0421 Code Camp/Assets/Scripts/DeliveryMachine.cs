@@ -11,7 +11,7 @@ public class DeliveryMachine : Interactable
         Debug.Log("Picked up good part!");
 
         //Finding the slots
-        Slot slot = player.GetSlotToRepair();
+        Slot slot = player.PeekSlotToRepair();
 
         //In hand display toggle
         player.HideBadObjectInHand();
