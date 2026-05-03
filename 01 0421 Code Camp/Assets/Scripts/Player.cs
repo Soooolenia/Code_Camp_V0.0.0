@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
     [SerializeField] private int currentGoodPartIndex = -1;
     [SerializeField] private int currentBrokenPartIndex = -1;
 
+    [SerializeField] private int currentGoodPartInMachineIndex = -1;
+
     private Slot slotToRepair;
 
     public void ShowBadObjectInHand(int partIndex)
@@ -42,12 +44,12 @@ public class Player : MonoBehaviour
     public void ShowGoodObjectInMachine(int partIndex)
     {
         goodPartsInMachine[partIndex].SetActive(true);
-        currentGoodPartIndex = partIndex;
+        currentGoodPartInMachineIndex = partIndex;
     }
     public void HideGoodObjectInMachine()
     {
-        goodPartsInMachine[currentGoodPartIndex].SetActive(false);
-        currentGoodPartIndex = -1;
+        goodPartsInMachine[currentGoodPartInMachineIndex].SetActive(false);
+        currentGoodPartInMachineIndex = -1;
     }
 
     public void SetTargetSlotForReplacement(Slot slot)
