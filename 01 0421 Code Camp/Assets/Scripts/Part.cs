@@ -11,6 +11,9 @@ public class Part : MonoBehaviour
 
     [SerializeField] private InteractableKill interactableKill;
 
+    [SerializeField] private ParticleSystem smallExplosion;
+    [SerializeField] private ParticleSystem machineSmoke;
+
     public bool IsDamaged = false;
     public bool IsBroken = false;
 
@@ -27,7 +30,6 @@ public class Part : MonoBehaviour
             Debug.Log($"Part {gameObject.name} is damaged!");
             Good.SetActive(false);
             damaged.SetActive(true);
-
             IsDamaged = true;
 
             //damage the kill
@@ -39,7 +41,9 @@ public class Part : MonoBehaviour
             if (interactableKill.KillDamage <= 0)
             {
                 machine.MachineIsWorking = false;
+                machineSmoke.Play();
                 Debug.Log("All parts are damaged! The machine is now broken!");
+
             }
         }
         else
@@ -68,18 +72,22 @@ public class Part : MonoBehaviour
                 damaged.SetActive(false);
                 broken.SetActive(true);
                 Debug.Log($"Part {gameObject.name} is broken!");
+                smallExplosion.Play();
+
                 IsBroken = true;
 
                 // because part is broken, it's no longer damaged
                 IsDamaged = false;
 
                 machine.MachineIsWorking = false;
+                machineSmoke.Play();
             }
         }
         else
         {
             damageLevel = 0;
             machine.MachineIsWorking = true;
+            machineSmoke.Stop();
         }
     }
 }

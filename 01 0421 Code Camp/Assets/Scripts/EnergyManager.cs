@@ -12,6 +12,11 @@ public class EnergyManager : MonoBehaviour
         {
             Debug.Log("Target energy reached!");
         }
+
+        if (CurrentEnergy <= 0f)
+        {
+            Debug.Log("Energy depleted! Game Over!");
+        }
     }
 
     public void IncreaseEnergy()
@@ -25,16 +30,16 @@ public class EnergyManager : MonoBehaviour
 
     public void DecreaseEnergy()
     {
-        Debug.Log("Energy decreased by 0.2");
-        CurrentEnergy -= 0.2f;
+        Debug.Log("Energy decreased by 0.3");
+        CurrentEnergy -= 0.3f;
         //Run Energy Level Check
         EnergyCheck();
     }
 
     public void DecreaseMoreEnergy()
     {
-        Debug.Log("Energy decreased by 0.6");
-        CurrentEnergy -= 0.6f;
+        Debug.Log("Energy decreased by 0.7");
+        CurrentEnergy -= 0.7f;
         //Run Energy Level Check
         EnergyCheck();
     }
