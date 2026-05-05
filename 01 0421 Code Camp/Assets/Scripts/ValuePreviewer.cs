@@ -14,6 +14,7 @@ public class ValuePreviewer : MonoBehaviour
     
     [Header("Machine State")]
     [SerializeField] private bool isMachineWorking;
+    [SerializeField] private int killDamage;
     [Header("")]
     [SerializeField] private bool isPartADamaged;
     [SerializeField] private bool isPartABroken;
@@ -21,7 +22,6 @@ public class ValuePreviewer : MonoBehaviour
     [SerializeField] private bool isPartBBroken;
     [SerializeField] private bool isPartCDamaged;
     [SerializeField] private bool isPartCBroken;
-    [SerializeField] private int killDamage;
 
     [Header("References")]
     [SerializeField] private EnergyManager energyManager;
@@ -40,7 +40,7 @@ public class ValuePreviewer : MonoBehaviour
         isMonsterAlive = monster.IsAlive;
         monsterHealth = monster.MonsterHealth;
 
-        isMachineWorking = !machine.IsBroken();
+        isMachineWorking = machine.IsBroken();
         isPartADamaged = partA.IsDamaged;
         isPartABroken = partA.IsBroken;
         isPartBDamaged = partB.IsDamaged;

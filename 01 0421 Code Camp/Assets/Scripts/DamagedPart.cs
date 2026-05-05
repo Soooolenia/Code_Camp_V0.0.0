@@ -23,7 +23,7 @@ public class DamagedPart : Interactable
         gameObject.SetActive(false);
 
         part.IsDamaged = false;
-        interactableKill.KillDamage += 1;
+        //interactableKill.KillDamage += 1;
         energyManager.DecreaseEnergy();
 
         Debug.Log($"{gameObject.name} has been repaired!");

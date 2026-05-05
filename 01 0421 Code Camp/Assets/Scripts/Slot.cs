@@ -28,7 +28,7 @@ public class Slot : Interactable
         part.IsBroken = false;
 
         //Add back kill damage
-        interactableKill.KillDamage += 1;
+        //interactableKill.KillDamage += 1;
 
         //Turn off slot interactability
         gameObject.SetActive(false);

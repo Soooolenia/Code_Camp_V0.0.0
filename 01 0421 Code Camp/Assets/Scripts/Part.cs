@@ -15,7 +15,22 @@ public class Part : MonoBehaviour
     public bool IsDamaged = false;
     public bool IsBroken = false;
 
-    [SerializeField] private int damageLevel = 0;
+    public int PartDamage
+    {
+        get
+        {
+            if (IsDamaged)
+            {
+                return 0;
+            }
+            else
+            {
+                return 1;
+            }
+        }
+    }
+
+    [SerializeField] public int DamageLevel = 0;
 
     public UnityEvent OnDamaged;
 
@@ -25,22 +40,16 @@ public class Part : MonoBehaviour
 
         if (IsDamaged == false)
         {
+            //Damage part
             Debug.Log($"Part {gameObject.name} is damaged!");
             Good.SetActive(false);
             damaged.SetActive(true);
             IsDamaged = true;
+            //PartDamage = 0;
 
             //damage the kill
-            interactableKill.KillDamage -= 1;
-            Debug.Log($"Part {gameObject.name} reduced kill damage by 1");
-
-            //If all parts are damaged, the damage is 0
-            //Which means the machine is now broken
-            if (interactableKill.KillDamage <= 0)
-            {
-                //machineSmoke.Play();
-                Debug.Log("All parts are damaged! The machine is now broken!");
-            }
+            //interactableKill.KillDamage -= 1;
+            //Debug.Log($"Part {gameObject.name} reduced kill damage by 1");
         }
         else
         {
@@ -59,10 +68,10 @@ public class Part : MonoBehaviour
 
         if (IsDamaged)
         {
-            damageLevel += 1;
-            Debug.Log($"{gameObject.name} damage level: {damageLevel}");
+            DamageLevel += 1;
+            Debug.Log($"{gameObject.name} damage level: {DamageLevel}");
 
-            if (damageLevel >= 2)
+            if (DamageLevel >= 2)
             {
                 Good.SetActive(false);
                 damaged.SetActive(false);
@@ -74,14 +83,12 @@ public class Part : MonoBehaviour
 
                 // because part is broken, it's no longer damaged
                 IsDamaged = false;
-
-                //machine.MachineIsWorking = false;
-                //machineSmoke.Play();
+                //PartDamage = 1;
             }
         }
         else
         {
-            damageLevel = 0;
+            DamageLevel = 0;
             //machine.MachineIsWorking = true;
             //machineSmoke.Stop();
         }
