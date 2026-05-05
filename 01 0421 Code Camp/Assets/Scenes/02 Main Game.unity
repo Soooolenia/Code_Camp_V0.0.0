@@ -1115,6 +1115,8 @@ MonoBehaviour:
   CurrentEnergy: 1
   TargetEnergy: 5
   EnergyDrainRate: 1
+  machine: {fileID: 108373814}
+  valuePreviewer: {fileID: 1173857580}
 --- !u!1 &488722678
 GameObject:
   m_ObjectHideFlags: 0
@@ -8219,7 +8221,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.4566037, g: 0.4566037, b: 0.4566037, a: 1}
+      maxColor: {r: 0.176, g: 0.176, b: 0.176, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}

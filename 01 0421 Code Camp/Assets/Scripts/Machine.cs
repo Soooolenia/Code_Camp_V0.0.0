@@ -55,7 +55,7 @@ public class Machine : MonoBehaviour
         return machineIsBroken;
     }
 
-    private void Update()
+    public void UpdateMachineSmoke()
     {
         if(IsBroken())
         {

@@ -31,7 +31,7 @@ public class ValuePreviewer : MonoBehaviour
     [SerializeField] private Part partB;    
     [SerializeField] private Part partC;
     [SerializeField] private InteractableKill interactableKill;
-    private void Update()
+    public void UpdateValues()
     {
         currentEnergyLevel = energyManager.CurrentEnergy;
         targetEnergyLevel = energyManager.TargetEnergy;
@@ -40,7 +40,7 @@ public class ValuePreviewer : MonoBehaviour
         isMonsterAlive = monster.IsAlive;
         monsterHealth = monster.MonsterHealth;
 
-        isMachineWorking = machine.IsBroken();
+        isMachineWorking = !machine.IsBroken();
         isPartADamaged = partA.IsDamaged;
         isPartABroken = partA.IsBroken;
         isPartBDamaged = partB.IsDamaged;

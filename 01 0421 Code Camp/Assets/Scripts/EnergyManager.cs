@@ -8,8 +8,13 @@ public class EnergyManager : MonoBehaviour
 
     [SerializeField] public float EnergyDrainRate;
 
+    [SerializeField] private Machine machine;
+    [SerializeField] private ValuePreviewer valuePreviewer;
+
     private void EnergyCheck()
     {
+        onInteractionTasks();
+
         if (CurrentEnergy >= TargetEnergy)
         {
             Debug.Log("Target energy reached!");
@@ -19,6 +24,12 @@ public class EnergyManager : MonoBehaviour
         {
             Debug.Log("Energy depleted! Game Over!");
         }
+    }
+
+    private void onInteractionTasks()
+    {
+        machine.UpdateMachineSmoke();
+        valuePreviewer.UpdateValues();
     }
 
     public void IncreaseEnergy()
