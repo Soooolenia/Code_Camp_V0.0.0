@@ -34,8 +34,8 @@ public class EnergyManager : MonoBehaviour
 
     public void IncreaseEnergy()
     {
-        Debug.Log("Energy increased by 1");
-        CurrentEnergy += 1f;
+        Debug.Log("Energy increased by 1.5");
+        CurrentEnergy += 1.5f;
 
         //Run Energy Level Check
         EnergyCheck();

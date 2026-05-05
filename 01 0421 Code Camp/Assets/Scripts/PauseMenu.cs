@@ -1,9 +1,12 @@
+using StarterAssets;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using StarterAssets;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
+    [SerializeField] private GameObject optionsPanel;
+
     [SerializeField] private GameObject pauseMenuUI;
     private bool isPaused = false;
 
@@ -13,7 +16,7 @@ public class PauseMenu : MonoBehaviour
     {
         _playerInputs = GetComponent<StarterAssetsInputs>();
     }
-    private void OnPause(InputValue value)
+    public void OnPause(InputValue value)
     {
         if (value.isPressed)
         {
@@ -48,5 +51,22 @@ public class PauseMenu : MonoBehaviour
             // Optional: Reset move input so the player doesn't keep sliding
             _playerInputs.move = Vector2.zero;
         }
+    }
+
+    public void ToggleOptions()
+    {
+        optionsPanel.SetActive(true);
+        pauseMenuUI.SetActive(false);
+    }
+    public void BackToPauseMenu()
+    {
+        optionsPanel.SetActive(false);
+        pauseMenuUI.SetActive(true);
+    }
+    public void QuitGame()
+    {
+        GameManager.Instance.LoadSceneAtIndex(1);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }
