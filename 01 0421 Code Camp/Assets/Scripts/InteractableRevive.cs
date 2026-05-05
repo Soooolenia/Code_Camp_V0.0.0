@@ -15,7 +15,7 @@ public class InteractableRevive : Interactable
         //If alive, revive
         //If not, debug log "Monster is already alive!"
 
-        if (!machine.MachineIsWorking)
+        if (machine.IsBroken())
         {
             Debug.Log("The machine is broken!");
             return;

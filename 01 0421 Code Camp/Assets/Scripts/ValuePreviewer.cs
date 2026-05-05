@@ -1,3 +1,4 @@
+using System.IO;
 using UnityEngine;
 
 public class ValuePreviewer : MonoBehaviour
@@ -5,6 +6,7 @@ public class ValuePreviewer : MonoBehaviour
     [Header("Energy Level")]
     [SerializeField] private float currentEnergyLevel;
     [SerializeField] private float targetEnergyLevel;
+    [SerializeField] private float energyDrainRate;
 
     [Header("Monster State")]
     [SerializeField] private bool isMonsterAlive;
@@ -33,11 +35,12 @@ public class ValuePreviewer : MonoBehaviour
     {
         currentEnergyLevel = energyManager.CurrentEnergy;
         targetEnergyLevel = energyManager.TargetEnergy;
+        energyDrainRate = energyManager.EnergyDrainRate;
 
         isMonsterAlive = monster.IsAlive;
         monsterHealth = monster.MonsterHealth;
 
-        isMachineWorking = machine.MachineIsWorking;
+        isMachineWorking = !machine.IsBroken();
         isPartADamaged = partA.IsDamaged;
         isPartABroken = partA.IsBroken;
         isPartBDamaged = partB.IsDamaged;

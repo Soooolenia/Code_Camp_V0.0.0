@@ -24,8 +24,7 @@ public class Slot : Interactable
         //In hand state toggle
         player.HideGoodObjectInHand();
 
-        //unbreak machine, unbreak part
-        machine.MachineIsWorking = true;
+        //Unbreak part
         part.IsBroken = false;
 
         //Add back kill damage

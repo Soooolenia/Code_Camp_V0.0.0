@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Machine : MonoBehaviour
@@ -12,7 +13,11 @@ public class Machine : MonoBehaviour
     [SerializeField] private Part partB;
     [SerializeField] private Part partC;
 
-    public bool MachineIsWorking = true;
+    [SerializeField] private InteractableKill InteractableKill;
+
+    [SerializeField] private ParticleSystem machineSmoke;
+
+    //private bool MachineIsWorking = true;
 
     private void Start()
     {
@@ -25,22 +30,6 @@ public class Machine : MonoBehaviour
     }
     public void BreakParts()
     {
-        //Decide which one to break
-        //Call break function in part
-
-        //if (Random.value < 0.33f)
-        //{
-        //    partA.DamagePartA();
-        //}
-        //else if (Random.value < 0.66f)
-        //{
-        //    partB.DamagePartB();
-        //}
-        //else
-        //{
-        //    partC.DamagePartC();
-        //}
-
         var partsChosen = parts[Random.Range(0, parts.Count)];
 
         partsChosen.DamagePart();
@@ -54,5 +43,27 @@ public class Machine : MonoBehaviour
         partC.DamageCounter();
     }
 
-    //CUSTOM FUNCTION MACHINE - Run CUSTOM FUNCTION PART A (and B and C)
+    public bool IsBroken()
+    {
+        bool everyPartIsDamaged = partA.IsDamaged && partB.IsDamaged && partC.IsDamaged;
+
+        bool anyPartIsBroken = partA.IsBroken || partB.IsBroken || partC.IsBroken;
+
+        bool killDamageIsZero = InteractableKill.KillDamage <= 0;
+
+        bool machineIsBroken = everyPartIsDamaged || anyPartIsBroken || killDamageIsZero;
+        return machineIsBroken;
+    }
+
+    private void Update()
+    {
+        if(IsBroken())
+        {
+            machineSmoke.Play();
+        }
+        else
+        {
+            machineSmoke.Stop();
+        }
+    }
 }

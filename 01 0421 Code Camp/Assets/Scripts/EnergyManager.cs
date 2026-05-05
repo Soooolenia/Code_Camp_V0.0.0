@@ -6,6 +6,8 @@ public class EnergyManager : MonoBehaviour
     [SerializeField] public float CurrentEnergy = 1f;
     [SerializeField] public float TargetEnergy = 5f;
 
+    [SerializeField] public float EnergyDrainRate = 1f;
+
     private void EnergyCheck()
     {
         if (CurrentEnergy >= TargetEnergy)
@@ -41,6 +43,12 @@ public class EnergyManager : MonoBehaviour
         Debug.Log("Energy decreased by 0.7");
         CurrentEnergy -= 0.7f;
         //Run Energy Level Check
+        EnergyCheck();
+    }
+
+    private void Update()
+    {
+        CurrentEnergy -= EnergyDrainRate * Time.deltaTime * 0.0001f;
         EnergyCheck();
     }
 }
