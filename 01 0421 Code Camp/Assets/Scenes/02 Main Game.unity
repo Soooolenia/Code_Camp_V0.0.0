@@ -1160,6 +1160,8 @@ GameObject:
   - component: {fileID: 534142742}
   - component: {fileID: 534142741}
   - component: {fileID: 534142740}
+  - component: {fileID: 534142744}
+  - component: {fileID: 534142743}
   m_Layer: 0
   m_Name: Light Bulb 03
   m_TagString: Untagged
@@ -1260,6 +1262,43 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534142738}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &534142743
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534142738}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 52baf42a00375b14098cc8a03724e3b6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &534142744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534142738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a62f7cd151d21f488487cfb8080ebeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Lightbulb
+  energyManager: {fileID: 424864577}
+  energyThreshold: 3
+  animator: {fileID: 534142743}
 --- !u!1 &541647989
 GameObject:
   m_ObjectHideFlags: 0
@@ -1272,6 +1311,8 @@ GameObject:
   - component: {fileID: 541647993}
   - component: {fileID: 541647992}
   - component: {fileID: 541647991}
+  - component: {fileID: 541647995}
+  - component: {fileID: 541647994}
   m_Layer: 0
   m_Name: Light Bulb 04
   m_TagString: Untagged
@@ -1372,6 +1413,43 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 541647989}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &541647994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541647989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a62f7cd151d21f488487cfb8080ebeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Lightbulb
+  energyManager: {fileID: 424864577}
+  energyThreshold: 4
+  animator: {fileID: 541647995}
+--- !u!95 &541647995
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541647989}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 52baf42a00375b14098cc8a03724e3b6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &550567897
 GameObject:
   m_ObjectHideFlags: 0
@@ -2028,7 +2106,6 @@ GameObject:
   - component: {fileID: 748591657}
   - component: {fileID: 748591656}
   - component: {fileID: 748591655}
-  - component: {fileID: 748591654}
   m_Layer: 0
   m_Name: Energy Level Machine
   m_TagString: Untagged
@@ -2036,24 +2113,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &748591654
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 748591653}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7db20c3941166f84389077ffd83be926, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  energyManager: {fileID: 0}
-  lightbulb01: {fileID: 0}
-  lightbulb02: {fileID: 0}
-  lightbulb03: {fileID: 0}
-  lightbulb04: {fileID: 0}
-  lightbulb05: {fileID: 0}
 --- !u!65 &748591655
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7267,6 +7326,8 @@ GameObject:
   - component: {fileID: 879336395}
   - component: {fileID: 879336394}
   - component: {fileID: 879336393}
+  - component: {fileID: 879336397}
+  - component: {fileID: 879336396}
   m_Layer: 0
   m_Name: Light Bulb 05
   m_TagString: Untagged
@@ -7367,6 +7428,43 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 879336391}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &879336396
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879336391}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 52baf42a00375b14098cc8a03724e3b6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &879336397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879336391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a62f7cd151d21f488487cfb8080ebeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Lightbulb
+  energyManager: {fileID: 424864577}
+  energyThreshold: 5
+  animator: {fileID: 879336396}
 --- !u!1 &910363547
 GameObject:
   m_ObjectHideFlags: 0
@@ -18212,6 +18310,7 @@ GameObject:
   - component: {fileID: 1057930727}
   - component: {fileID: 1057930726}
   - component: {fileID: 1057930725}
+  - component: {fileID: 1057930729}
   m_Layer: 0
   m_Name: Light Bulb 01
   m_TagString: Untagged
@@ -18246,6 +18345,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a62f7cd151d21f488487cfb8080ebeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  energyManager: {fileID: 424864577}
+  energyThreshold: 1
+  animator: {fileID: 1057930729}
 --- !u!65 &1057930726
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18324,6 +18426,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1057930723}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &1057930729
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057930723}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 52baf42a00375b14098cc8a03724e3b6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1063549716
 GameObject:
   m_ObjectHideFlags: 0
@@ -18381,7 +18505,7 @@ MonoBehaviour:
   machineSmoke: {fileID: 937406347}
   IsDamaged: 0
   IsBroken: 0
-  damageLevel: 0
+  DamageLevel: 0
   OnDamaged:
     m_PersistentCalls:
       m_Calls: []
@@ -18442,7 +18566,7 @@ MonoBehaviour:
   machineSmoke: {fileID: 937406347}
   IsDamaged: 0
   IsBroken: 0
-  damageLevel: 0
+  DamageLevel: 0
   OnDamaged:
     m_PersistentCalls:
       m_Calls: []
@@ -23580,13 +23704,13 @@ MonoBehaviour:
   isMonsterAlive: 0
   monsterHealth: 0
   isMachineWorking: 0
+  killDamage: 0
   isPartADamaged: 0
   isPartABroken: 0
   isPartBDamaged: 0
   isPartBBroken: 0
   isPartCDamaged: 0
   isPartCBroken: 0
-  killDamage: 0
   energyManager: {fileID: 424864577}
   monster: {fileID: 56322146}
   machine: {fileID: 108373814}
@@ -23747,6 +23871,8 @@ GameObject:
   - component: {fileID: 1203872131}
   - component: {fileID: 1203872130}
   - component: {fileID: 1203872129}
+  - component: {fileID: 1203872133}
+  - component: {fileID: 1203872132}
   m_Layer: 0
   m_Name: Light Bulb 02
   m_TagString: Untagged
@@ -23847,6 +23973,43 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1203872127}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1203872132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203872127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a62f7cd151d21f488487cfb8080ebeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Lightbulb
+  energyManager: {fileID: 424864577}
+  energyThreshold: 2
+  animator: {fileID: 1203872133}
+--- !u!95 &1203872133
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203872127}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 52baf42a00375b14098cc8a03724e3b6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1238564151
 GameObject:
   m_ObjectHideFlags: 0
@@ -23994,7 +24157,7 @@ MonoBehaviour:
   machineSmoke: {fileID: 937406347}
   IsDamaged: 0
   IsBroken: 0
-  damageLevel: 0
+  DamageLevel: 0
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -27015,7 +27178,6 @@ MonoBehaviour:
   partA: {fileID: 1297298063}
   partB: {fileID: 1108737915}
   partC: {fileID: 1063549718}
-  KillDamage: 3
 --- !u!4 &7372742369439882687
 Transform:
   m_ObjectHideFlags: 0

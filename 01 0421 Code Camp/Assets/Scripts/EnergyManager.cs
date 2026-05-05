@@ -6,7 +6,7 @@ public class EnergyManager : MonoBehaviour
     [SerializeField] public float CurrentEnergy = 1f;
     [SerializeField] public float TargetEnergy = 5f;
 
-    [SerializeField] public float EnergyDrainRate = 1f;
+    [SerializeField] public float EnergyDrainRate;
 
     private void EnergyCheck()
     {
