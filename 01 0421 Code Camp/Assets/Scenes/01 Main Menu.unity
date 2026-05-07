@@ -316,6 +316,7 @@ GameObject:
   - component: {fileID: 275530092}
   - component: {fileID: 275530091}
   - component: {fileID: 275530094}
+  - component: {fileID: 275530095}
   m_Layer: 5
   m_Name: Quit
   m_TagString: Untagged
@@ -459,6 +460,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &275530095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275530089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 146b4e2d820170141b1b8c46180b94aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SetButtonAnimatorOnEnabled
 --- !u!1 &376601147
 GameObject:
   m_ObjectHideFlags: 0
@@ -639,6 +652,7 @@ GameObject:
   - component: {fileID: 470674437}
   - component: {fileID: 470674436}
   - component: {fileID: 470674439}
+  - component: {fileID: 470674440}
   m_Layer: 5
   m_Name: Start Game
   m_TagString: Untagged
@@ -782,6 +796,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &470674440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470674434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 146b4e2d820170141b1b8c46180b94aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SetButtonAnimatorOnEnabled
 --- !u!1 &509508634 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9005220659476430823, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
@@ -1462,6 +1488,7 @@ GameObject:
   - component: {fileID: 856566752}
   - component: {fileID: 856566751}
   - component: {fileID: 856566750}
+  - component: {fileID: 856566754}
   m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
@@ -1605,6 +1632,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 856566748}
   m_CullTransparentMesh: 1
+--- !u!114 &856566754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856566748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 146b4e2d820170141b1b8c46180b94aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SetButtonAnimatorOnEnabled
 --- !u!43 &864478056
 Mesh:
   m_ObjectHideFlags: 0
@@ -1979,6 +2018,7 @@ GameObject:
   - component: {fileID: 1044170672}
   - component: {fileID: 1044170671}
   - component: {fileID: 1044170674}
+  - component: {fileID: 1044170675}
   m_Layer: 5
   m_Name: Credits
   m_TagString: Untagged
@@ -2122,6 +2162,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1044170675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1044170669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 146b4e2d820170141b1b8c46180b94aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SetButtonAnimatorOnEnabled
 --- !u!1 &1132047060
 GameObject:
   m_ObjectHideFlags: 0
@@ -18441,6 +18493,7 @@ GameObject:
   - component: {fileID: 2022693149}
   - component: {fileID: 2022693148}
   - component: {fileID: 2022693151}
+  - component: {fileID: 2022693152}
   m_Layer: 5
   m_Name: Options
   m_TagString: Untagged
@@ -18584,6 +18637,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2022693152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022693146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 146b4e2d820170141b1b8c46180b94aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SetButtonAnimatorOnEnabled
 --- !u!1 &2042145786
 GameObject:
   m_ObjectHideFlags: 0
