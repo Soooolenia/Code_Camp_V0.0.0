@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class DeliveryMachine : Interactable
@@ -6,9 +7,11 @@ public class DeliveryMachine : Interactable
     [SerializeField] private Player player;
 
     [SerializeField] private EnergyManager energyManager;
-    public override void Interact()
+    [SerializeField] private DeliveryIndicator deliveryIndicator;
+    public override async void Interact()
     {  
-        Debug.Log("Picked up good part!");
+        Debug.Log("Parts delivering!");
+        deliveryIndicator.On();
 
         //Finding the slots
         Slot slot = player.PeekSlotToRepair();
@@ -16,6 +19,8 @@ public class DeliveryMachine : Interactable
         //In hand display toggle
         player.HideBadObjectInHand();
         //player.ShowGoodObjectInHand(slot.partIndex);
+
+        await Task.Delay(2000);
         player.ShowGoodObjectInMachine(slot.partIndex);
 
         //Toggle off delivery machine interactability
