@@ -26280,6 +26280,7 @@ MonoBehaviour:
   monster: {fileID: 56322146}
   machine: {fileID: 108373814}
   animator: {fileID: 1355822180}
+  cooldown: 1
   energyManager: {fileID: 424864577}
 --- !u!65 &1468052890
 BoxCollider:
@@ -28747,7 +28748,7 @@ Transform:
   m_GameObject: {fileID: 2035358251}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.7071079}
-  m_LocalPosition: {x: 8.529671, y: 2.07622, z: 0}
+  m_LocalPosition: {x: -3.4, y: 2.07622, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -29679,6 +29680,7 @@ MonoBehaviour:
   partA: {fileID: 1297298063}
   partB: {fileID: 1108737915}
   partC: {fileID: 1063549718}
+  cooldown: 1
 --- !u!4 &7372742369439882687
 Transform:
   m_ObjectHideFlags: 0
