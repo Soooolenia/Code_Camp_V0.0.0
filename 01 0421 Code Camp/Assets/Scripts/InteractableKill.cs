@@ -12,7 +12,7 @@ public class InteractableKill : Interactable
     [SerializeField] private Part partB;
     [SerializeField] private Part partC;
 
-    [SerializeField] private float cooldown = 1f;
+    [SerializeField] private float cooldown;
     public int KillDamage
     {
         get

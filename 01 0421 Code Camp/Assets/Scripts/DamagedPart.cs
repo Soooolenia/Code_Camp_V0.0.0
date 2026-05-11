@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DamagedPart : Interactable
 {
@@ -11,13 +12,18 @@ public class DamagedPart : Interactable
 
     [SerializeField] private EnergyManager energyManager;
 
+    [SerializeField] private GameObject radialUI;
+
     [SerializeField] private float repairProgress = 0;
     public override void Interact()
     {
+        //radialUI.SetActive(true);
+
         repairProgress += 0.1f;
         if (repairProgress >= 1)
         {
             repair();
+            repairProgress = 0;
         }
     }
 
