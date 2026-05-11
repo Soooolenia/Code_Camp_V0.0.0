@@ -495,6 +495,7 @@ MonoBehaviour:
   interactableKill: {fileID: 7331833490056101419}
   energyManager: {fileID: 424864577}
   radialUI: {fileID: 1710060460}
+  hudManager: {fileID: 9202131741115754912}
   repairProgress: 0
 --- !u!1 &171393502
 GameObject:
@@ -702,6 +703,7 @@ MonoBehaviour:
   interactableKill: {fileID: 7331833490056101419}
   energyManager: {fileID: 424864577}
   radialUI: {fileID: 1710060460}
+  hudManager: {fileID: 9202131741115754912}
   repairProgress: 0
 --- !u!1 &240002940
 GameObject:
@@ -26255,6 +26257,7 @@ MonoBehaviour:
   interactableKill: {fileID: 7331833490056101419}
   energyManager: {fileID: 424864577}
   radialUI: {fileID: 1710060460}
+  hudManager: {fileID: 9202131741115754912}
   repairProgress: 0
 --- !u!1 &1468052888
 GameObject:
@@ -27409,7 +27412,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1710060459
 RectTransform:
   m_ObjectHideFlags: 0
@@ -28650,7 +28653,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1847200920
 RectTransform:
   m_ObjectHideFlags: 0
@@ -56236,7 +56239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HUDManager
   crosshair: {fileID: 848671811233328388}
   progressBar: {fileID: 171393502}
-  damagedPartUI: {fileID: 0}
+  damagedPartUI: {fileID: 1710060460}
   reversedWidth: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

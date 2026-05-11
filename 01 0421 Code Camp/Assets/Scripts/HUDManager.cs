@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,7 +7,7 @@ public class HUDManager : MonoBehaviour
 {
     [SerializeField] private UnityEngine.UI.Image crosshair;
     [SerializeField] private GameObject progressBar;
-    [SerializeField] private GameObject damagedPartUI;
+    [SerializeField] private Image damagedPartUI;
     public float reversedWidth;
 
     private float maxBarWidth = 300f;
@@ -83,14 +84,20 @@ public class HUDManager : MonoBehaviour
         theBarRectTransform.sizeDelta = new Vector2(reversedWidth, theBarRectTransform.sizeDelta.y);
     }
 
-
     //Damaged Part UI
     public void ShowDamagedPartUI()
     {
-        damagedPartUI.gameObject.SetActive(true);
+        if (damagedPartUI != null)
+        {
+            damagedPartUI.gameObject.SetActive(true);
+        }
     }
     public void HideDamagedPartUI()
     {
         damagedPartUI.gameObject.SetActive(false);
+    }
+    public void DamagedPartUIUpdate(float progress)
+    {
+        damagedPartUI.fillAmount = progress;
     }
 }

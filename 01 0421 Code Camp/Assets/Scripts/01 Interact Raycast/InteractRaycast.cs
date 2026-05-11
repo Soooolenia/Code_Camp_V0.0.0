@@ -15,6 +15,7 @@ public class InteractRaycast : MonoBehaviour
 
         bool canInteract = false;
         bool isDeliveryDoor = false;
+        bool isDamagedPart = false;
 
         if (Physics.Raycast(transform.position, fwd, out RaycastHit hit, rayLength, targetLayerMask))
         {
@@ -33,15 +34,23 @@ public class InteractRaycast : MonoBehaviour
                         interactable.Interact();
                     }
                 }
+
                 DeliveryDoorFix deliverdoorfix = hit.collider.gameObject.GetComponentInParent<DeliveryDoorFix>();
                 if (deliverdoorfix != null)
                 {
                     isDeliveryDoor = true;
+                }
+
+                DamagedPart damagedPart = hit.collider.gameObject.GetComponentInParent<DamagedPart>();
+                if (damagedPart != null)
+                {
+                    isDamagedPart = true;
                 }
             }
         }
 
         hudManager.CrosshairChange(canInteract);
         hudManager.DeliveryDoorChange(isDeliveryDoor);
+        hudManager.DamagedPartUIChange(isDamagedPart);
     }
 }

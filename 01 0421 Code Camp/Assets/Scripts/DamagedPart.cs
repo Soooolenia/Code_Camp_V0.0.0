@@ -13,17 +13,21 @@ public class DamagedPart : Interactable
     [SerializeField] private EnergyManager energyManager;
 
     [SerializeField] private Image radialUI;
+    [SerializeField] private HUDManager hudManager;
 
     [SerializeField] private float repairProgress = 0;
     public override void Interact()
     {
-        radialUI.gameObject.SetActive(true);
-        radialUI.fillAmount = repairProgress;
         repairProgress += 0.1f;
+        //radialUI.gameObject.SetActive(true);
+        hudManager.ShowDamagedPartUI();
+        hudManager.DamagedPartUIUpdate(repairProgress);
+        
         if (repairProgress >= 1)
         {
             repair();
             repairProgress = 0;
+            hudManager.DamagedPartUIUpdate(repairProgress);
         }
     }
 
@@ -32,7 +36,8 @@ public class DamagedPart : Interactable
         good.SetActive(true);
         broken.SetActive(false);
         gameObject.SetActive(false);
-        radialUI.gameObject.SetActive(false);
+        //radialUI.gameObject.SetActive(false);
+        hudManager.HideDamagedPartUI();
 
         part.IsDamaged = false;
         //interactableKill.KillDamage += 1;
