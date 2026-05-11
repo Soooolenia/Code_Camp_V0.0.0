@@ -377,7 +377,7 @@ GameObject:
   - component: {fileID: 137236858}
   - component: {fileID: 137236857}
   - component: {fileID: 137236860}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Part C Damaged
   m_TagString: Untagged
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
@@ -494,6 +494,7 @@ MonoBehaviour:
   part: {fileID: 1063549718}
   interactableKill: {fileID: 7331833490056101419}
   energyManager: {fileID: 424864577}
+  radialUI: {fileID: 0}
   repairProgress: 0
 --- !u!1 &171393502
 GameObject:
@@ -583,7 +584,7 @@ GameObject:
   - component: {fileID: 180871428}
   - component: {fileID: 180871427}
   - component: {fileID: 180871430}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Part B Damaged
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -700,6 +701,7 @@ MonoBehaviour:
   part: {fileID: 1108737915}
   interactableKill: {fileID: 7331833490056101419}
   energyManager: {fileID: 424864577}
+  radialUI: {fileID: 0}
   repairProgress: 0
 --- !u!1 &240002940
 GameObject:
@@ -1098,6 +1100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   on: {fileID: 2122648908}
   off: {fileID: 528681206}
+  animator: {fileID: 2122648913}
 --- !u!43 &309957421
 Mesh:
   m_ObjectHideFlags: 0
@@ -1289,7 +1292,7 @@ GameObject:
   - component: {fileID: 338906517}
   - component: {fileID: 338906516}
   - component: {fileID: 338906515}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Part B Slot Interact
   m_TagString: Parts
   m_Icon: {fileID: 0}
@@ -1422,7 +1425,7 @@ GameObject:
   - component: {fileID: 360478669}
   - component: {fileID: 360478668}
   - component: {fileID: 360478673}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Delivery Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1572,7 +1575,7 @@ GameObject:
   - component: {fileID: 365713592}
   - component: {fileID: 365713591}
   - component: {fileID: 365713594}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Part A Slot Interaction
   m_TagString: Parts
   m_Icon: {fileID: 0}
@@ -1752,7 +1755,7 @@ GameObject:
   - component: {fileID: 474151644}
   - component: {fileID: 474151643}
   - component: {fileID: 474151642}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Constrain A Good
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2617,7 +2620,7 @@ GameObject:
   - component: {fileID: 632970555}
   - component: {fileID: 632970554}
   - component: {fileID: 632970558}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Part A Delivered
   m_TagString: Parts
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
@@ -19978,7 +19981,7 @@ GameObject:
   - component: {fileID: 1116857436}
   - component: {fileID: 1116857435}
   - component: {fileID: 1116857438}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Part C Broken
   m_TagString: Untagged
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
@@ -25006,7 +25009,7 @@ GameObject:
   - component: {fileID: 1200439935}
   - component: {fileID: 1200439934}
   - component: {fileID: 1200439938}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Part B Delivered
   m_TagString: Parts
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -25533,7 +25536,7 @@ GameObject:
   - component: {fileID: 1347101772}
   - component: {fileID: 1347101771}
   - component: {fileID: 1347101770}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Part C Slot Interact
   m_TagString: Parts
   m_Icon: {fileID: 0}
@@ -25998,6 +26001,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractRaycast
   rayLength: 5
+  targetLayerMask:
+    serializedVersion: 2
+    m_Bits: 192
   crosshair: {fileID: 848671811233328388}
 --- !u!1001 &1367091887
 PrefabInstance:
@@ -26130,7 +26136,7 @@ GameObject:
   - component: {fileID: 1376569471}
   - component: {fileID: 1376569470}
   - component: {fileID: 1376569473}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Part A Damaged
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
@@ -26247,6 +26253,7 @@ MonoBehaviour:
   part: {fileID: 1297298063}
   interactableKill: {fileID: 7331833490056101419}
   energyManager: {fileID: 424864577}
+  radialUI: {fileID: 0}
   repairProgress: 0
 --- !u!1 &1468052888
 GameObject:
@@ -26261,7 +26268,7 @@ GameObject:
   - component: {fileID: 1468052891}
   - component: {fileID: 1468052890}
   - component: {fileID: 1468052889}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Revival Block
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
@@ -27115,7 +27122,7 @@ GameObject:
   - component: {fileID: 1665041856}
   - component: {fileID: 1665041855}
   - component: {fileID: 1665041854}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Constrain B Broken
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27509,7 +27516,7 @@ GameObject:
   - component: {fileID: 1735846520}
   - component: {fileID: 1735846519}
   - component: {fileID: 1735846522}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Part A Broken
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
@@ -27988,7 +27995,7 @@ GameObject:
   - component: {fileID: 1752573370}
   - component: {fileID: 1752573369}
   - component: {fileID: 1752573368}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Constrain A Broken
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28100,7 +28107,7 @@ GameObject:
   - component: {fileID: 1758691958}
   - component: {fileID: 1758691957}
   - component: {fileID: 1758691956}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Constrain B Good
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28213,7 +28220,7 @@ GameObject:
   - component: {fileID: 1768469518}
   - component: {fileID: 1768469517}
   - component: {fileID: 1768469521}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Part C Delivered
   m_TagString: Parts
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
@@ -28509,7 +28516,7 @@ GameObject:
   - component: {fileID: 1838642686}
   - component: {fileID: 1838642685}
   - component: {fileID: 1838642684}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Delivery Machine V3 Interaction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28730,7 +28737,7 @@ GameObject:
   - component: {fileID: 1922755464}
   - component: {fileID: 1922755463}
   - component: {fileID: 1922755466}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Part B Broken
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -28871,7 +28878,7 @@ Transform:
   m_GameObject: {fileID: 2035358251}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.7071079}
-  m_LocalPosition: {x: -3.4, y: 2.07622, z: 0}
+  m_LocalPosition: {x: -3.36, y: 2.07622, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -29030,6 +29037,7 @@ GameObject:
   - component: {fileID: 2122648912}
   - component: {fileID: 2122648911}
   - component: {fileID: 2122648910}
+  - component: {fileID: 2122648913}
   m_Layer: 0
   m_Name: Delivery Indicator On
   m_TagString: Untagged
@@ -29131,6 +29139,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2122648908}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &2122648913
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2122648908}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 95d9dc39ba850f949ad07cc17068b34e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2136327104
 GameObject:
   m_ObjectHideFlags: 0
@@ -29374,7 +29404,7 @@ GameObject:
   - component: {fileID: 3469287838523422154}
   - component: {fileID: 1711813854731010304}
   - component: {fileID: 70826217}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: 01 Machine Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29500,7 +29530,7 @@ GameObject:
   - component: {fileID: 7331833490056101418}
   - component: {fileID: 5112997228653982110}
   - component: {fileID: 7331833490056101419}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Killer Block
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}

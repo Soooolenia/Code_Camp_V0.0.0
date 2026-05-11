@@ -6,10 +6,10 @@ using UnityEngine.InputSystem;
 public class InteractRaycast : MonoBehaviour
 {
     [SerializeField] private int rayLength = 5;
+    [SerializeField] LayerMask targetLayerMask;
 
     [SerializeField] private UnityEngine.UI.Image crosshair;
     //[SerializeField] private Animator wandLightAnim;
-
 
     private void OnEnable()
     {
@@ -30,7 +30,7 @@ public class InteractRaycast : MonoBehaviour
 
         bool canInteract = false;
 
-        if (Physics.Raycast(transform.position, fwd, out RaycastHit hit, rayLength))
+        if (Physics.Raycast(transform.position, fwd, out RaycastHit hit, rayLength, targetLayerMask))
         {
             Interactable[] interactables = hit.collider.gameObject.GetComponentsInParent<Interactable>();
 
