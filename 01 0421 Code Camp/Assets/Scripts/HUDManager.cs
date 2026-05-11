@@ -6,6 +6,7 @@ public class HUDManager : MonoBehaviour
 {
     [SerializeField] private UnityEngine.UI.Image crosshair;
     [SerializeField] private GameObject progressBar;
+    [SerializeField] private GameObject damagedPartUI;
     public float reversedWidth;
 
     private float maxBarWidth = 300f;
@@ -31,6 +32,17 @@ public class HUDManager : MonoBehaviour
             HideProgressBar();
         }
     }
+    public void DamagedPartUIChange(bool on)
+    {
+        if (on)
+        {
+            ShowDamagedPartUI();
+        }
+        else
+        {
+            HideDamagedPartUI();
+        }
+    }
     private void OnEnable()
     {
         crosshair.gameObject.SetActive(true);
@@ -43,6 +55,8 @@ public class HUDManager : MonoBehaviour
             crosshair.gameObject.SetActive(false);
         }
     }
+
+    //Progress Bar
     public void ShowProgressBar()
     {
         if (progressBar != null)
@@ -67,5 +81,16 @@ public class HUDManager : MonoBehaviour
         var theBarRectTransform = progressBar.transform as RectTransform;
 
         theBarRectTransform.sizeDelta = new Vector2(reversedWidth, theBarRectTransform.sizeDelta.y);
+    }
+
+
+    //Damaged Part UI
+    public void ShowDamagedPartUI()
+    {
+        damagedPartUI.gameObject.SetActive(true);
+    }
+    public void HideDamagedPartUI()
+    {
+        damagedPartUI.gameObject.SetActive(false);
     }
 }

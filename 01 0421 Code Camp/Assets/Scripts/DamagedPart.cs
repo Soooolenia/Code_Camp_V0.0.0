@@ -12,13 +12,13 @@ public class DamagedPart : Interactable
 
     [SerializeField] private EnergyManager energyManager;
 
-    [SerializeField] private GameObject radialUI;
+    [SerializeField] private Image radialUI;
 
     [SerializeField] private float repairProgress = 0;
     public override void Interact()
     {
-        //radialUI.SetActive(true);
-
+        radialUI.gameObject.SetActive(true);
+        radialUI.fillAmount = repairProgress;
         repairProgress += 0.1f;
         if (repairProgress >= 1)
         {
@@ -32,6 +32,7 @@ public class DamagedPart : Interactable
         good.SetActive(true);
         broken.SetActive(false);
         gameObject.SetActive(false);
+        radialUI.gameObject.SetActive(false);
 
         part.IsDamaged = false;
         //interactableKill.KillDamage += 1;
