@@ -11,7 +11,7 @@ public class DeliveryMachine : Interactable
     public override async void Interact()
     {  
         Debug.Log("Parts delivering!");
-        deliveryIndicator.On();
+        deliveryIndicator.InProgress();
 
         //Finding the slots
         Slot slot = player.PeekSlotToRepair();
@@ -21,7 +21,10 @@ public class DeliveryMachine : Interactable
         //player.ShowGoodObjectInHand(slot.partIndex);
 
         await Task.Delay(2000);
+        if (this == null) return;
         player.ShowGoodObjectInMachine(slot.partIndex);
+        deliveryIndicator.InProgressStop();
+        deliveryIndicator.On();
 
         //Toggle off delivery machine interactability
         gameObject.SetActive(false);
