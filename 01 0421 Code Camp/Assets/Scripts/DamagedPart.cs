@@ -10,9 +10,15 @@ public class DamagedPart : Interactable
     [SerializeField] private InteractableKill interactableKill;
 
     [SerializeField] private EnergyManager energyManager;
+
+    [SerializeField] private float repairProgress = 0;
     public override void Interact()
     {
-        repair();
+        repairProgress += 0.1f;
+        if (repairProgress >= 1)
+        {
+            repair();
+        }
     }
 
     private void repair()
