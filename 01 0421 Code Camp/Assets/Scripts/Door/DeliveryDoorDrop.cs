@@ -6,10 +6,12 @@ public class DeliveryDoorDrop : MonoBehaviour
     [SerializeField] private DeliveryDoorFix deliveryDoorFix;
     [SerializeField] private DeliveryDoorManager deliveryDoorManager;
 
+    [SerializeField] private HUDManager hudManager;
+
     private void OnTriggerEnter(Collider other)
     {
         var doorDropChance = Random.Range(0f, 1f);
-        if (doorDropChance <= 0.1f)
+        if (doorDropChance <= 1f)
         {
             if (!deliveryDoorManager.IsBroken())
             {
@@ -22,20 +24,20 @@ public class DeliveryDoorDrop : MonoBehaviour
 
     private void DropDoor()
     {
-        // ADDED: Tell the manager the door is now broken
+        //Tell the manager the door is now broken
         deliveryDoorManager.SetBrokenState(true);
 
         animator.ResetTrigger("Fix");
         animator.SetTrigger("Drop");
 
         deliveryDoorFix.enabled = true;
-        // ADDED: Tell the fix script to show the UI again
-        deliveryDoorFix.ShowUI();
+        //Tell the fix script to show the UI again
+        hudManager.ShowUI();
     }
 
     public void FixDoor()
     {
-        // ADDED: Tell the manager the door is fixed
+        //Tell the manager the door is fixed
         deliveryDoorManager.SetBrokenState(false);
 
         animator.ResetTrigger("Drop");

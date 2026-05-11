@@ -8,22 +8,8 @@ public class InteractRaycast : MonoBehaviour
     [SerializeField] private int rayLength = 5;
     [SerializeField] LayerMask targetLayerMask;
 
-    [SerializeField] private UnityEngine.UI.Image crosshair;
-    //[SerializeField] private Animator wandLightAnim;
-
-    private void OnEnable()
-    {
-        crosshair.gameObject.SetActive(true);
-    }
-
-    private void OnDisable()
-    {
-        if (crosshair != null)
-        {
-            crosshair.gameObject.SetActive(false);
-        }
-    }
-
+    //[SerializeField] private UnityEngine.UI.Image crosshair;
+    [SerializeField] private HUDManager hudManager;
     private void Update()
     {
         Vector3 fwd = transform.forward;
@@ -50,18 +36,6 @@ public class InteractRaycast : MonoBehaviour
             }
         }
 
-        CrosshairChange(canInteract);
-    }
-
-    public void CrosshairChange(bool on)
-    {
-        if (on)
-        {
-            crosshair.color = Color.red;
-        }
-        else
-        {
-            crosshair.color = Color.white;
-        }
+        hudManager.CrosshairChange(canInteract);
     }
 }
