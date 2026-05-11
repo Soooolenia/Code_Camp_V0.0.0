@@ -8,13 +8,13 @@ public class InteractRaycast : MonoBehaviour
     [SerializeField] private int rayLength = 5;
     [SerializeField] LayerMask targetLayerMask;
 
-    //[SerializeField] private UnityEngine.UI.Image crosshair;
     [SerializeField] private HUDManager hudManager;
     private void Update()
     {
         Vector3 fwd = transform.forward;
 
         bool canInteract = false;
+        bool isDeliveryDoor = false;
 
         if (Physics.Raycast(transform.position, fwd, out RaycastHit hit, rayLength, targetLayerMask))
         {
@@ -33,9 +33,15 @@ public class InteractRaycast : MonoBehaviour
                         interactable.Interact();
                     }
                 }
+                DeliveryDoorFix deliverdoorfix = hit.collider.gameObject.GetComponentInParent<DeliveryDoorFix>();
+                if (deliverdoorfix != null)
+                {
+                    isDeliveryDoor = true;
+                }
             }
         }
 
         hudManager.CrosshairChange(canInteract);
+        hudManager.DeliveryDoorChange(isDeliveryDoor);
     }
 }

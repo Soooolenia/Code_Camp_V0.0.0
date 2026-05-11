@@ -6,7 +6,6 @@ public class HUDManager : MonoBehaviour
 {
     [SerializeField] private UnityEngine.UI.Image crosshair;
     [SerializeField] private GameObject progressBar;
-    [SerializeField] private DeliveryDoorFix deliveryDoorFix;
     public float reversedWidth;
 
     private float maxBarWidth = 300f;
@@ -21,6 +20,17 @@ public class HUDManager : MonoBehaviour
             crosshair.color = Color.white;
         }
     }
+    public void DeliveryDoorChange(bool on)
+    {
+        if (on)
+        {
+            ShowProgressBar();
+        }
+        else
+        {
+            HideProgressBar();
+        }
+    }
     private void OnEnable()
     {
         crosshair.gameObject.SetActive(true);
@@ -33,7 +43,7 @@ public class HUDManager : MonoBehaviour
             crosshair.gameObject.SetActive(false);
         }
     }
-    public void ShowUI()
+    public void ShowProgressBar()
     {
         if (progressBar != null)
         {
@@ -45,19 +55,14 @@ public class HUDManager : MonoBehaviour
     {
         progressBar.gameObject.SetActive(false);
     }
-    private void Update()
-    {
-        
-    }
     public void NoProgress()
     {
         var rect = progressBar.transform as RectTransform;
         rect.sizeDelta = new Vector2(0, rect.sizeDelta.y);
     }
-
-    public void ProgressUpdate()
+    public void ProgressUpdate(float progress)
     {
-        float reversedWidth = (1f - deliveryDoorFix.FixProgress) * maxBarWidth;
+        float reversedWidth = (1f - progress) * maxBarWidth;
 
         var theBarRectTransform = progressBar.transform as RectTransform;
 

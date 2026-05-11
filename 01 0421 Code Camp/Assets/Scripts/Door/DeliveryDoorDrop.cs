@@ -32,7 +32,7 @@ public class DeliveryDoorDrop : MonoBehaviour
 
         deliveryDoorFix.enabled = true;
         //Tell the fix script to show the UI again
-        hudManager.ShowUI();
+        hudManager.ShowProgressBar();
     }
 
     public void FixDoor()
