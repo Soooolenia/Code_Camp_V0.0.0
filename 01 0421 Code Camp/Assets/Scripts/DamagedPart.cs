@@ -1,4 +1,4 @@
-using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,17 +18,29 @@ public class DamagedPart : Interactable
     [SerializeField] private float repairProgress = 0;
     public override void Interact()
     {
-        repairProgress += 0.1f;
-        //radialUI.gameObject.SetActive(true);
         hudManager.ShowDamagedPartUI();
-        hudManager.DamagedPartUIUpdate(repairProgress);
-        
+        repairProgress = 0;
+    }
+
+    public override void InteractHold()
+    {
+        repairProgress += 0.5f * Time.deltaTime;
+
         if (repairProgress >= 1)
         {
             repair();
             repairProgress = 0;
-            hudManager.DamagedPartUIUpdate(repairProgress);
         }
+    }
+
+    public override void InteractStop()
+    {
+        StartCoroutine(ReduceRepairProgress());
+    }
+
+    public override void HoverStay()
+    {
+        hudManager.DamagedPartUIUpdate(repairProgress);
     }
 
     private void repair()
@@ -44,5 +56,15 @@ public class DamagedPart : Interactable
         energyManager.DecreaseEnergy();
 
         Debug.Log($"{gameObject.name} has been repaired!");
+    }
+
+    private IEnumerator ReduceRepairProgress()
+    {
+        while (repairProgress > 0)
+        {
+            repairProgress -= 0.5f * Time.deltaTime;
+            yield return null;
+        }
+        repairProgress = 0;
     }
 }

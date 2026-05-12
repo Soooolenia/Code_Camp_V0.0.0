@@ -379,7 +379,7 @@ GameObject:
   - component: {fileID: 137236860}
   m_Layer: 6
   m_Name: Part C Damaged
-  m_TagString: Untagged
+  m_TagString: DamagedPartC
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -587,7 +587,7 @@ GameObject:
   - component: {fileID: 180871430}
   m_Layer: 6
   m_Name: Part B Damaged
-  m_TagString: Untagged
+  m_TagString: DamagedPartB
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26008,6 +26008,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 192
   hudManager: {fileID: 9202131741115754912}
+  interactables: []
 --- !u!1001 &1367091887
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26141,7 +26142,7 @@ GameObject:
   - component: {fileID: 1376569473}
   m_Layer: 6
   m_Name: Part A Damaged
-  m_TagString: Untagged
+  m_TagString: DamagedPartA
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28883,7 +28884,7 @@ Transform:
   m_GameObject: {fileID: 2035358251}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.7071079}
-  m_LocalPosition: {x: -3.13, y: 2.86, z: 0}
+  m_LocalPosition: {x: -3.13, y: 1.43, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

@@ -1,6 +1,6 @@
 using UnityEngine;
-using System.Collections;
-using UnityEngine.InputSystem;
+using System.Collections.Generic;
+using System.Linq;
 
 
 public class InteractRaycast : MonoBehaviour
@@ -9,6 +9,8 @@ public class InteractRaycast : MonoBehaviour
     [SerializeField] LayerMask targetLayerMask;
 
     [SerializeField] private HUDManager hudManager;
+
+    [SerializeField] private Interactable[] interactables;
     private void Update()
     {
         Vector3 fwd = transform.forward;
@@ -19,7 +21,25 @@ public class InteractRaycast : MonoBehaviour
 
         if (Physics.Raycast(transform.position, fwd, out RaycastHit hit, rayLength, targetLayerMask))
         {
-            Interactable[] interactables = hit.collider.gameObject.GetComponentsInParent<Interactable>();
+            List<Interactable> prevInteractables = new List<Interactable>();
+
+            if (interactables.Length > 0)
+            {
+                prevInteractables.AddRange(interactables);
+            }
+
+            interactables = hit.collider.gameObject.GetComponentsInParent<Interactable>();
+
+            if (prevInteractables.Count > 0)
+            {
+                foreach (Interactable thisInteractable in prevInteractables)
+                {
+                    if (!interactables.Contains(thisInteractable))
+                    {
+                        thisInteractable.HoverExit();
+                    }
+                }
+            }
 
             foreach (Interactable interactable in interactables)
             {
@@ -27,15 +47,22 @@ public class InteractRaycast : MonoBehaviour
                 {
                     canInteract = true;
 
+                    interactable.HoverStay();
+
                     if (Input.GetKeyDown(KeyCode.Mouse0))
                     {
                         StopAllCoroutines();
                         //StartCoroutine(PlayLightGlow());
                         interactable.Interact();
                     }
+
+                    if (Input.GetKey(KeyCode.Mouse0))
+                    {
+                        interactable.InteractHold();
+                    }
                 }
 
-                DeliveryDoorFix deliverdoorfix = hit.collider.gameObject.GetComponentInParent<DeliveryDoorFix>();
+                    DeliveryDoorFix deliverdoorfix = hit.collider.gameObject.GetComponentInParent<DeliveryDoorFix>();
                 if (deliverdoorfix != null)
                 {
                     isDeliveryDoor = true;
@@ -47,10 +74,30 @@ public class InteractRaycast : MonoBehaviour
                     isDamagedPart = true;
                 }
             }
+
+            hudManager.CrosshairChange(canInteract);
+            hudManager.DeliveryDoorChange(isDeliveryDoor);
+            hudManager.DamagedPartUIChange(isDamagedPart);
+        }
+        else
+        {
+            if (interactables.Length > 0)
+            {
+                foreach (Interactable interactable in interactables)
+                {
+                    interactable.HoverExit();
+                }
+            }
+
         }
 
-        hudManager.CrosshairChange(canInteract);
-        hudManager.DeliveryDoorChange(isDeliveryDoor);
-        hudManager.DamagedPartUIChange(isDamagedPart);
+
+        if (Input.GetKeyUp(KeyCode.Mouse0))
+        {
+            foreach (Interactable thisInteractable in interactables)
+            {
+                thisInteractable.InteractStop();
+            }
+        }
     }
 }

@@ -6,6 +6,9 @@ TagManager:
   tags:
   - CinemachineTarget
   - Parts
+  - DamagedPartA
+  - DamagedPartB
+  - DamagedPartC
   layers:
   - Default
   - TransparentFX
