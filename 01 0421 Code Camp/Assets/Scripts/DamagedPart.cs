@@ -16,6 +16,12 @@ public class DamagedPart : Interactable
     [SerializeField] private HUDManager hudManager;
 
     [SerializeField] private float repairProgress = 0;
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+    }
+
     public override void Interact()
     {
         hudManager.ShowDamagedPartUI();
@@ -35,6 +41,11 @@ public class DamagedPart : Interactable
 
     public override void InteractStop()
     {
+        if (!gameObject.activeSelf)
+        {
+            return;
+        }
+
         StartCoroutine(ReduceRepairProgress());
     }
 

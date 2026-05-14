@@ -75,11 +75,9 @@ public class InteractRaycast : MonoBehaviour
                 }
             }
 
-            hudManager.CrosshairChange(canInteract);
-            hudManager.DeliveryDoorChange(isDeliveryDoor);
-            hudManager.DamagedPartUIChange(isDamagedPart);
-
-            Debug.Log("Can interact: " + canInteract);
+            //hudManager.CrosshairChange(canInteract);
+            //hudManager.DeliveryDoorChange(isDeliveryDoor);
+            //hudManager.DamagedPartUIChange(isDamagedPart);
         }
         else
         {
@@ -91,10 +89,11 @@ public class InteractRaycast : MonoBehaviour
                 }
             }
 
-            Debug.Log("Can interact: Hit nothing");
-
         }
 
+        hudManager.CrosshairChange(canInteract);
+        hudManager.DeliveryDoorChange(isDeliveryDoor);
+        hudManager.DamagedPartUIChange(isDamagedPart);
 
         if (Input.GetKeyUp(KeyCode.Mouse0))
         {

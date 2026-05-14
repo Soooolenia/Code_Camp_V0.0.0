@@ -7119,6 +7119,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 56322146}
     - target: {fileID: 2406653703797954753, guid: 1d204edacef5a304cba49574ae87b401, type: 3}
+      propertyPath: constrainA
+      value: 
+      objectReference: {fileID: 795999632}
+    - target: {fileID: 2406653703797954753, guid: 1d204edacef5a304cba49574ae87b401, type: 3}
+      propertyPath: constrainB
+      value: 
+      objectReference: {fileID: 631424076}
+    - target: {fileID: 2406653703797954753, guid: 1d204edacef5a304cba49574ae87b401, type: 3}
       propertyPath: energyManager
       value: 
       objectReference: {fileID: 424864577}
