@@ -35,7 +35,7 @@ public class Monster : MonoBehaviour
 
             Debug.Log("Monster has been killed!");
             machine.DamageCounter();
-            energyManager.IncreaseEnergy();
+            energyManager.IncreaseEnergy(1.45f);
 
         }
 

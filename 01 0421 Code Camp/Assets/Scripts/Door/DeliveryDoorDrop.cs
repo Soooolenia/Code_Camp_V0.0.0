@@ -8,6 +8,8 @@ public class DeliveryDoorDrop : MonoBehaviour
 
     [SerializeField] private HUDManager hudManager;
 
+    //[SerializeField] private GameObject progressText;
+
     private void OnTriggerEnter(Collider other)
     {
         var doorDropChance = Random.Range(0f, 1f);
@@ -33,6 +35,8 @@ public class DeliveryDoorDrop : MonoBehaviour
         deliveryDoorFix.enabled = true;
         //Tell the fix script to show the UI again
         hudManager.ShowProgressBar();
+        //progressText.SetActive(true);
+
     }
 
     public void FixDoor()
@@ -45,5 +49,6 @@ public class DeliveryDoorDrop : MonoBehaviour
 
         deliveryDoorFix.ResetProgress();
         deliveryDoorFix.enabled = false;
+        //progressText.SetActive(false);
     }
 }

@@ -32,19 +32,19 @@ public class EnergyManager : MonoBehaviour
         valuePreviewer.UpdateValues();
     }
 
-    public void IncreaseEnergy()
+    public void IncreaseEnergy(float amount)
     {
-        Debug.Log("Energy increased by 1.5");
-        CurrentEnergy += 1.5f;
+        Debug.Log($"Energy increased by {amount}");
+        CurrentEnergy += amount;
 
         //Run Energy Level Check
         EnergyCheck();
     }
 
-    public void DecreaseEnergy()
+    public void DecreaseEnergy(float amount)
     {
-        Debug.Log("Energy decreased by 0.3");
-        CurrentEnergy -= 0.3f;
+        Debug.Log($"Energy decreased by {amount}");
+        CurrentEnergy -= amount;
         //Run Energy Level Check
         EnergyCheck();
     }

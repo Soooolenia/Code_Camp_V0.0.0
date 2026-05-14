@@ -20,7 +20,7 @@ public class DeliveryMachine : Interactable
         player.HideBadObjectInHand();
         //player.ShowGoodObjectInHand(slot.partIndex);
 
-        await Task.Delay(2000);
+        await Task.Delay(5000);
         if (this == null) return;
         player.ShowGoodObjectInMachine(slot.partIndex);
         deliveryIndicator.InProgressStop();
@@ -29,6 +29,6 @@ public class DeliveryMachine : Interactable
         //Toggle off delivery machine interactability
         gameObject.SetActive(false);
 
-        energyManager.DecreaseMoreEnergy();
+        energyManager.DecreaseEnergy(0.65f);
     }
 }

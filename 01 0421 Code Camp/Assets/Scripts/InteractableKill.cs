@@ -12,6 +12,8 @@ public class InteractableKill : Interactable
     [SerializeField] private Part partB;
     [SerializeField] private Part partC;
 
+    [SerializeField] private ButtonIndicator indicator;
+
     [SerializeField] private float cooldown;
     public int KillDamage
     {
@@ -45,10 +47,10 @@ public class InteractableKill : Interactable
 
         cooldown = 0f;
 
-        energyManager.DecreaseEnergy();
+        energyManager.DecreaseEnergy(0.25f);
 
         //Decide if parts break or not
-        if (Random.value < 0.5f)
+        if (Random.value < 0.3f)
         {
             machine.BreakParts();
         }
@@ -58,5 +60,14 @@ public class InteractableKill : Interactable
         //Remember to change cooldown time back 
         cooldown += 0.2f * Time.deltaTime;
         cooldown = Mathf.Clamp(cooldown, 0f, 1f);
+
+        if (cooldown >= 1f)
+        {
+            indicator.On();
+        }
+        else
+        {
+            indicator.Off();
+        }
     }
 }

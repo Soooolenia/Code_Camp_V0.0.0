@@ -11,6 +11,8 @@ public class InteractableRevive : Interactable
     [SerializeField] private float cooldown = 1f;
 
     [SerializeField] private EnergyManager energyManager;
+
+    [SerializeField] private ButtonIndicator indicator;
     public override void Interact()
     {
         if (cooldown < 1f) { return; }
@@ -33,8 +35,9 @@ public class InteractableRevive : Interactable
 
         monster.Revive();
         animator.SetTrigger("Revive");
+        cooldown = 0f;
 
-        energyManager.DecreaseEnergy();
+        energyManager.DecreaseEnergy(0.25f);
 
         //Decide if parts break or not
         if (Random.value < 0.5f)
@@ -46,5 +49,14 @@ public class InteractableRevive : Interactable
     {
         cooldown += 0.2f * Time.deltaTime;
         cooldown = Mathf.Clamp(cooldown, 0f, 1f);
+
+        if (cooldown >= 1f)
+        {
+            indicator.On();
+        }
+        else
+        {
+            indicator.Off();
+        }
     }
 }

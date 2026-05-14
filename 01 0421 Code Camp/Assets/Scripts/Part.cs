@@ -93,4 +93,17 @@ public class Part : MonoBehaviour
             //machineSmoke.Stop();
         }
     }
+
+    public void BreakPartFr()
+    {
+        Good.SetActive(false);
+        damaged.SetActive(false);
+        broken.SetActive(true);
+        Debug.Log($"Part {gameObject.name} is broken!");
+        smallExplosion.Play();
+
+        IsBroken = true;
+
+        IsDamaged = false;
+    }
 }

@@ -32,8 +32,14 @@ public class Machine : MonoBehaviour
     {
         var partsChosen = parts[Random.Range(0, parts.Count)];
 
-        partsChosen.DamagePart();
-        //partsChosen.DamageCounter();
+        if (Random.value < 0.2f)
+        {
+            partsChosen.DamagePart();
+        }
+        else
+        {
+            partsChosen.DamagePart();
+        }
     }
 
     public void DamageCounter()
