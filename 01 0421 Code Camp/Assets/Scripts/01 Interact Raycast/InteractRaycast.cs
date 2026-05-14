@@ -78,6 +78,8 @@ public class InteractRaycast : MonoBehaviour
             hudManager.CrosshairChange(canInteract);
             hudManager.DeliveryDoorChange(isDeliveryDoor);
             hudManager.DamagedPartUIChange(isDamagedPart);
+
+            Debug.Log("Can interact: " + canInteract);
         }
         else
         {
@@ -88,6 +90,8 @@ public class InteractRaycast : MonoBehaviour
                     interactable.HoverExit();
                 }
             }
+
+            Debug.Log("Can interact: Hit nothing");
 
         }
 
