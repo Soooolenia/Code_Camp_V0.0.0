@@ -12,7 +12,7 @@ public class Constrain : Interactable
     [SerializeField] private ConstrainManager constrainManager;
 
     [SerializeField] public bool IsConstrainBroken = false;
-    [SerializeField] private float damage = 0f;
+    [SerializeField] public float damage = 0f;
     [SerializeField] private float damageSpeed;
 
     void Update()

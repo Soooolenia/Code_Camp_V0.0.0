@@ -56,7 +56,7 @@ public class InteractableKill : Interactable
     private void Update()
     {
         //Remember to change cooldown time back 
-        cooldown += 1f * Time.deltaTime;
+        cooldown += 0.2f * Time.deltaTime;
         cooldown = Mathf.Clamp(cooldown, 0f, 1f);
     }
 }

@@ -11,11 +11,11 @@ public class Monster : MonoBehaviour
 
     [SerializeField] private EnergyManager energyManager;
 
-    [SerializeField] public bool isAlive = true;
+    [SerializeField] public bool isAlive = false;
 
     public bool IsAlive => isAlive;
 
-    [SerializeField] public int MonsterHealth = 3;
+    [SerializeField] public int MonsterHealth = 0;
     public void Kill()
     {
         if (!isAlive)

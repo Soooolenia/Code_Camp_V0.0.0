@@ -44,7 +44,7 @@ public class InteractableRevive : Interactable
     }
     private void Update()
     {
-        cooldown += 0.1f * Time.deltaTime;
+        cooldown += 0.2f * Time.deltaTime;
         cooldown = Mathf.Clamp(cooldown, 0f, 1f);
     }
 }

@@ -22,6 +22,9 @@ public class ValuePreviewer : MonoBehaviour
     [SerializeField] private bool isPartBBroken;
     [SerializeField] private bool isPartCDamaged;
     [SerializeField] private bool isPartCBroken;
+    [Header("")]
+    [SerializeField] private float constrainADamage;
+    [SerializeField] private float constrainBDamage;
 
     [Header("References")]
     [SerializeField] private EnergyManager energyManager;
@@ -31,6 +34,8 @@ public class ValuePreviewer : MonoBehaviour
     [SerializeField] private Part partB;    
     [SerializeField] private Part partC;
     [SerializeField] private InteractableKill interactableKill;
+    [SerializeField] private Constrain constrainA;
+    [SerializeField] private Constrain constrainB;
     public void UpdateValues()
     {
         currentEnergyLevel = energyManager.CurrentEnergy;
@@ -48,6 +53,9 @@ public class ValuePreviewer : MonoBehaviour
         isPartCDamaged = partC.IsDamaged;
         isPartCBroken = partC.IsBroken;
         killDamage = interactableKill.KillDamage;
+
+        constrainADamage = constrainA.damage;
+        constrainBDamage = constrainB.damage;
     }
 
 }
