@@ -13,6 +13,12 @@ public class InteractableRevive : Interactable
     [SerializeField] private EnergyManager energyManager;
 
     [SerializeField] private ButtonIndicator indicator;
+
+    [SerializeField] private AudioSource buttonClick;
+    [SerializeField] private AudioSource coolDownReady;
+
+    private bool isReadySoundPlayed = false;
+
     public override void Interact()
     {
         if (cooldown < 1f) { return; }
@@ -37,6 +43,8 @@ public class InteractableRevive : Interactable
         animator.SetTrigger("Revive");
         cooldown = 0f;
 
+        buttonClick.Play();
+
         energyManager.DecreaseEnergy(0.25f);
 
         //Decide if parts break or not
@@ -50,13 +58,25 @@ public class InteractableRevive : Interactable
         cooldown += 0.2f * Time.deltaTime;
         cooldown = Mathf.Clamp(cooldown, 0f, 1f);
 
+
         if (cooldown >= 1f)
         {
             indicator.On();
+
+            // Only play if we haven't played it yet for this cycle
+            if (!isReadySoundPlayed)
+            {
+                coolDownReady.Play();
+                isReadySoundPlayed = true;
+            }
         }
         else
         {
             indicator.Off();
+
+            // IMPORTANT: Reset the flag when the cooldown is NOT full
+            // This ensures it can play again the next time it finishes
+            isReadySoundPlayed = false;
         }
     }
 }
