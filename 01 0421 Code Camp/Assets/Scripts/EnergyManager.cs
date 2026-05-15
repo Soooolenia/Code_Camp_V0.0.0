@@ -117,7 +117,7 @@ public class EnergyManager : MonoBehaviour
 
     private void LateUpdate()
     {
-        CurrentEnergy -= EnergyDrainRate * Time.deltaTime * 0.1f;
+        CurrentEnergy -= EnergyDrainRate * Time.deltaTime * 0.01f;
         EnergyCheck();
     }
 }

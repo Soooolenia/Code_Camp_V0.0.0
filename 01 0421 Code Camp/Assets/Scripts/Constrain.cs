@@ -20,7 +20,7 @@ public class Constrain : Interactable
     {
         if (monster.isAlive)
         {
-            if (damage > 1f || damage  < 0f) { return; }
+            if (damage > 1f || damage  < 0f) {return;}
 
             damage += damageSpeed * Time.deltaTime;
 
@@ -61,6 +61,7 @@ public class Constrain : Interactable
         IsConstrainBroken = false;
         monsterCollider.SetActive(false);
         badConstrain.SetActive(false);
+        midConstrain.SetActive(false);
         goodConstrain.SetActive(true);
         Debug.Log("Constrain Repaired");
     }

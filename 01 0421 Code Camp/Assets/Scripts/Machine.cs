@@ -19,12 +19,14 @@ public class Machine : MonoBehaviour
 
     [SerializeField] private AudioSource breakDown;
     [SerializeField] private AudioSource start;
-    //[SerializeField] private AudioSource operation;
+    [SerializeField] private AudioSource operation;
 
     //private bool MachineIsWorking = true;
 
     private void Start()
     {
+        operation.Play();
+
         var foundComponents = GetComponentsInChildren<Part>();
 
         foreach (Part part  in foundComponents)
@@ -69,15 +71,21 @@ public class Machine : MonoBehaviour
     {
         if(IsBroken())
         {
-            machineSmoke.Play();
-            //breakDown.Play();
-            //operation.Stop();
+            if (!machineSmoke.isPlaying)
+            {
+                machineSmoke.Play();
+                breakDown.Play();
+                operation.Stop();
+            }
         }
         else
         {
-            machineSmoke.Stop();
-            //start.Play();
-            //operation.Play();
+            if (machineSmoke.isPlaying)
+            {
+                machineSmoke.Stop();
+                start.Play();
+                operation.Play();
+            }
         }
     }
 }
