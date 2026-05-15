@@ -11,7 +11,8 @@ public class EnergyManager : MonoBehaviour
     [SerializeField] private Machine machine;
     [SerializeField] private ValuePreviewer valuePreviewer;
 
-    [SerializeField] private LightFlicker lightFlicker;
+    [SerializeField] private BrightFlicker brightFlickerBright;
+    [SerializeField] private BrightFlicker brightFlickerDark;
 
     private float lastEnergy;
 
@@ -56,13 +57,13 @@ public class EnergyManager : MonoBehaviour
     private void OnWholeNumberIncreased(int newLevel)
     {
         Debug.Log($"Increased! Now at level: {newLevel}");
-        lightFlicker.Rise();
+        brightFlickerBright.BrightenSmall();
     }
 
     private void OnWholeNumberDropped(int newLevel)
     {
         Debug.Log($"Dropped! Now at level: {newLevel}");
-        lightFlicker.Drop();
+        brightFlickerDark.DarkenSmall();
     }
 
     private void onInteractionTasks()
@@ -76,14 +77,32 @@ public class EnergyManager : MonoBehaviour
         Debug.Log($"Energy increased by {amount}");
         CurrentEnergy += amount;
 
-        //Run Energy Level Check
-        EnergyCheck();
+        if (amount >= 0.4f)
+        {
+            brightFlickerBright.Brighten();
+        }
+        else
+        {
+            brightFlickerBright.BrightenSmall();
+        }
+
+            //Run Energy Level Check
+            EnergyCheck();
     }
 
     public void DecreaseEnergy(float amount)
     {
         Debug.Log($"Energy decreased by {amount}");
         CurrentEnergy -= amount;
+
+        if (amount <= 0.4f)
+        {
+            brightFlickerDark.DarkenSmall();
+        }
+        else
+        {
+            brightFlickerDark.Darken();
+        }
         //Run Energy Level Check
         EnergyCheck();
     }
@@ -98,7 +117,7 @@ public class EnergyManager : MonoBehaviour
 
     private void LateUpdate()
     {
-        CurrentEnergy -= EnergyDrainRate * Time.deltaTime * 0.01f;
+        CurrentEnergy -= EnergyDrainRate * Time.deltaTime * 0.1f;
         EnergyCheck();
     }
 }

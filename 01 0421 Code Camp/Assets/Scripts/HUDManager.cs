@@ -8,6 +8,8 @@ public class HUDManager : MonoBehaviour
     [SerializeField] private UnityEngine.UI.Image crosshair;
     [SerializeField] private GameObject progressBar;
     [SerializeField] private Image damagedPartUI;
+    [SerializeField] private Image damagedPartBG;
+
     public float reversedWidth;
 
     private float maxBarWidth = 300f;
@@ -90,11 +92,13 @@ public class HUDManager : MonoBehaviour
         if (damagedPartUI != null)
         {
             damagedPartUI.gameObject.SetActive(true);
+            damagedPartBG.gameObject.SetActive(true);
         }
     }
     public void HideDamagedPartUI()
     {
         damagedPartUI.gameObject.SetActive(false);
+        damagedPartBG.gameObject.SetActive(false);
     }
     public void DamagedPartUIUpdate(float progress)
     {

@@ -34,7 +34,7 @@ public class Machine : MonoBehaviour
 
         if (Random.value < 0.2f)
         {
-            partsChosen.DamagePart();
+            partsChosen.BreakPartFr();
         }
         else
         {

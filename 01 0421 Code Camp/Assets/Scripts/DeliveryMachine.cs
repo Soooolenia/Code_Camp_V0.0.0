@@ -9,8 +9,9 @@ public class DeliveryMachine : Interactable
     [SerializeField] private EnergyManager energyManager;
     [SerializeField] private DeliveryIndicator deliveryIndicator;
     public override async void Interact()
-    {  
-        Debug.Log("Parts delivering!");
+    {
+        energyManager.DecreaseEnergy(0.65f);
+        //Debug.Log("Parts delivering!");
         deliveryIndicator.InProgress();
 
         //Finding the slots
@@ -28,7 +29,5 @@ public class DeliveryMachine : Interactable
 
         //Toggle off delivery machine interactability
         gameObject.SetActive(false);
-
-        energyManager.DecreaseEnergy(0.65f);
     }
 }
