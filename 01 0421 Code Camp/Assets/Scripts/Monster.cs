@@ -13,6 +13,11 @@ public class Monster : MonoBehaviour
 
     [SerializeField] public bool isAlive = false;
 
+    [SerializeField] private AudioSource stab;
+    [SerializeField] private AudioSource stabWeak;
+    [SerializeField] private AudioSource revive;
+
+
     public bool IsAlive => isAlive;
 
     [SerializeField] public int MonsterHealth = 0;
@@ -30,6 +35,8 @@ public class Monster : MonoBehaviour
         {
             isAlive = false;
 
+            stab.Play();
+
             monsterAlive.gameObject.SetActive(false);
             monsterDead.gameObject.SetActive(true);
 
@@ -42,6 +49,7 @@ public class Monster : MonoBehaviour
         else
         {
             Debug.Log($"Monster current health: {MonsterHealth}");
+            stabWeak.Play();
         }
 
         // TODO: Add death animation or effects here
@@ -59,6 +67,8 @@ public class Monster : MonoBehaviour
 
         monsterAlive.gameObject.SetActive(true);
         monsterDead.gameObject.SetActive(false);
+
+        revive.Play();
 
         MonsterHealth = 3;
         Debug.Log("Monster has been revived!");

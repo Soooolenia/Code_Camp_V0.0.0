@@ -17,6 +17,10 @@ public class Machine : MonoBehaviour
 
     [SerializeField] private ParticleSystem machineSmoke;
 
+    [SerializeField] private AudioSource breakDown;
+    [SerializeField] private AudioSource start;
+    //[SerializeField] private AudioSource operation;
+
     //private bool MachineIsWorking = true;
 
     private void Start()
@@ -66,10 +70,14 @@ public class Machine : MonoBehaviour
         if(IsBroken())
         {
             machineSmoke.Play();
+            //breakDown.Play();
+            //operation.Stop();
         }
         else
         {
             machineSmoke.Stop();
+            //start.Play();
+            //operation.Play();
         }
     }
 }

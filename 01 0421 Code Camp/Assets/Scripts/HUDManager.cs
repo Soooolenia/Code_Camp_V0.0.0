@@ -10,6 +10,8 @@ public class HUDManager : MonoBehaviour
     [SerializeField] private Image damagedPartUI;
     [SerializeField] private Image damagedPartBG;
 
+    [SerializeField] private GameObject FixdoorLogo;
+
     public float reversedWidth;
 
     private float maxBarWidth = 300f;
@@ -65,12 +67,14 @@ public class HUDManager : MonoBehaviour
         if (progressBar != null)
         {
             progressBar.gameObject.SetActive(true);
+            FixdoorLogo.SetActive(true);
         }
     }
 
     public void HideProgressBar()
     {
         progressBar.gameObject.SetActive(false);
+        FixdoorLogo.SetActive(false);
     }
     public void NoProgress()
     {

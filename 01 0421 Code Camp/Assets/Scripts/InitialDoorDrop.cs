@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class InitialDoorDrop : MonoBehaviour
 {
-    [SerializeField] private Animator animator;
-    [SerializeField] private DeliveryDoorFix deliveryDoorFix;
-    [SerializeField] private DeliveryDoorManager deliveryDoorManager;
+    //[SerializeField] private Animator animator;
+    //[SerializeField] private DeliveryDoorFix deliveryDoorFix;
+    //[SerializeField] private DeliveryDoorManager deliveryDoorManager;
 
-    [SerializeField] private HUDManager hudManager;
+    //[SerializeField] private HUDManager hudManager;
 
     [SerializeField] private DeliveryDoorDrop deliveryDoorDrop;
     private void OnTriggerEnter(Collider other)
