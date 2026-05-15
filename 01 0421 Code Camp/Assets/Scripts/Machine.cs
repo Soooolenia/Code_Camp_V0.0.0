@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class Machine : MonoBehaviour
@@ -21,7 +22,7 @@ public class Machine : MonoBehaviour
     [SerializeField] private AudioSource start;
     [SerializeField] private AudioSource operation;
 
-    //private bool MachineIsWorking = true;
+    private bool wasBrokenLastCheck = false;
 
     private void Start()
     {
@@ -29,10 +30,12 @@ public class Machine : MonoBehaviour
 
         var foundComponents = GetComponentsInChildren<Part>();
 
-        foreach (Part part  in foundComponents)
+        foreach (Part part in foundComponents)
         {
             parts.Add(part);
         }
+
+        wasBrokenLastCheck = IsBroken();
     }
     public void BreakParts()
     {
@@ -67,25 +70,33 @@ public class Machine : MonoBehaviour
         return machineIsBroken;
     }
 
-    public void UpdateMachineSmoke()
+    public async void UpdateMachineSmoke()
     {
-        if(IsBroken())
+        bool currentlyBroken = IsBroken();
+
+        //Machine broke down this frame
+        if (currentlyBroken && !wasBrokenLastCheck)
         {
-            if (!machineSmoke.isPlaying)
-            {
-                machineSmoke.Play();
-                breakDown.Play();
-                operation.Stop();
-            }
+            if (!machineSmoke.isPlaying) machineSmoke.Play();
+
+            breakDown.Play();
+            operation.Stop();
+
+            wasBrokenLastCheck = true; 
         }
-        else
+        //Machine got fixed this frame
+        else if (!currentlyBroken && wasBrokenLastCheck)
         {
-            if (machineSmoke.isPlaying)
-            {
-                machineSmoke.Stop();
-                start.Play();
-                operation.Play();
-            }
+            wasBrokenLastCheck = false;
+
+            if (machineSmoke.isPlaying) machineSmoke.Stop();
+
+            start.Play();
+
+            await Task.Delay(2750);
+            operation.Play();
+
+            //wasBrokenLastCheck = false; 
         }
     }
 }

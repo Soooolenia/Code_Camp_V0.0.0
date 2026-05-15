@@ -42,7 +42,7 @@ public class Monster : MonoBehaviour
 
             Debug.Log("Monster has been killed!");
             machine.DamageCounter();
-            energyManager.IncreaseEnergy(1.45f);
+            energyManager.IncreaseEnergy(1.75f);
 
         }
 
