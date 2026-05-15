@@ -11,9 +11,34 @@ public class EnergyManager : MonoBehaviour
     [SerializeField] private Machine machine;
     [SerializeField] private ValuePreviewer valuePreviewer;
 
+    [SerializeField] private Light lights;
+
+    private float lastEnergy;
+
+    private void Start()
+    {
+        lastEnergy = CurrentEnergy;
+    }
+
     private void EnergyCheck()
     {
         onInteractionTasks();
+
+        int currentFloor = Mathf.FloorToInt(CurrentEnergy);
+        int lastFloor = Mathf.FloorToInt(lastEnergy);
+
+        if(currentFloor == lastFloor) {return;}
+
+        if (currentFloor < lastFloor)
+        {
+            OnWholeNumberDropped(currentFloor);
+        }
+        else if (currentFloor > lastFloor)
+        {
+            OnWholeNumberIncreased(currentFloor);
+        }
+
+        lastEnergy = CurrentEnergy;
 
         if (CurrentEnergy >= TargetEnergy)
         {
@@ -24,6 +49,16 @@ public class EnergyManager : MonoBehaviour
         {
             Debug.Log("Energy depleted! Game Over!");
         }
+    }
+
+    private void OnWholeNumberIncreased(int newLevel)
+    {
+        Debug.Log($"Increased! Now at level: {newLevel}");
+    }
+
+    private void OnWholeNumberDropped(int newLevel)
+    {
+        Debug.Log($"Dropped! Now at level: {newLevel}");
     }
 
     private void onInteractionTasks()
@@ -59,7 +94,7 @@ public class EnergyManager : MonoBehaviour
 
     private void Update()
     {
-        CurrentEnergy -= EnergyDrainRate * Time.deltaTime * 0.0001f;
+        CurrentEnergy -= EnergyDrainRate * Time.deltaTime * 0.01f;
         EnergyCheck();
     }
 }

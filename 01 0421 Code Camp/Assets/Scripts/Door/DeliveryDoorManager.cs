@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class DeliveryDoorManager : MonoBehaviour
 {
-    private bool DoorIsBroken = false;
+    [SerializeField] private bool DoorIsBroken = false;
     public bool IsBroken()
     {
         return DoorIsBroken;
