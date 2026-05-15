@@ -5,7 +5,7 @@ public class DoorButton : Interactable
     [SerializeField] private Animator animator;
     public override void Interact()
     {
-        Debug.Log("Door button pressed!");
+        //Debug.Log("Door button pressed!");
         animator.SetTrigger("Open");
     }
 }

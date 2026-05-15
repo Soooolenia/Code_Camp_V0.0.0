@@ -23,13 +23,13 @@ public class InteractableRevive : Interactable
 
         if (machine.IsBroken())
         {
-            Debug.Log("The machine is broken!");
+            //Debug.Log("The machine is broken!");
             return;
         }
 
         if (monster.IsAlive == true)
         {
-            Debug.Log("Monster is already alive!");
+            //Debug.Log("Monster is already alive!");
             return;
         }
 

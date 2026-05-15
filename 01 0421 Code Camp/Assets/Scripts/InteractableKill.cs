@@ -31,14 +31,14 @@ public class InteractableKill : Interactable
 
         if (machine.IsBroken())
         {
-            Debug.Log("The machine is broken!");
+            //Debug.Log("The machine is broken!");
             return;
         }
 
         //Check if the monster is alive
         if (monster.IsAlive == false)
         {
-            Debug.Log("Monster is already dead!");
+            //Debug.Log("Monster is already dead!");
             return;
         }
         //Kill the monster

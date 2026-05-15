@@ -17,7 +17,7 @@ public class DeliveryDoorFix : Interactable
 
         if (FixProgress >= 1f)
         {
-            Debug.Log("Door fixed!");
+            //Debug.Log("Door fixed!");
             deliveryDoorDrop.FixDoor();
 
             hudManager.HideProgressBar();
