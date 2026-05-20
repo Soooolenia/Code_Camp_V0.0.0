@@ -9200,7 +9200,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NoiseTex:
-        m_Texture: {fileID: 787530841}
+        m_Texture: {fileID: 1295970302}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
@@ -9224,7 +9224,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DetailColor: {r: 0.32495174, g: 0.3654299, b: 0.44047168, a: 0}
     - _DetailData: {r: 0.5, g: 4, b: -0.5, a: 0}
-    - _DetailWindDirection: {r: 0.1269231, g: 0, b: 0, a: 0}
+    - _DetailWindDirection: {r: 0.061519954, g: 0, b: 0, a: 0}
     - _DistanceData: {r: 0, g: 5, b: 1, a: 1}
     - _FogOfWarCenter: {r: 0, g: 0, b: 0, a: 1}
     - _FogOfWarCenterAdjusted: {r: 0, g: 0, b: 0, a: 1}
@@ -9237,7 +9237,7 @@ Material:
     - _ShadowData: {r: 0.5, g: 0, b: 250, a: 0}
     - _SpecularColor: {r: 0.5, g: 0.5, b: 0.5, a: 0}
     - _SunDir: {r: 0.3213938, g: 0.76604444, b: -0.5566705, a: 0}
-    - _WindDirection: {r: 0.1269231, g: 0, b: 0, a: 0}
+    - _WindDirection: {r: 0.061519954, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!1 &610139093
@@ -10454,43 +10454,6 @@ MonoBehaviour:
   energyManager: {fileID: 1023503590}
   energyThreshold: 3
   animator: {fileID: 785716222}
---- !u!84 &787530841
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 6
-  m_Width: 256
-  m_Height: 256
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 0
-  m_ColorFormat: 8
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_UseDynamicScaleExplicit: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_EnableRandomWrite: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 0
-    m_WrapV: 0
-    m_WrapW: 0
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
 --- !u!1 &805774400
 GameObject:
   m_ObjectHideFlags: 0
@@ -14868,6 +14831,43 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 33ec19e304e85e2469a5f298b5f07327, type: 3}
   m_PrefabInstance: {fileID: 945758794}
   m_PrefabAsset: {fileID: 0}
+--- !u!84 &1295970302
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 6
+  m_Width: 256
+  m_Height: 256
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthStencilFormat: 0
+  m_ColorFormat: 8
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_UseDynamicScaleExplicit: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_EnableRandomWrite: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 0
+    m_WrapV: 0
+    m_WrapW: 0
+  m_Dimension: 2
+  m_VolumeDepth: 1
+  m_ShadowSamplingMode: 2
 --- !u!1 &1296492624
 GameObject:
   m_ObjectHideFlags: 0
@@ -15689,7 +15689,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1457756030}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2447675938c1994db927698e026a967, type: 3}
   m_Name: 
@@ -18848,7 +18848,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1900860597}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2447675938c1994db927698e026a967, type: 3}
   m_Name: 
@@ -27373,7 +27373,7 @@ PrefabInstance:
       objectReference: {fileID: 1023503590}
     - target: {fileID: 5875758355003771907, guid: 04dacd7c7f1f3834a9f81185cf8ae3d2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.873
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: 5875758355003771907, guid: 04dacd7c7f1f3834a9f81185cf8ae3d2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -27381,7 +27381,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5875758355003771907, guid: 04dacd7c7f1f3834a9f81185cf8ae3d2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.4037
+      value: 3.4
       objectReference: {fileID: 0}
     - target: {fileID: 7281397588532637280, guid: 04dacd7c7f1f3834a9f81185cf8ae3d2, type: 3}
       propertyPath: energyManager
