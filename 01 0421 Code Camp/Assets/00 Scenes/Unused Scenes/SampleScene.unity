@@ -502,7 +502,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DetailColor: {r: 0.32495174, g: 0.3654299, b: 0.44047168, a: 0}
     - _DetailData: {r: 0.5, g: 4, b: -0.5, a: 0}
-    - _DetailWindDirection: {r: 17.58503, g: 0, b: 0, a: 0}
+    - _DetailWindDirection: {r: 18.718563, g: 0, b: 0, a: 0}
     - _DistanceData: {r: 0, g: 5, b: 1, a: 1}
     - _FogOfWarCenter: {r: 0, g: 0, b: 0, a: 0}
     - _FogOfWarCenterAdjusted: {r: -0.5, g: 1, b: -0.49999994, a: 0}
@@ -515,7 +515,7 @@ Material:
     - _ShadowData: {r: 0.5, g: 0, b: 250, a: 0}
     - _SpecularColor: {r: 0.5, g: 0.5, b: 0.5, a: 0}
     - _SunDir: {r: 0.3213938, g: 0.76604444, b: -0.5566705, a: 0}
-    - _WindDirection: {r: 17.58503, g: 0, b: 0, a: 0}
+    - _WindDirection: {r: 18.718563, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!1 &302147834
@@ -9706,6 +9706,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4748318555754824824, guid: 56b8a7b42193f314cb3afaeac57f41c2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.281
+      objectReference: {fileID: 0}
+    - target: {fileID: 4748318555754824824, guid: 56b8a7b42193f314cb3afaeac57f41c2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.085
+      objectReference: {fileID: 0}
     - target: {fileID: 5116345314488916349, guid: 56b8a7b42193f314cb3afaeac57f41c2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 38.422096
@@ -9753,6 +9761,14 @@ PrefabInstance:
     - target: {fileID: 7945816673022712843, guid: 56b8a7b42193f314cb3afaeac57f41c2, type: 3}
       propertyPath: m_Name
       value: Cap L
+      objectReference: {fileID: 0}
+    - target: {fileID: 8245925921998808083, guid: 56b8a7b42193f314cb3afaeac57f41c2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.606
+      objectReference: {fileID: 0}
+    - target: {fileID: 8245925921998808083, guid: 56b8a7b42193f314cb3afaeac57f41c2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.677
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
