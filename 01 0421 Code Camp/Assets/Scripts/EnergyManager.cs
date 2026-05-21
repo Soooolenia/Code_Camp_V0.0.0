@@ -14,6 +14,8 @@ public class EnergyManager : MonoBehaviour
     [SerializeField] private BrightFlicker brightFlickerBright;
     [SerializeField] private BrightFlicker brightFlickerDark;
 
+    [SerializeField] private WinLoseManager winLoseManager;
+
     [Header("Energy use")]
     [SerializeField] private AudioSource energyUsedHigh;
     [SerializeField] private AudioSource energyUsedMid;
@@ -24,9 +26,6 @@ public class EnergyManager : MonoBehaviour
     [SerializeField] private AudioSource energyGainedHigh;
     [SerializeField] private AudioSource energyGainedLow;
     [SerializeField] private AudioSource energyFull;
-
-    [Header("Monster")]
-    [SerializeField] private AudioSource monsterApproaching;
 
     private float lastEnergy;
 
@@ -60,6 +59,7 @@ public class EnergyManager : MonoBehaviour
         {
             Debug.Log("Target energy reached!");
             energyFull.Play();
+            winLoseManager.Win();
         }
 
         if (CurrentEnergy <= 0f)
@@ -67,7 +67,7 @@ public class EnergyManager : MonoBehaviour
             Debug.Log("Energy depleted! Game Over!");
             CurrentEnergy = 0; 
             energyDepleted.Play();
-            monsterApproaching.Play();
+            winLoseManager.Lose();
 
             //trigger PP to turn of lights fully
         }
