@@ -57,7 +57,7 @@ public class InteractableKill : Interactable
         energyManager.DecreaseEnergy(0.25f);
 
         //Decide if parts break or not
-        if (Random.value < 0.3f)
+        if (Random.value < 0.5f)
         {
             machine.BreakParts();
         }
