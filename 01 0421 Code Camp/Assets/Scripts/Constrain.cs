@@ -16,24 +16,38 @@ public class Constrain : Interactable
     [SerializeField] public float damage = 0f;
     [SerializeField] private float damageSpeed;
 
+    [SerializeField] private Animator animator;
+    [SerializeField] private char side;
+
+    private void Start()
+    {
+        IsConstrainBroken = false;
+        monsterCollider.SetActive(false);
+        badConstrain.SetActive(false);
+        midConstrain.SetActive(false);
+        goodConstrain.SetActive(true);
+    }
+
     void Update()
     {
         if (monster.isAlive)
         {
-            if (damage > 1f || damage  < 0f) {return;}
+            //if (damage > 1f || damage  < 0f) {return;}
 
             damage += damageSpeed * Time.deltaTime;
 
-            if (damage >= 1)
+            if (damage >= 1f)
             {
                 IsConstrainBroken = true;
                 monsterCollider.SetActive(true);
                 badConstrain.SetActive(true);
+                midConstrain.SetActive(false);
                 goodConstrain.SetActive(false);
                 constrainManager.Check();
+                animator.SetTrigger($"Break{side}");
             }
 
-            if (damage >= 0.5)
+            else if (damage >= 0.5f)
             {
                 IsConstrainBroken = false;
                 monsterCollider.SetActive(false);
@@ -41,6 +55,7 @@ public class Constrain : Interactable
                 midConstrain.SetActive(true);
                 goodConstrain.SetActive(false);
                 constrainManager.Check();
+                animator.SetTrigger("Struggle");
             }
 
             else

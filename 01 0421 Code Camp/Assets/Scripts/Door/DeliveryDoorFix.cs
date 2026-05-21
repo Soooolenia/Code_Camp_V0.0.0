@@ -9,11 +9,15 @@ public class DeliveryDoorFix : Interactable
 
     [SerializeField] private HUDManager hudManager;
 
+    [SerializeField] private AudioSource deliveryDoorFix;
+
 
     public override void Interact()
     {
         FixProgress += 0.1f;
         FixProgress = Mathf.Clamp(FixProgress, 0f, 1f);
+
+        deliveryDoorFix.Play();
 
         if (FixProgress >= 1f)
         {

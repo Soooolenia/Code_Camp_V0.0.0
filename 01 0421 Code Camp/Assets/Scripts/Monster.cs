@@ -17,6 +17,7 @@ public class Monster : MonoBehaviour
     [SerializeField] private AudioSource stabWeak;
     [SerializeField] private AudioSource revive;
 
+    [SerializeField] private Animator animator;
 
     public bool IsAlive => isAlive;
 
@@ -37,8 +38,9 @@ public class Monster : MonoBehaviour
 
             stab.Play();
 
-            monsterAlive.gameObject.SetActive(false);
-            monsterDead.gameObject.SetActive(true);
+            //monsterAlive.gameObject.SetActive(false);
+            //monsterDead.gameObject.SetActive(true);
+            animator.SetTrigger("Kill");
 
             Debug.Log("Monster has been killed!");
             machine.DamageCounter();
@@ -65,8 +67,10 @@ public class Monster : MonoBehaviour
 
         isAlive = true;
 
-        monsterAlive.gameObject.SetActive(true);
-        monsterDead.gameObject.SetActive(false);
+        //monsterAlive.gameObject.SetActive(true);
+        //monsterDead.gameObject.SetActive(false);
+
+        animator.SetTrigger("Revive");
 
         revive.Play();
 
