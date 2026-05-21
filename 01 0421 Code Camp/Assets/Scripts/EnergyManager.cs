@@ -69,7 +69,6 @@ public class EnergyManager : MonoBehaviour
     private void onInteractionTasks()
     {
         machine.UpdateMachineSmoke();
-        valuePreviewer.UpdateValues();
     }
 
     public void IncreaseEnergy(float amount)

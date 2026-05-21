@@ -18,10 +18,13 @@ public class ValuePreviewer : MonoBehaviour
     [Header("")]
     [SerializeField] private bool isPartADamaged;
     [SerializeField] private bool isPartABroken;
+    [SerializeField] private int partADamageLevel;
     [SerializeField] private bool isPartBDamaged;
     [SerializeField] private bool isPartBBroken;
+    [SerializeField] private int partBDamageLevel;
     [SerializeField] private bool isPartCDamaged;
     [SerializeField] private bool isPartCBroken;
+    [SerializeField] private int partCDamageLevel;
     [Header("")]
     [SerializeField] private float constrainADamage;
     [SerializeField] private float constrainBDamage;
@@ -36,7 +39,8 @@ public class ValuePreviewer : MonoBehaviour
     [SerializeField] private InteractableKill interactableKill;
     [SerializeField] private Constrain constrainA;
     [SerializeField] private Constrain constrainB;
-    public void UpdateValues()
+
+    public void Update()
     {
         currentEnergyLevel = energyManager.CurrentEnergy;
         targetEnergyLevel = energyManager.TargetEnergy;
@@ -48,10 +52,13 @@ public class ValuePreviewer : MonoBehaviour
         isMachineWorking = !machine.IsBroken();
         isPartADamaged = partA.IsDamaged;
         isPartABroken = partA.IsBroken;
+        partADamageLevel = partA.DamageLevel;
         isPartBDamaged = partB.IsDamaged;
         isPartBBroken = partB.IsBroken;
+        partBDamageLevel = partB.DamageLevel;
         isPartCDamaged = partC.IsDamaged;
         isPartCBroken = partC.IsBroken;
+        partCDamageLevel = partC.DamageLevel;
         killDamage = interactableKill.KillDamage;
 
         constrainADamage = constrainA.damage;
