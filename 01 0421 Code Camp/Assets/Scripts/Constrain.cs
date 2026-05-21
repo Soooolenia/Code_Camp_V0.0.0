@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Threading.Tasks;
 
 public class Constrain : Interactable
 {
@@ -18,6 +19,9 @@ public class Constrain : Interactable
 
     [SerializeField] private Animator animator;
     [SerializeField] private char side;
+
+    [SerializeField] private Animator UIAnimation;
+    [SerializeField] private GameObject repairUI;
 
     private void Start()
     {
@@ -58,7 +62,7 @@ public class Constrain : Interactable
             }
         }
     }
-    public override void Interact()
+    public async override void Interact()
     {
         damage = 0f;
         energyManager.DecreaseEnergy(0.15f);
@@ -68,6 +72,11 @@ public class Constrain : Interactable
         midConstrain.SetActive(false);
         goodConstrain.SetActive(true);
         Debug.Log("Constrain Repaired");
+
+        repairUI.SetActive(true);
+        UIAnimation.Play("Repair");
+        await Task.Delay(667);
+        repairUI.SetActive(false);
     }
 }
 

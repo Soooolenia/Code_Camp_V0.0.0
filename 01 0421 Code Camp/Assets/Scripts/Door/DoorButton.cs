@@ -9,6 +9,12 @@ public class DoorButton : Interactable
         //Debug.Log("Door button pressed!");
         animator.SetTrigger("Open");
         audioAnimator.SetTrigger("Open");
-        GetComponentInChildren<AudioSource>().Play();
+
+        AudioSource[] allAudioSources = GetComponentsInChildren<AudioSource>();
+
+        foreach (AudioSource audio in allAudioSources)
+        {
+            audio.Play();
+        }
     }
 }
