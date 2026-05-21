@@ -18,6 +18,10 @@ public class InteractableRevive : Interactable
     [SerializeField] private AudioSource buttonClick;
     [SerializeField] private AudioSource coolDownReady;
 
+    [SerializeField] private MusicManager musicManager;
+
+    private bool introLoopEnded = false;
+
     private bool isReadySoundPlayed = false;
 
     public override void Interact()
@@ -53,6 +57,14 @@ public class InteractableRevive : Interactable
         if (Random.value < 0.5f)
         {
             machine.BreakParts();
+        }
+
+
+        if (introLoopEnded == false)
+        {
+            musicManager.IntroLoopCut();
+            musicManager.InitialStart();
+            introLoopEnded = true;
         }
     }
     private void Update()

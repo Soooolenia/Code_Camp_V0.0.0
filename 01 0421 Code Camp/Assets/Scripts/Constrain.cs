@@ -28,6 +28,8 @@ public class Constrain : Interactable
     [SerializeField] private AudioSource repairComplete;
     [SerializeField] private AudioSource breakDown;
 
+    [SerializeField] private MusicManager musicManager;
+
     private void Start()
     {
         State = ConstraintState.Normal;
