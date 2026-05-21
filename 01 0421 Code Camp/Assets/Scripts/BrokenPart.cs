@@ -8,6 +8,8 @@ public class BrokenPart : Interactable
 
     [SerializeField] private Slot slot;
 
+    [SerializeField] private AudioSource pickupSound;
+
     public override void Interact()
     {
         //In hand state toggle
@@ -23,5 +25,7 @@ public class BrokenPart : Interactable
 
         //Play right cap animation to open hatch
         animator.SetTrigger("Open");
+
+        pickupSound.Play();
     }
 }

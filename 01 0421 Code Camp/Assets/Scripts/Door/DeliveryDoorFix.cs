@@ -10,8 +10,7 @@ public class DeliveryDoorFix : Interactable
     [SerializeField] private HUDManager hudManager;
 
     [SerializeField] private AudioSource deliveryDoorFix;
-
-
+    [SerializeField] private AudioSource deliveryDoorFixed;
     public override void Interact()
     {
         FixProgress += 0.1f;
@@ -23,6 +22,8 @@ public class DeliveryDoorFix : Interactable
         {
             //Debug.Log("Door fixed!");
             deliveryDoorDrop.FixDoor();
+
+            deliveryDoorFix.Play();
 
             hudManager.HideProgressBar();
         }

@@ -14,6 +14,20 @@ public class EnergyManager : MonoBehaviour
     [SerializeField] private BrightFlicker brightFlickerBright;
     [SerializeField] private BrightFlicker brightFlickerDark;
 
+    [Header("Energy use")]
+    [SerializeField] private AudioSource energyUsedHigh;
+    [SerializeField] private AudioSource energyUsedMid;
+    [SerializeField] private AudioSource energyUsedLow;
+    [SerializeField] private AudioSource energyDepleted;
+
+    [Header("Energy gain")]
+    [SerializeField] private AudioSource energyGainedHigh;
+    [SerializeField] private AudioSource energyGainedLow;
+    [SerializeField] private AudioSource energyFull;
+
+    [Header("Monster")]
+    [SerializeField] private AudioSource monsterApproaching;
+
     private float lastEnergy;
 
     private void Start()
@@ -45,12 +59,17 @@ public class EnergyManager : MonoBehaviour
         if (CurrentEnergy >= TargetEnergy)
         {
             Debug.Log("Target energy reached!");
+            energyFull.Play();
         }
 
         if (CurrentEnergy <= 0f)
         {
             Debug.Log("Energy depleted! Game Over!");
             CurrentEnergy = 0; 
+            energyDepleted.Play();
+            monsterApproaching.Play();
+
+            //trigger PP to turn of lights fully
         }
     }
 
@@ -58,12 +77,14 @@ public class EnergyManager : MonoBehaviour
     {
         Debug.Log($"Increased! Now at level: {newLevel}");
         brightFlickerBright.BrightenSmall();
+        energyGainedHigh.Play();
     }
 
     private void OnWholeNumberDropped(int newLevel)
     {
         Debug.Log($"Dropped! Now at level: {newLevel}");
         brightFlickerDark.DarkenSmall();
+        energyUsedMid.Play();
     }
 
     private void onInteractionTasks()
@@ -79,10 +100,12 @@ public class EnergyManager : MonoBehaviour
         if (amount >= 0.4f)
         {
             brightFlickerBright.Brighten();
+            energyGainedHigh.Play();
         }
         else
         {
             brightFlickerBright.BrightenSmall();
+            energyGainedLow.Play();
         }
 
             //Run Energy Level Check
@@ -97,10 +120,12 @@ public class EnergyManager : MonoBehaviour
         if (amount <= 0.4f)
         {
             brightFlickerDark.DarkenSmall();
+            energyUsedLow.Play();
         }
         else
         {
             brightFlickerDark.Darken();
+            energyGainedHigh.Play();
         }
         //Run Energy Level Check
         EnergyCheck();

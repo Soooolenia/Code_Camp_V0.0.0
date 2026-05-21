@@ -8,6 +8,8 @@ public class DeliveryDoorDrop : MonoBehaviour
 
     [SerializeField] private HUDManager hudManager;
 
+    [SerializeField] private AudioSource doorDrop;
+
     //[SerializeField] private GameObject progressText;
 
     private void OnTriggerEnter(Collider other)
@@ -36,6 +38,8 @@ public class DeliveryDoorDrop : MonoBehaviour
         //Tell the fix script to show the UI again
         hudManager.ShowProgressBar();
         //progressText.SetActive(true);
+
+        doorDrop.Play();
 
     }
 

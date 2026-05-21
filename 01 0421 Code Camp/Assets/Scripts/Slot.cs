@@ -10,6 +10,8 @@ public class Slot : Interactable
     [SerializeField] private Machine machine;
     [SerializeField] private InteractableKill interactableKill;
 
+    [SerializeField] private AudioSource installSound;
+
     public int partIndex;
 
     public override void Interact()
@@ -27,8 +29,7 @@ public class Slot : Interactable
         //Unbreak part
         part.IsBroken = false;
 
-        //Add back kill damage
-        //interactableKill.KillDamage += 1;
+        installSound.Play();
 
         //Turn off slot interactability
         gameObject.SetActive(false);

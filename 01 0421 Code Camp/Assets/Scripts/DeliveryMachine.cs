@@ -11,10 +11,21 @@ public class DeliveryMachine : Interactable
 
     [SerializeField] private Animator animator;
     [SerializeField] private Animator animatorL;
+
+    [SerializeField] private AudioSource partInserted;
+    [SerializeField] private AudioSource delivering;
+    [SerializeField] private AudioSource partsDelivered;
     public override async void Interact()
     {
         //Close Hatch
         animator.SetTrigger("Close");
+
+        partInserted.Play();
+        
+        if (!delivering.isPlaying)
+        {
+            delivering.Play();
+        }
 
         energyManager.DecreaseEnergy(0.65f);
         //Debug.Log("Parts delivering!");
@@ -34,6 +45,13 @@ public class DeliveryMachine : Interactable
         deliveryIndicator.On();
         //Open Left hatch
         animatorL.SetTrigger("Open");
+
+        partsDelivered.Play();
+
+        if (delivering.isPlaying)
+        {
+            delivering.Stop();
+        }
 
         //Toggle off delivery machine interactability
         gameObject.SetActive(false);

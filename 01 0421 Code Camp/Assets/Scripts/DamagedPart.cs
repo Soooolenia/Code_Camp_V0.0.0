@@ -17,6 +17,9 @@ public class DamagedPart : Interactable
 
     [SerializeField] private float repairProgress = 0;
 
+    [SerializeField] private AudioSource repairing;
+    [SerializeField] private AudioSource repaired;
+
     private void OnDisable()
     {
         StopAllCoroutines();
@@ -32,15 +35,28 @@ public class DamagedPart : Interactable
     {
         repairProgress += 0.5f * Time.deltaTime;
 
+        if (!repairing.isPlaying)
+        {
+            repairing.Play();
+        }
+
         if (repairProgress >= 1)
         {
             repair();
             repairProgress = 0;
+
+            repairing.Stop();
+            repaired.Play();
         }
     }
 
     public override void InteractStop()
     {
+        if (repairing.isPlaying)
+        {
+            repairing.Stop();
+        }
+
         if (!gameObject.activeSelf)
         {
             return;

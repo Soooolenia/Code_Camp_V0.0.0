@@ -12,6 +12,8 @@ public class Part : MonoBehaviour
     [SerializeField] private ParticleSystem smallExplosion;
     [SerializeField] private ParticleSystem machineSmoke;
 
+    [SerializeField] private AudioSource breakDown;
+
     public bool IsDamaged = false;
     public bool IsBroken = false;
 
@@ -45,11 +47,9 @@ public class Part : MonoBehaviour
             Good.SetActive(false);
             damaged.SetActive(true);
             IsDamaged = true;
-            //PartDamage = 0;
-
-            //damage the kill
-            //interactableKill.KillDamage -= 1;
-            //Debug.Log($"Part {gameObject.name} reduced kill damage by 1");
+            
+            breakDown.volume = 0.5f;
+            breakDown.Play();
         }
         else
         {
@@ -83,6 +83,8 @@ public class Part : MonoBehaviour
 
                 IsBroken = true;
 
+                breakDown.Play();
+
                 // because part is broken, it's no longer damaged
                 IsDamaged = false;
                 //PartDamage = 1;
@@ -105,6 +107,8 @@ public class Part : MonoBehaviour
         smallExplosion.Play();
 
         IsBroken = true;
+
+        breakDown.Play();
 
         IsDamaged = false;
     }

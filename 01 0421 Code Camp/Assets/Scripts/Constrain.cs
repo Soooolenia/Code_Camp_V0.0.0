@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Threading.Tasks;
+using Unity.VisualScripting;
 
 public class Constrain : Interactable
 {
@@ -22,6 +23,10 @@ public class Constrain : Interactable
 
     [SerializeField] private Animator UIAnimation;
     [SerializeField] private GameObject repairUI;
+
+    [SerializeField] private AudioSource repairSound;
+    [SerializeField] private AudioSource repairComplete;
+    [SerializeField] private AudioSource breakDown;
 
     private void Start()
     {
@@ -49,6 +54,7 @@ public class Constrain : Interactable
                 goodConstrain.SetActive(false);
                 constrainManager.Check();
                 animator.SetTrigger($"Break{side}");
+                breakDown.Play();
             }
             else if (State == ConstraintState.Normal && damage >= 0.5f)
             {
@@ -58,7 +64,8 @@ public class Constrain : Interactable
                 midConstrain.SetActive(true);
                 goodConstrain.SetActive(false);
                 constrainManager.Check();
-                animator.SetTrigger("Struggle");
+                //animator.SetTrigger("Struggle");
+                breakDown.Play();
             }
         }
     }
@@ -75,8 +82,10 @@ public class Constrain : Interactable
 
         repairUI.SetActive(true);
         UIAnimation.Play("Repair");
-        await Task.Delay(667);
+        repairSound.Play();
+        await Task.Delay(1666);
         repairUI.SetActive(false);
+        repairComplete.Play();
     }
 }
 
