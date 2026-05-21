@@ -8,7 +8,7 @@ public class ConstrainManager : MonoBehaviour
 
     public void Check()
     {
-        if (constrainA.IsConstrainBroken == true && constrainB.IsConstrainBroken == true)
+        if (constrainA.State == ConstraintState.Broken && constrainB.State == ConstraintState.Broken)
         {
             Debug.Log("You are dead, the monster got out!");
         }

@@ -12,7 +12,7 @@ public class Constrain : Interactable
     [SerializeField] private EnergyManager energyManager;
     [SerializeField] private ConstrainManager constrainManager;
 
-    [SerializeField] public bool IsConstrainBroken = false;
+    [SerializeField] public ConstraintState State = ConstraintState.Normal;
     [SerializeField] public float damage = 0f;
     [SerializeField] private float damageSpeed;
 
@@ -21,7 +21,7 @@ public class Constrain : Interactable
 
     private void Start()
     {
-        IsConstrainBroken = false;
+        State = ConstraintState.Normal;
         monsterCollider.SetActive(false);
         badConstrain.SetActive(false);
         midConstrain.SetActive(false);
@@ -36,9 +36,9 @@ public class Constrain : Interactable
 
             damage += damageSpeed * Time.deltaTime;
 
-            if (damage >= 1f)
+            if (State == ConstraintState.Damaged && damage >= 1f)
             {
-                IsConstrainBroken = true;
+                State = ConstraintState.Broken;
                 monsterCollider.SetActive(true);
                 badConstrain.SetActive(true);
                 midConstrain.SetActive(false);
@@ -46,10 +46,9 @@ public class Constrain : Interactable
                 constrainManager.Check();
                 animator.SetTrigger($"Break{side}");
             }
-
-            else if (damage >= 0.5f)
+            else if (State == ConstraintState.Normal && damage >= 0.5f)
             {
-                IsConstrainBroken = false;
+                State = ConstraintState.Damaged;
                 monsterCollider.SetActive(false);
                 badConstrain.SetActive(false);
                 midConstrain.SetActive(true);
@@ -57,23 +56,13 @@ public class Constrain : Interactable
                 constrainManager.Check();
                 animator.SetTrigger("Struggle");
             }
-
-            else
-            {
-                IsConstrainBroken = false;
-                monsterCollider.SetActive(false);
-                badConstrain.SetActive(false);
-                midConstrain.SetActive(false);
-                goodConstrain.SetActive(true);
-                constrainManager.Check();
-            }
         }
     }
     public override void Interact()
     {
         damage = 0f;
         energyManager.DecreaseEnergy(0.15f);
-        IsConstrainBroken = false;
+        State = ConstraintState.Normal;
         monsterCollider.SetActive(false);
         badConstrain.SetActive(false);
         midConstrain.SetActive(false);
