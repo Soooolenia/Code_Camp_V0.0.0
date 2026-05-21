@@ -61,6 +61,8 @@ public class Part : MonoBehaviour
 
     public void DamageCounter()
     {
+        Debug.Log(nameof(DamageCounter) + " " + name);
+
         //If part is broken, add one to damage counter
         //If part is not broken, set damage counter back to 0
 
