@@ -6,7 +6,8 @@ public class InteractableRevive : Interactable
     [SerializeField] private Monster monster;
     [SerializeField] private Machine machine;
 
-    [SerializeField] private Animator animator;
+    [SerializeField] private Animator animatorR;
+    [SerializeField] private Animator animatorL;
 
     [SerializeField] private float cooldown = 1f;
 
@@ -40,7 +41,8 @@ public class InteractableRevive : Interactable
         }
 
         monster.Revive();
-        animator.SetTrigger("Revive");
+        animatorR.SetTrigger("Revive");
+        animatorL.SetTrigger("Revive");
         cooldown = 0f;
 
         buttonClick.Play();

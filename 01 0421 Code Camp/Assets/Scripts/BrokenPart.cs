@@ -4,6 +4,7 @@ public class BrokenPart : Interactable
 {
     [SerializeField] private Player player;
     [SerializeField] private DeliveryMachine deliveryMachineInteract;
+    [SerializeField] private Animator animator;
 
     [SerializeField] private Slot slot;
 
@@ -20,5 +21,7 @@ public class BrokenPart : Interactable
         //Turn on delivery machine
         deliveryMachineInteract.gameObject.SetActive(true);
 
+        //Play right cap animation to open hatch
+        animator.SetTrigger("Open");
     }
 }

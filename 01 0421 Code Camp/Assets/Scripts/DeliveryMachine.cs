@@ -8,8 +8,14 @@ public class DeliveryMachine : Interactable
 
     [SerializeField] private EnergyManager energyManager;
     [SerializeField] private DeliveryIndicator deliveryIndicator;
+
+    [SerializeField] private Animator animator;
+    [SerializeField] private Animator animatorL;
     public override async void Interact()
     {
+        //Close Hatch
+        animator.SetTrigger("Close");
+
         energyManager.DecreaseEnergy(0.65f);
         //Debug.Log("Parts delivering!");
         deliveryIndicator.InProgress();
@@ -26,6 +32,8 @@ public class DeliveryMachine : Interactable
         player.ShowGoodObjectInMachine(slot.partIndex);
         deliveryIndicator.InProgressStop();
         deliveryIndicator.On();
+        //Open Left hatch
+        animatorL.SetTrigger("Open");
 
         //Toggle off delivery machine interactability
         gameObject.SetActive(false);

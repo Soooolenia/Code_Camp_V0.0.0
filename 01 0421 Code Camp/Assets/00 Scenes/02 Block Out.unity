@@ -826,7 +826,7 @@ ParticleSystemRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 115303922}
   m_Enabled: 1
-  m_CastShadows: 0
+  m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -869,8 +869,8 @@ ParticleSystemRenderer:
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
-  m_MinParticleSize: 0
-  m_MaxParticleSize: 0.5
+  m_MinParticleSize: 0.6
+  m_MaxParticleSize: 3.1
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
   m_LengthScale: 2
@@ -1087,7 +1087,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.176, g: 0.176, b: 0.176, a: 1}
+      maxColor: {r: 0, g: 0, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -1151,7 +1151,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 52
+      scalar: 1.64
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -5856,7 +5856,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &173757173
 Animator:
   serializedVersion: 7
@@ -6222,6 +6222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DeliveredParts
   player: {fileID: 1279259499}
   indicator: {fileID: 970914152}
+  animator: {fileID: 8245925920731125810}
 --- !u!1 &220042419
 GameObject:
   m_ObjectHideFlags: 0
@@ -6917,7 +6918,7 @@ GameObject:
   - component: {fileID: 300291713}
   - component: {fileID: 300291712}
   - component: {fileID: 300291711}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Part A Slot Interaction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6936,7 +6937,8 @@ Transform:
   m_LocalPosition: {x: 1.2021465, y: 0.2356857, z: 14.06355}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 497744619}
   m_Father: {fileID: 1152242881}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &300291711
@@ -6975,7 +6977,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -7036,7 +7038,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 300291709}
-  m_Mesh: {fileID: -3432512819861702008, guid: 3cdc741316bff2f43a94ce870a942d08, type: 3}
+  m_Mesh: {fileID: 0}
 --- !u!1 &301351339
 GameObject:
   m_ObjectHideFlags: 0
@@ -7453,6 +7455,8 @@ MonoBehaviour:
   player: {fileID: 1279259499}
   energyManager: {fileID: 1023503590}
   deliveryIndicator: {fileID: 970914152}
+  animator: {fileID: 7678118119147874641}
+  animatorL: {fileID: 8245925920731125810}
 --- !u!65 &310046691
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7990,7 +7994,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &418002072
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8293,6 +8297,118 @@ Transform:
   - {fileID: 1055008116}
   m_Father: {fileID: 970914151}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &497744618
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 497744619}
+  - component: {fileID: 497744622}
+  - component: {fileID: 497744621}
+  - component: {fileID: 497744620}
+  m_Layer: 6
+  m_Name: Part A Slot Interaction Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &497744619
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 497744618}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.50083774, y: -0.49916086, z: -0.49916086, w: 0.50083774}
+  m_LocalPosition: {x: 0.0000403361, y: -0.00626628, z: 0.0016727286}
+  m_LocalScale: {x: 0.01382523, y: 0.004356244, z: 0.004356244}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 300291710}
+  m_LocalEulerAnglesHint: {x: 0, y: 16.786, z: 0}
+--- !u!65 &497744620
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 497744618}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &497744621
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 497744618}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &497744622
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 497744618}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &533028516
 GameObject:
   m_ObjectHideFlags: 0
@@ -9367,6 +9483,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DeliveredParts
   player: {fileID: 1279259499}
   indicator: {fileID: 970914152}
+  animator: {fileID: 8245925920731125810}
 --- !u!1 &632050285
 GameObject:
   m_ObjectHideFlags: 0
@@ -9989,7 +10106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Constrain
   goodConstrain: {fileID: 3321011670921391750}
   midConstrain: {fileID: 1665806913}
-  badConstrain: {fileID: 3321011670921391750}
+  badConstrain: {fileID: 857419580}
   monsterCollider: {fileID: 930265991}
   monster: {fileID: 665897141}
   energyManager: {fileID: 1023503590}
@@ -10046,6 +10163,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BrokenPart
   player: {fileID: 0}
   deliveryMachineInteract: {fileID: 0}
+  animator: {fileID: 0}
   slot: {fileID: 4407939461292882736}
 --- !u!65 &753310213
 BoxCollider:
@@ -10583,6 +10701,8 @@ MonoBehaviour:
   player: {fileID: 1279259499}
   energyManager: {fileID: 1023503590}
   deliveryIndicator: {fileID: 1701503132}
+  animator: {fileID: 0}
+  animatorL: {fileID: 0}
 --- !u!1 &809012483
 GameObject:
   m_ObjectHideFlags: 0
@@ -10833,7 +10953,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &857419581
 Transform:
   m_ObjectHideFlags: 0
@@ -11714,7 +11834,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InteractableRevive
   monster: {fileID: 665897141}
   machine: {fileID: 1006998293}
-  animator: {fileID: 173757173}
+  animatorR: {fileID: 0}
+  animatorL: {fileID: 0}
   cooldown: 1
   energyManager: {fileID: 1023503590}
   indicator: {fileID: 1457756032}
@@ -15272,7 +15393,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Constrain
   goodConstrain: {fileID: 1728100038}
   midConstrain: {fileID: 552226553}
-  badConstrain: {fileID: 1728100038}
+  badConstrain: {fileID: 2115571180}
   monsterCollider: {fileID: 368030041}
   monster: {fileID: 665897141}
   energyManager: {fileID: 1023503590}
@@ -17202,7 +17323,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1665806914
 Transform:
   m_ObjectHideFlags: 0
@@ -18745,6 +18866,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BrokenPart
   player: {fileID: 0}
   deliveryMachineInteract: {fileID: 0}
+  animator: {fileID: 0}
   slot: {fileID: 0}
 --- !u!65 &1899429668
 BoxCollider:
@@ -18840,7 +18962,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1900860598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18864,7 +18986,7 @@ Transform:
   m_GameObject: {fileID: 1900860597}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.70696676, z: -0, w: 0.70724684}
-  m_LocalPosition: {x: -0.54, y: -1.511, z: -1.99}
+  m_LocalPosition: {x: -0.53, y: -1.511, z: 12.64}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -19375,6 +19497,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DeliveredParts
   player: {fileID: 1279259499}
   indicator: {fileID: 970914152}
+  animator: {fileID: 8245925920731125810}
 --- !u!1 &2037060559
 GameObject:
   m_ObjectHideFlags: 0
@@ -19470,6 +19593,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BrokenPart
   player: {fileID: 0}
   deliveryMachineInteract: {fileID: 0}
+  animator: {fileID: 0}
   slot: {fileID: 0}
 --- !u!65 &2056531888
 BoxCollider:
@@ -20490,7 +20614,7 @@ Transform:
   m_GameObject: {fileID: 1087770296599044171}
   serializedVersion: 2
   m_LocalRotation: {x: 0.26031747, y: -0.3896167, z: 0.87579817, w: -0.11580744}
-  m_LocalPosition: {x: -0.70480156, y: 4.0515537, z: 14.124736}
+  m_LocalPosition: {x: -1.066, y: 4.463, z: 13.754}
   m_LocalScale: {x: 99.99999, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21600,6 +21724,7 @@ GameObject:
   - component: {fileID: 79420056219406372}
   - component: {fileID: 5702475068530805922}
   - component: {fileID: 4216383008000716780}
+  - component: {fileID: 5702475068530805923}
   m_Layer: 0
   m_Name: 00-6 Right Needle.002
   m_TagString: Untagged
@@ -27851,7 +27976,7 @@ Transform:
   m_GameObject: {fileID: 5838765441142836390}
   serializedVersion: 2
   m_LocalRotation: {x: 0.26031747, y: -0.3896167, z: 0.87579817, w: -0.11580744}
-  m_LocalPosition: {x: -0.713, y: 4.061, z: 14.117}
+  m_LocalPosition: {x: -1.074, y: 4.499, z: 13.706}
   m_LocalScale: {x: 99.99999, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -29471,6 +29596,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BrokenPart
   player: {fileID: 1279259499}
   deliveryMachineInteract: {fileID: 310046690}
+  animator: {fileID: 7678118119147874641}
   slot: {fileID: 5475971382461364563}
 --- !u!65 &3679549047351502730
 BoxCollider:
@@ -29574,13 +29700,13 @@ GameObject:
   - component: {fileID: 785638843831454233}
   - component: {fileID: 6885870676014104615}
   - component: {fileID: 6885870676014104616}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Part C Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &3858234239796848251
 GameObject:
   m_ObjectHideFlags: 0
@@ -30121,6 +30247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BrokenPart
   player: {fileID: 1279259499}
   deliveryMachineInteract: {fileID: 310046690}
+  animator: {fileID: 7678118119147874641}
   slot: {fileID: 4407939461292882736}
 --- !u!65 &4216502498733135451
 BoxCollider:
@@ -30330,13 +30457,13 @@ GameObject:
   - component: {fileID: 2750813053265533690}
   - component: {fileID: 4407939461292882737}
   - component: {fileID: 4407939461292882736}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Part B Slot Interaction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &4407939461292882736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30355,7 +30482,7 @@ MonoBehaviour:
   deliveryMachineInteract: {fileID: 310046690}
   machine: {fileID: 7177923625238806011}
   interactableKill: {fileID: 1341830032}
-  partIndex: 0
+  partIndex: 1
 --- !u!64 &4407939461292882737
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -30706,6 +30833,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   player: {fileID: 1279259499}
   deliveryMachineInteract: {fileID: 805774405}
+  animator: {fileID: 0}
   slot: {fileID: 5475971382461364563}
 --- !u!1 &4683771359510158596
 GameObject:
@@ -30774,8 +30902,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7678118119147874640}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.70341593, y: -0.072152615, z: 0.07215259, w: 0.703416}
-  m_LocalPosition: {x: 0.281, y: 1.085, z: 5.0838118}
+  m_LocalRotation: {x: -0.7034159, y: -0.07215261, z: 0.07215259, w: 0.703416}
+  m_LocalPosition: {x: 0.281, y: 1.085, z: 5.083812}
   m_LocalScale: {x: 100, y: 100, z: 99.999985}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -31692,6 +31820,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1087770296599044171}
   m_Mesh: {fileID: -2379902124592860808, guid: 480e203b6c2ed5545bad27222e8ae83f, type: 3}
+--- !u!95 &5702475068530805923
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087770296599044171}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f7e63399556e3824890e36eba88ac388, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!33 &5725009574632535979
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -31818,6 +31968,7 @@ GameObject:
   - component: {fileID: 2384564801763873793}
   - component: {fileID: 112828420611229784}
   - component: {fileID: 2143620648563515740}
+  - component: {fileID: 5838765441142836391}
   m_Layer: 0
   m_Name: 00-6 Right Needle.002
   m_TagString: Untagged
@@ -31825,6 +31976,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &5838765441142836391
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5838765441142836390}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4bdbfd867b56f1f45a03ba53f3ef1233, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!33 &5850170440852875091
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -32961,7 +33134,7 @@ MonoBehaviour:
   deliveryMachineInteract: {fileID: 310046690}
   machine: {fileID: 7177923625238806011}
   interactableKill: {fileID: 1341830032}
-  partIndex: 0
+  partIndex: 2
 --- !u!4 &6969601173675460896
 Transform:
   m_ObjectHideFlags: 0
@@ -33244,7 +33417,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InteractableRevive
   monster: {fileID: 665897141}
   machine: {fileID: 7177923625238806011}
-  animator: {fileID: 173757173}
+  animatorR: {fileID: 5702475068530805923}
+  animatorL: {fileID: 5838765441142836391}
   cooldown: 1
   energyManager: {fileID: 1023503590}
   indicator: {fileID: 1986647744}
@@ -33781,6 +33955,7 @@ GameObject:
   - component: {fileID: 4748318556517070938}
   - component: {fileID: 540990085586388216}
   - component: {fileID: 7568364953038722284}
+  - component: {fileID: 7678118119147874641}
   m_Layer: 0
   m_Name: Cap R
   m_TagString: Untagged
@@ -33788,6 +33963,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &7678118119147874641
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7678118119147874640}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 96ba5e3450a272240991b26a97992e8a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7679171251817069959
 GameObject:
   m_ObjectHideFlags: 0
@@ -33859,6 +34056,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BrokenPart
   player: {fileID: 1279259499}
   deliveryMachineInteract: {fileID: 805774405}
+  animator: {fileID: 0}
   slot: {fileID: 3742908895659611202}
 --- !u!23 &7787866470861678937
 MeshRenderer:
@@ -34081,6 +34279,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8245925920731125809}
+  - component: {fileID: 8245925920731125810}
   m_Layer: 0
   m_Name: Cap L
   m_TagString: Untagged
@@ -39065,13 +39264,35 @@ Transform:
   m_GameObject: {fileID: 7945816671587196969}
   serializedVersion: 2
   m_LocalRotation: {x: -0.58939433, y: -0.39065886, z: 0.39065886, w: 0.5893944}
-  m_LocalPosition: {x: 0.208, y: 0.845, z: 2.6974669}
+  m_LocalPosition: {x: 0.613, y: 0.674, z: 2.697467}
   m_LocalScale: {x: 100, y: 100.00002, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 104966501026208419}
   m_Father: {fileID: 5116345315387598175}
   m_LocalEulerAnglesHint: {x: 0, y: -55.361, z: 0}
+--- !u!95 &8245925920731125810
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7945816671587196969}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7341cb14cb4e9c144b1e09d21b84ca3b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8254980940663000481
 GameObject:
   m_ObjectHideFlags: 0
@@ -39330,6 +39551,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BrokenPart
   player: {fileID: 1279259499}
   deliveryMachineInteract: {fileID: 805774405}
+  animator: {fileID: 0}
   slot: {fileID: 4886855385783402019}
 --- !u!4 &8474423088277550153
 Transform:
@@ -39950,6 +40172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BrokenPart
   player: {fileID: 1279259499}
   deliveryMachineInteract: {fileID: 310046690}
+  animator: {fileID: 7678118119147874641}
   slot: {fileID: 6885870676014104616}
 --- !u!65 &8820446512961443364
 BoxCollider:
