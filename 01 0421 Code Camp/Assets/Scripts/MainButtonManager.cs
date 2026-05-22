@@ -2,15 +2,11 @@ using UnityEngine;
 
 public class MainButtonManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void BackToMainMenu()
     {
-        
-    }
+        GameManager.Instance.LoadSceneAtIndex(1);
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Cursor.lockState = false ? CursorLockMode.None : CursorLockMode.Locked;
+        Cursor.visible = true;
     }
 }
