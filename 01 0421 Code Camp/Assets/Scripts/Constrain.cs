@@ -30,6 +30,9 @@ public class Constrain : Interactable
 
     [SerializeField] private MusicManager musicManager;
 
+    private bool hasTriggeredDamagedEffects = false;
+    private bool hasTriggeredBrokenEffects = false;
+
     private void Start()
     {
         State = ConstraintState.Normal;
@@ -56,7 +59,13 @@ public class Constrain : Interactable
                 goodConstrain.SetActive(false);
                 constrainManager.Check();
                 animator.SetTrigger($"Break{side}");
-                breakDown.Play();
+
+                if (!hasTriggeredBrokenEffects)
+                {
+                    breakDown.Play();
+                    musicManager.StartDangerLoop(); 
+                    hasTriggeredBrokenEffects = true;
+                }
             }
             else if (State == ConstraintState.Normal && damage >= 0.5f)
             {
@@ -67,7 +76,17 @@ public class Constrain : Interactable
                 goodConstrain.SetActive(false);
                 constrainManager.Check();
                 //animator.SetTrigger("Struggle");
-                breakDown.Play();
+
+                if (!hasTriggeredDamagedEffects)
+                {
+                    breakDown.Play();
+                    hasTriggeredDamagedEffects = true;
+                }
+            }
+
+            if (State == ConstraintState.Broken)
+            {
+                musicManager.StartDangerLoop();
             }
         }
     }
@@ -81,6 +100,10 @@ public class Constrain : Interactable
         midConstrain.SetActive(false);
         goodConstrain.SetActive(true);
         Debug.Log("Constrain Repaired");
+
+        hasTriggeredDamagedEffects = false;
+        hasTriggeredBrokenEffects = false;
+        musicManager.StartDarkHearts();
 
         repairUI.SetActive(true);
         UIAnimation.Play("Repair");

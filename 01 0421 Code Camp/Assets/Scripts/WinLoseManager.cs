@@ -22,7 +22,7 @@ public class WinLoseManager : MonoBehaviour
         fullyCharged.Play();
         await Task.Delay(4755);
 
-        Cursor.lockState = false ? CursorLockMode.None : CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
         win.SetActive(true);
@@ -57,7 +57,8 @@ public class WinLoseManager : MonoBehaviour
         await Task.Delay(4000);
 
         deathByEscape.SetActive(true);
-        Cursor.lockState = false ? CursorLockMode.None : CursorLockMode.Locked;
+
+        Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
     public void DeathByMonsterSwing()
@@ -70,7 +71,7 @@ public class WinLoseManager : MonoBehaviour
 
         deathBySwing.SetActive(true);
 
-        Cursor.lockState = false ? CursorLockMode.None : CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
 

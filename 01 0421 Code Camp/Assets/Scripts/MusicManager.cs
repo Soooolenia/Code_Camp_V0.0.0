@@ -8,6 +8,8 @@ public class MusicManager : MonoBehaviour
     [SerializeField] private Animator dangerLoop;
 
     [SerializeField] private AudioSource dangerSting;
+
+    private bool isDangerActive = false;
     public void IntroLoopCut()
     {
         introLoop.SetTrigger("End");
@@ -18,14 +20,22 @@ public class MusicManager : MonoBehaviour
     }
     public void StartDarkHearts()
     {
-        darkHearts.SetTrigger("On");
-        dangerLoop.SetTrigger("Off");
+        if (isDangerActive)
+        {
+            darkHearts.SetTrigger("On");
+            dangerLoop.SetTrigger("Off");
+            isDangerActive = false;
+        }
     }
 
     public void StartDangerLoop()
     {
-        dangerLoop.SetTrigger("On");
-        darkHearts.SetTrigger("Off");
-        dangerSting.Play();
+        if (!isDangerActive)
+        {
+            dangerLoop.SetTrigger("On");
+            darkHearts.SetTrigger("Off");
+            dangerSting.Play();
+            isDangerActive = true;
+        }
     }
 }

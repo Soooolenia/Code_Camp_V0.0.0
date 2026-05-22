@@ -6,7 +6,7 @@ public class MainButtonManager : MonoBehaviour
     {
         GameManager.Instance.LoadSceneAtIndex(1);
 
-        Cursor.lockState = false ? CursorLockMode.None : CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
 }

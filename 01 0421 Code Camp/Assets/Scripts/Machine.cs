@@ -22,6 +22,8 @@ public class Machine : MonoBehaviour
     [SerializeField] private AudioSource start;
     [SerializeField] private AudioSource operation;
 
+    [SerializeField] private EnergyManager energyManager;
+
     private bool wasBrokenLastCheck = false;
 
     private void Start()
@@ -43,7 +45,10 @@ public class Machine : MonoBehaviour
 
         if (Random.value < 0.2f)
         {
-            partsChosen.BreakPartFr();
+            if (energyManager.CurrentEnergy >= 2)
+            {
+                partsChosen.BreakPartFr();
+            }
         }
         else
         {
