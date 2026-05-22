@@ -28,7 +28,7 @@ public class Constrain : Interactable
     [SerializeField] private AudioSource repairComplete;
     [SerializeField] private AudioSource breakDown;
 
-    [SerializeField] private MusicManager musicManager;
+    //[SerializeField] private MusicManager musicManager;
 
     private bool hasTriggeredDamagedEffects = false;
     private bool hasTriggeredBrokenEffects = false;
@@ -63,7 +63,7 @@ public class Constrain : Interactable
                 {
                     breakDown.Play();
                     
-                    musicManager.StartDangerLoop();
+                    //musicManager.StartDangerLoop();
                     Debug.Log("Danger Loop Played");
                     hasTriggeredBrokenEffects = true;
                 }
@@ -99,7 +99,7 @@ public class Constrain : Interactable
 
         hasTriggeredDamagedEffects = false;
         hasTriggeredBrokenEffects = false;
-        musicManager.StartDarkHearts();
+        //musicManager.StartDarkHearts();
 
         repairUI.SetActive(true);
         UIAnimation.Play("Repair");

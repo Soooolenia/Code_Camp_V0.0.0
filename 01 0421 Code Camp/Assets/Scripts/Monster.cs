@@ -47,8 +47,6 @@ public class Monster : MonoBehaviour
             killSpike.Play();
             monsterGeneral.Stop();
 
-            //monsterAlive.gameObject.SetActive(false);
-            //monsterDead.gameObject.SetActive(true);
             animator.SetTrigger("Kill");
 
             Debug.Log("Monster has been killed!");

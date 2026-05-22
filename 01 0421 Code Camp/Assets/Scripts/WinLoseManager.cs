@@ -13,18 +13,22 @@ public class WinLoseManager : MonoBehaviour
 
     [SerializeField] private AudioSource fullyCharged;
     [SerializeField] private AudioSource energyDepleted;
+    [SerializeField] private AudioSource monsterFinalAudio;
+    [SerializeField] private AudioSource monsterFinalMusic;
 
     [SerializeField] private GameObject cam1;
     [SerializeField] private GameObject cam2;
     [SerializeField] private GameObject cam3;
 
+    [SerializeField] private Animator monster;
+
     private bool isGameOver = false;
     public void Win()
     {
+        fullyCharged.Play();
         if (isGameOver) { return; }
         isGameOver = true;
-
-        fullyCharged.Play();
+        
         //await Task.Delay(4755);
         
         StartCoroutine(WinSequence());
@@ -79,7 +83,10 @@ public class WinLoseManager : MonoBehaviour
     IEnumerator WinSequence()
     {
         cam1.SetActive(true);
-        yield return new WaitForSeconds(2);
+        monster.SetTrigger("End");
+        monsterFinalAudio.Play();
+        monsterFinalMusic.Play();
+        yield return new WaitForSeconds(15f);
         cam2.SetActive(true);
         yield return new WaitForSeconds(0.5f);
         cam3.SetActive(true);

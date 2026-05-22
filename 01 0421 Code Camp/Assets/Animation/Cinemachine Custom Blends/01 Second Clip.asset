@@ -17,7 +17,18 @@ MonoBehaviour:
     To: Ending Cam 02
     Blend:
       Style: 1
-      Time: 0.5
+      Time: 0.3
+      CustomCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0
+  - From: Ending Cam 02
+    To: Ending Cam 03
+    Blend:
+      Style: 1
+      Time: 1.5
       CustomCurve:
         serializedVersion: 2
         m_Curve: []
