@@ -9,9 +9,18 @@ public class WinLoseManager : MonoBehaviour
     [SerializeField] private GameObject deathByEscape;
     [SerializeField] private GameObject deathBySwing;
     [SerializeField] private GameObject win;
-    public void Win()
+
+    [SerializeField] private AudioSource fullyCharged;
+    public async void Win()
     {
+        fullyCharged.Play();
+        await Task.Delay(4755);
+
+        Cursor.lockState = false ? CursorLockMode.None : CursorLockMode.Locked;
+        Cursor.visible = true;
+
         win.SetActive(true);
+        fullyCharged.Play();
     }
     public void Lose()
     {
@@ -21,6 +30,7 @@ public class WinLoseManager : MonoBehaviour
         {
             monsterOut.Play();
         }
+
     }
     public async void DeathByEscapedMonster()
     {
@@ -34,11 +44,18 @@ public class WinLoseManager : MonoBehaviour
         await Task.Delay(4000);
 
         deathByEscape.SetActive(true);
+        Cursor.lockState = false ? CursorLockMode.None : CursorLockMode.Locked;
+        Cursor.visible = true;
     }
-    public async void DeathByMonsterSwing()
+    public void DeathByMonsterSwing()
     {
         PPDark.SetTrigger("Darken");
 
         deathBySwing.SetActive(true);
+
+        Cursor.lockState = false ? CursorLockMode.None : CursorLockMode.Locked;
+        Cursor.visible = true;
     }
+
+
 }

@@ -67,7 +67,7 @@ public class EnergyManager : MonoBehaviour
             Debug.Log("Energy depleted! Game Over!");
             CurrentEnergy = 0; 
             energyDepleted.Play();
-            winLoseManager.Lose();
+            winLoseManager.DeathByEscapedMonster();
 
             //trigger PP to turn of lights fully
         }

@@ -6,11 +6,16 @@ public class MonsterReach : MonoBehaviour
     [SerializeField] private char side;
 
     [SerializeField] private AudioSource monsterSwing;
+    [SerializeField] private AudioSource dangerSting;
+
+    [SerializeField] private WinLoseManager winloseManager;
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("You Died!");
         animator.SetTrigger($"Swipe{side}");
 
         monsterSwing.Play();
+        dangerSting.Play();
+        winloseManager.DeathByMonsterSwing();
     }
 }

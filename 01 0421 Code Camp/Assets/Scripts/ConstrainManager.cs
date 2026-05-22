@@ -13,7 +13,7 @@ public class ConstrainManager : MonoBehaviour
         if (constrainA.State == ConstraintState.Broken && constrainB.State == ConstraintState.Broken)
         {
             Debug.Log("You are dead, the monster got out!");
-            winLoseManager.Lose();
+            winLoseManager.DeathByEscapedMonster();
         }
     }
 }
