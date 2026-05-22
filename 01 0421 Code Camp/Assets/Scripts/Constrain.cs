@@ -46,8 +46,6 @@ public class Constrain : Interactable
     {
         if (monster.isAlive)
         {
-            //if (damage > 1f || damage  < 0f) {return;}
-
             damage += damageSpeed * Time.deltaTime;
 
             if (State == ConstraintState.Damaged && damage >= 1f)
@@ -60,10 +58,13 @@ public class Constrain : Interactable
                 constrainManager.Check();
                 animator.SetTrigger($"Break{side}");
 
+                
                 if (!hasTriggeredBrokenEffects)
                 {
                     breakDown.Play();
-                    musicManager.StartDangerLoop(); 
+                    
+                    musicManager.StartDangerLoop();
+                    Debug.Log("Danger Loop Played");
                     hasTriggeredBrokenEffects = true;
                 }
             }
@@ -75,7 +76,6 @@ public class Constrain : Interactable
                 midConstrain.SetActive(true);
                 goodConstrain.SetActive(false);
                 constrainManager.Check();
-                //animator.SetTrigger("Struggle");
 
                 if (!hasTriggeredDamagedEffects)
                 {
@@ -84,10 +84,6 @@ public class Constrain : Interactable
                 }
             }
 
-            if (State == ConstraintState.Broken)
-            {
-                musicManager.StartDangerLoop();
-            }
         }
     }
     public async override void Interact()

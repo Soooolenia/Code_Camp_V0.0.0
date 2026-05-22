@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnergyManager : MonoBehaviour
@@ -28,6 +29,7 @@ public class EnergyManager : MonoBehaviour
     [SerializeField] private AudioSource energyGainedLow;
     [SerializeField] private AudioSource energyFull;
 
+    private bool isGameStarted = false;
     private bool isGameOver = false;
 
     private float lastEnergy;
@@ -156,7 +158,16 @@ public class EnergyManager : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (isGameStarted == false) { return; }
+
         CurrentEnergy -= EnergyDrainRate * Time.deltaTime * 0.01f;
         EnergyCheck();
+    }
+
+    public void startGame()
+    {
+        if(isGameStarted == true) { return; }
+
+        isGameStarted = true;
     }
 }

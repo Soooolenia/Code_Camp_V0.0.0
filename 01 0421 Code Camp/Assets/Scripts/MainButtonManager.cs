@@ -9,4 +9,9 @@ public class MainButtonManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
+
+    public void Test()
+    {
+        Debug.Log("Options");
+    }
 }

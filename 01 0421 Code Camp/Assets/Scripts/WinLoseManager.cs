@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -13,20 +14,20 @@ public class WinLoseManager : MonoBehaviour
     [SerializeField] private AudioSource fullyCharged;
     [SerializeField] private AudioSource energyDepleted;
 
+    [SerializeField] private GameObject cam1;
+    [SerializeField] private GameObject cam2;
+    [SerializeField] private GameObject cam3;
+
     private bool isGameOver = false;
-    public async void Win()
+    public void Win()
     {
         if (isGameOver) { return; }
         isGameOver = true;
 
         fullyCharged.Play();
-        await Task.Delay(4755);
-
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-
-        win.SetActive(true);
-        fullyCharged.Play();
+        //await Task.Delay(4755);
+        
+        StartCoroutine(WinSequence());
     }
     public void Lose()
     {
@@ -75,5 +76,18 @@ public class WinLoseManager : MonoBehaviour
         Cursor.visible = true;
     }
 
+    IEnumerator WinSequence()
+    {
+        cam1.SetActive(true);
+        yield return new WaitForSeconds(2);
+        cam2.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        cam3.SetActive(true);
+        yield return new WaitForSeconds(3);
 
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        win.SetActive(true);
+    }
 }

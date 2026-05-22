@@ -24,8 +24,11 @@ public class InteractableRevive : Interactable
 
     private bool isReadySoundPlayed = false;
 
+    private bool isGameStarted = false;
+
     public override void Interact()
     {
+
         if (cooldown < 1f) { return; }
 
         //Check if the monster is alive
@@ -66,6 +69,8 @@ public class InteractableRevive : Interactable
             musicManager.InitialStart();
             introLoopEnded = true;
         }
+
+        energyManager.startGame();
     }
     private void Update()
     {

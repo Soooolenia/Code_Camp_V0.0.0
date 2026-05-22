@@ -1,20 +1,26 @@
 using StarterAssets;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private GameObject optionsPanel;
 
     [SerializeField] private GameObject pauseMenuUI;
-    private bool isPaused = false;
+
+    public bool isPaused = false;
 
     private StarterAssetsInputs _playerInputs;
 
     private void Awake()
     {
         _playerInputs = GetComponent<StarterAssetsInputs>();
+        if (_playerInputs == null)
+        {
+            _playerInputs = FindFirstObjectByType<StarterAssetsInputs>();
+        }
+
+        Debug.Log(gameObject.name);
     }
     public void OnPause(InputValue value)
     {
@@ -37,21 +43,24 @@ public class PauseMenu : MonoBehaviour
         //Freeze/Unfreeze Time
         Time.timeScale = isPaused ? 0f : 1f;
 
-        //Handle the Cursor
-        Cursor.lockState = isPaused ? CursorLockMode.None : CursorLockMode.Locked;
-        Cursor.visible = isPaused;
-
-        //Update StarterAssets Controller
-        //Stops the camera from spinning and the player from moving while paused
         if (_playerInputs != null)
         {
             _playerInputs.cursorLocked = !isPaused;
             _playerInputs.cursorInputForLook = !isPaused;
 
-            // Optional: Reset move input so the player doesn't keep sliding
             _playerInputs.move = Vector2.zero;
+            _playerInputs.look = Vector2.zero;
+        }
+
+        Cursor.lockState = isPaused ? CursorLockMode.None : CursorLockMode.Locked;
+        Cursor.visible = isPaused;
+
+        if (_playerInputs != null)
+        {
+            _playerInputs.SetCursorState(_playerInputs.cursorLocked);
         }
     }
+    
 
     public void ToggleOptions()
     {
@@ -71,5 +80,9 @@ public class PauseMenu : MonoBehaviour
 
         //Reset time scale
         Time.timeScale = 1f;
+    }
+    public void Test()
+    {
+        Debug.Log("Options");
     }
 }
