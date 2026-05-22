@@ -11,8 +11,14 @@ public class WinLoseManager : MonoBehaviour
     [SerializeField] private GameObject win;
 
     [SerializeField] private AudioSource fullyCharged;
+    [SerializeField] private AudioSource energyDepleted;
+
+    private bool isGameOver = false;
     public async void Win()
     {
+        if (isGameOver) { return; }
+        isGameOver = true;
+
         fullyCharged.Play();
         await Task.Delay(4755);
 
@@ -34,7 +40,14 @@ public class WinLoseManager : MonoBehaviour
     }
     public async void DeathByEscapedMonster()
     {
+        if (isGameOver) { return; }
+        isGameOver = true;
+
+        energyDepleted.Play();
+        Debug.Log("Death By Escaped Monster");
+
         PPDark.SetTrigger("Darken");
+        Debug.Log("PP Dark Played");
 
         if (!monsterOut.isPlaying)
         {
@@ -49,6 +62,10 @@ public class WinLoseManager : MonoBehaviour
     }
     public void DeathByMonsterSwing()
     {
+        if (isGameOver) { return; }
+        isGameOver = true;
+        Debug.Log("DeathByMonsterSwing");
+
         PPDark.SetTrigger("Darken");
 
         deathBySwing.SetActive(true);

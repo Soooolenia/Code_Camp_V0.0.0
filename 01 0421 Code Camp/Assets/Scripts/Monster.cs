@@ -61,6 +61,7 @@ public class Monster : MonoBehaviour
         {
             Debug.Log($"Monster current health: {MonsterHealth}");
             killWeak.Play();
+            animator.SetTrigger("Damaged");
             monsterHurt.Play();
         }
 

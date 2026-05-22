@@ -20,12 +20,13 @@ public class EnergyManager : MonoBehaviour
     [SerializeField] private AudioSource energyUsedHigh;
     [SerializeField] private AudioSource energyUsedMid;
     [SerializeField] private AudioSource energyUsedLow;
-    [SerializeField] private AudioSource energyDepleted;
 
     [Header("Energy gain")]
     [SerializeField] private AudioSource energyGainedHigh;
     [SerializeField] private AudioSource energyGainedLow;
     [SerializeField] private AudioSource energyFull;
+
+    private bool isGameOver = false;
 
     private float lastEnergy;
 
@@ -57,6 +58,9 @@ public class EnergyManager : MonoBehaviour
 
         if (CurrentEnergy >= TargetEnergy)
         {
+            if (isGameOver == true) { return; }
+            isGameOver = true;
+
             Debug.Log("Target energy reached!");
             energyFull.Play();
             winLoseManager.Win();
@@ -64,9 +68,11 @@ public class EnergyManager : MonoBehaviour
 
         if (CurrentEnergy <= 0f)
         {
+            if (isGameOver == true) { return; }
+            isGameOver = true;
+
             Debug.Log("Energy depleted! Game Over!");
             CurrentEnergy = 0; 
-            energyDepleted.Play();
             winLoseManager.DeathByEscapedMonster();
 
             //trigger PP to turn of lights fully

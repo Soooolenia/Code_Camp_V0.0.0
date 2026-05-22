@@ -15,10 +15,14 @@ public class DeliveryMachine : Interactable
     [SerializeField] private AudioSource partInserted;
     [SerializeField] private AudioSource delivering;
     [SerializeField] private AudioSource partsDelivered;
+    [SerializeField] private AudioSource rightHatchClose;
+    [SerializeField] private AudioSource leftHatchOpen;
+    
     public override async void Interact()
     {
         //Close Hatch
         animator.SetTrigger("Close");
+        rightHatchClose.Play();
 
         partInserted.Play();
         
@@ -45,6 +49,7 @@ public class DeliveryMachine : Interactable
         deliveryIndicator.On();
         //Open Left hatch
         animatorL.SetTrigger("Open");
+        leftHatchOpen.Play();
 
         partsDelivered.Play();
 
