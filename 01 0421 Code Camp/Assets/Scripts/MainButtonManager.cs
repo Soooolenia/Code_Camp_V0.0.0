@@ -2,15 +2,8 @@ using UnityEngine;
 
 public class MainButtonManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void BackToMenu()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        GameManager.Instance.LoadSceneAtIndex(1);
     }
 }

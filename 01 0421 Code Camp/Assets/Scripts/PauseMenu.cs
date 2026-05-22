@@ -8,6 +8,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject optionsPanel;
 
     [SerializeField] private GameObject pauseMenuUI;
+
     private bool isPaused = false;
 
     private StarterAssetsInputs _playerInputs;
@@ -48,7 +49,7 @@ public class PauseMenu : MonoBehaviour
             _playerInputs.cursorLocked = !isPaused;
             _playerInputs.cursorInputForLook = !isPaused;
 
-            // Optional: Reset move input so the player doesn't keep sliding
+            //Reset move input so the player doesn't keep sliding
             _playerInputs.move = Vector2.zero;
         }
     }
