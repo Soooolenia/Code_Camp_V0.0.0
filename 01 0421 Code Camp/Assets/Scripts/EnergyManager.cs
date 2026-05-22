@@ -16,6 +16,8 @@ public class EnergyManager : MonoBehaviour
 
     [SerializeField] private WinLoseManager winLoseManager;
 
+    [SerializeField] private MusicManager musicManager;
+
     [Header("Energy use")]
     [SerializeField] private AudioSource energyUsedHigh;
     [SerializeField] private AudioSource energyUsedMid;
@@ -38,6 +40,15 @@ public class EnergyManager : MonoBehaviour
     private void EnergyCheck()
     {
         onInteractionTasks();
+
+        if (CurrentEnergy < 1f)
+        {
+            musicManager.StartDangerLoop();
+        }
+        else if (CurrentEnergy >= 1f)
+        {
+            musicManager.StartDarkHearts();
+        }
 
         int currentFloor = Mathf.FloorToInt(CurrentEnergy);
         int lastFloor = Mathf.FloorToInt(lastEnergy);
@@ -74,8 +85,6 @@ public class EnergyManager : MonoBehaviour
             Debug.Log("Energy depleted! Game Over!");
             CurrentEnergy = 0; 
             winLoseManager.DeathByEscapedMonster();
-
-            //trigger PP to turn of lights fully
         }
     }
 

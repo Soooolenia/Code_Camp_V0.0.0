@@ -11654,7 +11654,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DetailColor: {r: 0.32495174, g: 0.3654299, b: 0.44047168, a: 0}
     - _DetailData: {r: 0.5, g: 4, b: -0.5, a: 0}
-    - _DetailWindDirection: {r: 0.006759139, g: 0, b: 0, a: 0}
+    - _DetailWindDirection: {r: 0.45068714, g: 0, b: 0, a: 0}
     - _DistanceData: {r: 0, g: 5, b: 1, a: 1}
     - _FogOfWarCenter: {r: 0, g: 0, b: 0, a: 1}
     - _FogOfWarCenterAdjusted: {r: 0, g: 0, b: 0, a: 1}
@@ -11667,7 +11667,7 @@ Material:
     - _ShadowData: {r: 0.5, g: 0, b: 250, a: 0}
     - _SpecularColor: {r: 0.5, g: 0.5, b: 0.5, a: 0}
     - _SunDir: {r: 0.3213938, g: 0.76604444, b: -0.5566705, a: 0}
-    - _WindDirection: {r: 0.006759139, g: 0, b: 0, a: 0}
+    - _WindDirection: {r: 0.45068714, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!1 &610139093
@@ -49066,6 +49066,7 @@ MonoBehaviour:
   brightFlickerBright: {fileID: 1269241132}
   brightFlickerDark: {fileID: 433107263}
   winLoseManager: {fileID: 797841402}
+  musicManager: {fileID: 1631065741}
   energyUsedHigh: {fileID: 884373447}
   energyUsedMid: {fileID: 1216563872}
   energyUsedLow: {fileID: 1458223384}
