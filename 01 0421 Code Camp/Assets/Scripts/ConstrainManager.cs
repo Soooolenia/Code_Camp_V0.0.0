@@ -20,11 +20,12 @@ public class ConstrainManager : MonoBehaviour
         
         if (constrainA.State == ConstraintState.Broken || constrainB.State == ConstraintState.Broken)
         {
-            musicManager.StartDangerLoop();
+            Debug.Log("One of the constraints is broken!");
+            musicManager.AreContraintsBroken = true;
         }
         else
         {
-            musicManager.StartDarkHearts();
+            musicManager.AreContraintsBroken = false;
         }
     }
 }

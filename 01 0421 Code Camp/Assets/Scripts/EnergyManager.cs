@@ -43,14 +43,7 @@ public class EnergyManager : MonoBehaviour
     {
         onInteractionTasks();
 
-        if (CurrentEnergy < 1f)
-        {
-            musicManager.StartDangerLoop();
-        }
-        else if (CurrentEnergy >= 1f)
-        {
-            musicManager.StartDarkHearts();
-        }
+        musicManager.IsEnergyLow = CurrentEnergy < 1f;
 
         int currentFloor = Mathf.FloorToInt(CurrentEnergy);
         int lastFloor = Mathf.FloorToInt(lastEnergy);

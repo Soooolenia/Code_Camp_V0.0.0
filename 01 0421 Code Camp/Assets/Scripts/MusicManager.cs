@@ -9,7 +9,70 @@ public class MusicManager : MonoBehaviour
 
     [SerializeField] private AudioSource dangerSting;
 
-    private bool isDangerActive = false;
+    //private bool isDangerActive = false;
+
+    private bool areContraintsBroken = false;
+    public bool AreContraintsBroken
+    {
+        get => areContraintsBroken;
+        set
+        {
+            if (areContraintsBroken == value) { return; }
+            areContraintsBroken = value;
+            Check();
+        }
+    }
+
+    private bool isEnergyLow = false;
+    public bool IsEnergyLow
+    {
+        get => isEnergyLow;
+        set
+        {
+            if (isEnergyLow == value) { return; }
+            isEnergyLow = value;
+            Check();
+        }
+    }
+
+    private MusicState state;
+    private MusicState State
+    {
+        get => state;
+        set
+        {
+            if (state == value) { return; }
+            Debug.Log(value);
+            state = value;
+            darkHearts.SetTrigger(state == MusicState.Normal ? "On" : "Off");
+            dangerLoop.SetTrigger(state == MusicState.Danger ? "On" : "Off");
+
+            if (value == MusicState.Danger)
+            {
+                dangerSting.Play();
+            }
+        }
+    }
+
+    private void Check()
+    {
+        if (AreContraintsBroken || IsEnergyLow)
+        {
+            if (State == MusicState.Danger) { return; }
+            State = MusicState.Danger;
+            dangerLoop.SetTrigger("On");
+            darkHearts.SetTrigger("Off");
+            dangerSting.Play();
+        }
+        else
+        {
+            if (State == MusicState.Normal) { return; }
+            State = MusicState.Normal;
+            dangerLoop.SetTrigger("Off");
+            darkHearts.SetTrigger("On");
+        }
+    }
+
     public void IntroLoopCut()
     {
         introLoop.SetTrigger("End");
@@ -18,24 +81,10 @@ public class MusicManager : MonoBehaviour
     {
         darkHearts.SetTrigger("On");
     }
-    public void StartDarkHearts()
-    {
-        if (isDangerActive)
-        {
-            darkHearts.SetTrigger("On");
-            dangerLoop.SetTrigger("Off");
-            isDangerActive = false;
-        }
-    }
+}
 
-    public void StartDangerLoop()
-    {
-        if (!isDangerActive)
-        {
-            dangerLoop.SetTrigger("On");
-            darkHearts.SetTrigger("Off");
-            dangerSting.Play();
-            isDangerActive = true;
-        }
-    }
+public enum MusicState
+{
+    Normal,
+    Danger
 }

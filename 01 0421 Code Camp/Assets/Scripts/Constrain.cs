@@ -14,7 +14,31 @@ public class Constrain : Interactable
     [SerializeField] private EnergyManager energyManager;
     [SerializeField] private ConstrainManager constrainManager;
 
-    [SerializeField] public ConstraintState State = ConstraintState.Normal;
+    [SerializeField] private ConstraintState state;
+
+    // Property
+    public ConstraintState State
+    {
+        get => state;
+        set
+        {
+            if (state == value) { return; }
+            state = value;
+            monsterCollider.SetActive(value == ConstraintState.Broken);
+            badConstrain.SetActive(value == ConstraintState.Broken);
+            midConstrain.SetActive(value == ConstraintState.Damaged);
+            goodConstrain.SetActive(value == ConstraintState.Normal);
+
+            constrainManager.Check();
+
+            if (state != ConstraintState.Normal)
+            {
+                breakDown.Play();
+            }
+        }
+    }
+
+
     [SerializeField] public float damage = 0f;
     [SerializeField] private float damageSpeed;
 
@@ -30,8 +54,8 @@ public class Constrain : Interactable
 
     //[SerializeField] private MusicManager musicManager;
 
-    private bool hasTriggeredDamagedEffects = false;
-    private bool hasTriggeredBrokenEffects = false;
+    /*private bool hasTriggeredDamagedEffects = false;
+    private bool hasTriggeredBrokenEffects = false;*/
 
     private void Start()
     {
@@ -51,7 +75,7 @@ public class Constrain : Interactable
             if (State == ConstraintState.Damaged && damage >= 1f)
             {
                 State = ConstraintState.Broken;
-                monsterCollider.SetActive(true);
+                /*monsterCollider.SetActive(true);
                 badConstrain.SetActive(true);
                 midConstrain.SetActive(false);
                 goodConstrain.SetActive(false);
@@ -66,12 +90,12 @@ public class Constrain : Interactable
                     //musicManager.StartDangerLoop();
                     Debug.Log("Danger Loop Played");
                     hasTriggeredBrokenEffects = true;
-                }
+                }*/
             }
             else if (State == ConstraintState.Normal && damage >= 0.5f)
             {
                 State = ConstraintState.Damaged;
-                monsterCollider.SetActive(false);
+                /*monsterCollider.SetActive(false);
                 badConstrain.SetActive(false);
                 midConstrain.SetActive(true);
                 goodConstrain.SetActive(false);
@@ -81,7 +105,7 @@ public class Constrain : Interactable
                 {
                     breakDown.Play();
                     hasTriggeredDamagedEffects = true;
-                }
+                }*/
             }
 
         }
@@ -91,7 +115,7 @@ public class Constrain : Interactable
         damage = 0f;
         energyManager.DecreaseEnergy(0.15f);
         State = ConstraintState.Normal;
-        monsterCollider.SetActive(false);
+        /*monsterCollider.SetActive(false);
         badConstrain.SetActive(false);
         midConstrain.SetActive(false);
         goodConstrain.SetActive(true);
@@ -99,7 +123,7 @@ public class Constrain : Interactable
 
         hasTriggeredDamagedEffects = false;
         hasTriggeredBrokenEffects = false;
-        //musicManager.StartDarkHearts();
+        //musicManager.StartDarkHearts();*/
 
         repairUI.SetActive(true);
         UIAnimation.Play("Repair");
