@@ -470,7 +470,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NoiseTex:
-        m_Texture: {fileID: 448643401}
+        m_Texture: {fileID: 1885398303}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
@@ -494,7 +494,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DetailColor: {r: 0.32495174, g: 0.3654299, b: 0.44047168, a: 0}
     - _DetailData: {r: 0.5, g: 4, b: -0.5, a: 0}
-    - _DetailWindDirection: {r: 11.851197, g: 0, b: 0, a: 0}
+    - _DetailWindDirection: {r: 18.204275, g: 0, b: 0, a: 0}
     - _DistanceData: {r: 0, g: 5, b: 1, a: 1}
     - _FogOfWarCenter: {r: 0, g: 0, b: 0, a: 0}
     - _FogOfWarCenterAdjusted: {r: -0.5, g: 1, b: -0.49999994, a: 0}
@@ -507,7 +507,7 @@ Material:
     - _ShadowData: {r: 0.5, g: 0, b: 250, a: 0}
     - _SpecularColor: {r: 0.5, g: 0.5, b: 0.5, a: 0}
     - _SunDir: {r: 0.3213938, g: 0.76604444, b: -0.5566705, a: 0}
-    - _WindDirection: {r: 11.851197, g: 0, b: 0, a: 0}
+    - _WindDirection: {r: 18.204275, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!1 &302147834
@@ -948,43 +948,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 130141032}
   m_SourcePrefab: {fileID: 100100000, guid: c2e25ec8030434c4983403d5c04b0abf, type: 3}
---- !u!84 &448643401
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 6
-  m_Width: 256
-  m_Height: 256
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 0
-  m_ColorFormat: 8
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_UseDynamicScaleExplicit: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_EnableRandomWrite: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 0
-    m_WrapV: 0
-    m_WrapW: 0
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -7350,6 +7313,43 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1826593195}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!84 &1885398303
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 6
+  m_Width: 256
+  m_Height: 256
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthStencilFormat: 0
+  m_ColorFormat: 8
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_UseDynamicScaleExplicit: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_EnableRandomWrite: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 0
+    m_WrapV: 0
+    m_WrapW: 0
+  m_Dimension: 2
+  m_VolumeDepth: 1
+  m_ShadowSamplingMode: 2
 --- !u!1 &1912195321
 GameObject:
   m_ObjectHideFlags: 0
@@ -8258,7 +8258,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3205040248361849287, guid: 2e201d8fd9b9244428e0b2eec4f39326, type: 3}
       propertyPath: m_Name
-      value: 01 Main Hallway V9
+      value: 02 Main Hallway V9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9282,6 +9282,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 543450651861496712}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &8292191043520740783
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2029758747143873203, guid: 7621d4ae1f4a2bd44a8c8d811d4c7d4b, type: 3}
+      propertyPath: m_Name
+      value: 03 Hallway End Combined V6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7097903657881194495, guid: 7621d4ae1f4a2bd44a8c8d811d4c7d4b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 77.42102
+      objectReference: {fileID: 0}
+    - target: {fileID: 7097903657881194495, guid: 7621d4ae1f4a2bd44a8c8d811d4c7d4b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.946863
+      objectReference: {fileID: 0}
+    - target: {fileID: 7097903657881194495, guid: 7621d4ae1f4a2bd44a8c8d811d4c7d4b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 21.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 7097903657881194495, guid: 7621d4ae1f4a2bd44a8c8d811d4c7d4b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7097903657881194495, guid: 7621d4ae1f4a2bd44a8c8d811d4c7d4b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7097903657881194495, guid: 7621d4ae1f4a2bd44a8c8d811d4c7d4b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7097903657881194495, guid: 7621d4ae1f4a2bd44a8c8d811d4c7d4b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7097903657881194495, guid: 7621d4ae1f4a2bd44a8c8d811d4c7d4b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7097903657881194495, guid: 7621d4ae1f4a2bd44a8c8d811d4c7d4b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7097903657881194495, guid: 7621d4ae1f4a2bd44a8c8d811d4c7d4b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7621d4ae1f4a2bd44a8c8d811d4c7d4b, type: 3}
 --- !u!1001 &8493953787130465580
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9300,7 +9357,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7005631685670448799, guid: d3843f4e9d8325b4d99441edeadb2adc, type: 3}
       propertyPath: m_Name
-      value: '02 Starter Room '
+      value: '01 Starter Room '
       objectReference: {fileID: 0}
     - target: {fileID: 7108331912399714531, guid: d3843f4e9d8325b4d99441edeadb2adc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9600,3 +9657,4 @@ SceneRoots:
   - {fileID: 174760931}
   - {fileID: 8493953787130465580}
   - {fileID: 3547218663842536082}
+  - {fileID: 8292191043520740783}
