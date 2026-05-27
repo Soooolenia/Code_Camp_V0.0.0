@@ -470,7 +470,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NoiseTex:
-        m_Texture: {fileID: 2068238554}
+        m_Texture: {fileID: 427496928}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
@@ -494,7 +494,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DetailColor: {r: 0.32495174, g: 0.3654299, b: 0.44047168, a: 0}
     - _DetailData: {r: 0.5, g: 4, b: -0.5, a: 0}
-    - _DetailWindDirection: {r: 4.822644, g: 0, b: 0, a: 0}
+    - _DetailWindDirection: {r: 11.809982, g: 0, b: 0, a: 0}
     - _DistanceData: {r: 0, g: 5, b: 1, a: 1}
     - _FogOfWarCenter: {r: 0, g: 0, b: 0, a: 0}
     - _FogOfWarCenterAdjusted: {r: -0.5, g: 1, b: -0.49999994, a: 0}
@@ -507,7 +507,7 @@ Material:
     - _ShadowData: {r: 0.5, g: 0, b: 250, a: 0}
     - _SpecularColor: {r: 0.5, g: 0.5, b: 0.5, a: 0}
     - _SunDir: {r: 0.3213938, g: 0.76604444, b: -0.5566705, a: 0}
-    - _WindDirection: {r: 4.822644, g: 0, b: 0, a: 0}
+    - _WindDirection: {r: 11.809982, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!1 &302147834
@@ -761,6 +761,43 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 414600673}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!84 &427496928
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 6
+  m_Width: 256
+  m_Height: 256
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthStencilFormat: 0
+  m_ColorFormat: 8
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_UseDynamicScaleExplicit: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_EnableRandomWrite: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 0
+    m_WrapV: 0
+    m_WrapW: 0
+  m_Dimension: 2
+  m_VolumeDepth: 1
+  m_ShadowSamplingMode: 2
 --- !u!1001 &440405149
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1431,6 +1468,63 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1445179408}
   m_SourcePrefab: {fileID: 100100000, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+--- !u!1001 &1084521681
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 78f618f3f82d11e46a702da6d07f0879, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 63.754814
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 78f618f3f82d11e46a702da6d07f0879, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.075429
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 78f618f3f82d11e46a702da6d07f0879, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.5189924
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 78f618f3f82d11e46a702da6d07f0879, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.67595315
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 78f618f3f82d11e46a702da6d07f0879, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.6759532
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 78f618f3f82d11e46a702da6d07f0879, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.2075748
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 78f618f3f82d11e46a702da6d07f0879, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.20757478
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 78f618f3f82d11e46a702da6d07f0879, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 78f618f3f82d11e46a702da6d07f0879, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 78f618f3f82d11e46a702da6d07f0879, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 34.142
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 78f618f3f82d11e46a702da6d07f0879, type: 3}
+      propertyPath: m_Name
+      value: 'suzane test V2 '
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 78f618f3f82d11e46a702da6d07f0879, type: 3}
 --- !u!1 &1108331397
 GameObject:
   m_ObjectHideFlags: 0
@@ -7404,43 +7498,6 @@ MonoBehaviour:
   enableDistanceDimmer: 1
   distanceStartDimming: 70
   distanceDeactivation: 100
---- !u!84 &2068238554
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 6
-  m_Width: 256
-  m_Height: 256
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 0
-  m_ColorFormat: 8
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_UseDynamicScaleExplicit: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_EnableRandomWrite: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 0
-    m_WrapV: 0
-    m_WrapW: 0
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
 --- !u!33 &40433935610919032
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9658,3 +9715,4 @@ SceneRoots:
   - {fileID: 8493953787130465580}
   - {fileID: 3547218663842536082}
   - {fileID: 8292191043520740783}
+  - {fileID: 1084521681}
