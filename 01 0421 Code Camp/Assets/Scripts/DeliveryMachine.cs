@@ -46,10 +46,13 @@ public class DeliveryMachine : Interactable
         if (this == null) return;
         player.ShowGoodObjectInMachine(slot.partIndex);
         deliveryIndicator.InProgressStop();
-        deliveryIndicator.On();
+        
         //Open Left hatch
         animatorL.SetTrigger("Open");
         leftHatchOpen.Play();
+
+        //Delivery indicator on idle
+        deliveryIndicator.On();
 
         partsDelivered.Play();
 
