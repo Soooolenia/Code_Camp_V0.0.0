@@ -15,7 +15,7 @@ public class DeliveryDoorDrop : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         var doorDropChance = Random.Range(0f, 1f);
-        if (doorDropChance <= 0.2f)
+        if (doorDropChance <= 1f)
         {
             if (!deliveryDoorManager.IsBroken())
             {
