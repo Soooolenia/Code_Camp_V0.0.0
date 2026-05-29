@@ -23,7 +23,7 @@ public class DeliveryDoorFix : Interactable
             //Debug.Log("Door fixed!");
             deliveryDoorDrop.FixDoor();
 
-            deliveryDoorFix.Play();
+            deliveryDoorFixed.Play();
 
             hudManager.HideProgressBar();
         }
