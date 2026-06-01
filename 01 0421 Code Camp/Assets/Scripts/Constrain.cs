@@ -23,6 +23,7 @@ public class Constrain : Interactable
         set
         {
             if (state == value) { return; }
+            Debug.Log(value);
             state = value;
             monsterCollider.SetActive(value == ConstraintState.Broken);
             badConstrain.SetActive(value == ConstraintState.Broken);
@@ -112,9 +113,11 @@ public class Constrain : Interactable
     }
     public async override void Interact()
     {
+        Debug.Log("Interacted with Constrain");
         damage = 0f;
         energyManager.DecreaseEnergy(0.15f);
         State = ConstraintState.Normal;
+        Debug.Log("Constrain Repaired" + State);
         /*monsterCollider.SetActive(false);
         badConstrain.SetActive(false);
         midConstrain.SetActive(false);
