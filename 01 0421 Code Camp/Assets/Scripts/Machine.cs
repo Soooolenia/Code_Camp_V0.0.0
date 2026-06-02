@@ -43,7 +43,7 @@ public class Machine : MonoBehaviour
     {
         var partsChosen = parts[Random.Range(0, parts.Count)];
 
-        if (Random.value < 0.2f)
+        if (Random.value < 0.35f)
         {
             if (energyManager.CurrentEnergy >= 2)
             {

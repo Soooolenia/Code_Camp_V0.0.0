@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 public class Constrain : Interactable
 {
     [SerializeField] private GameObject goodConstrain;
+    [SerializeField] private GameObject interactionBlocker;
     [SerializeField] private GameObject midConstrain;
     [SerializeField] private GameObject badConstrain;
 
@@ -15,6 +16,8 @@ public class Constrain : Interactable
     [SerializeField] private ConstrainManager constrainManager;
 
     [SerializeField] private ConstraintState state;
+
+    [SerializeField] private AudioSource monsterSwipe;
 
     // Property
     public ConstraintState State
@@ -29,6 +32,7 @@ public class Constrain : Interactable
             badConstrain.SetActive(value == ConstraintState.Broken);
             midConstrain.SetActive(value == ConstraintState.Damaged);
             goodConstrain.SetActive(value == ConstraintState.Normal);
+            interactionBlocker.SetActive(value == ConstraintState.Normal);
 
             constrainManager.Check();
 
@@ -53,6 +57,8 @@ public class Constrain : Interactable
     [SerializeField] private AudioSource repairComplete;
     [SerializeField] private AudioSource breakDown;
 
+    private bool isMonsterSwiping = false;
+
     //[SerializeField] private MusicManager musicManager;
 
     /*private bool hasTriggeredDamagedEffects = false;
@@ -65,9 +71,10 @@ public class Constrain : Interactable
         badConstrain.SetActive(false);
         midConstrain.SetActive(false);
         goodConstrain.SetActive(true);
+        interactionBlocker.SetActive(true);
     }
 
-    void Update()
+    async void Update()
     {
         if (monster.isAlive)
         {
@@ -109,6 +116,17 @@ public class Constrain : Interactable
                 }*/
             }
 
+            if (State == ConstraintState.Broken)
+            {
+                if (Random.Range(0f, 1f) < 0.2f && !isMonsterSwiping)
+                {
+                    isMonsterSwiping = true;
+                    animator.SetTrigger($"Swipe{side}");
+                    await Task.Delay(5000);
+                    isMonsterSwiping = false;
+                    monsterSwipe.Play();
+                }
+            }
         }
     }
     public async override void Interact()
